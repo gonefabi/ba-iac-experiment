@@ -1,5 +1,5 @@
 name: Terraform Deploy
-
+ 
 on:
   workflow_dispatch:
     inputs:
@@ -17,13 +17,13 @@ on:
         options:
           - apply
           - destroy
-
+ 
 env:
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
   ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-
+ 
 jobs:
   terraform:
     name: Terraform ${{ github.event.inputs.action }} – ${{ github.event.inputs.variante }}
@@ -31,41 +31,43 @@ jobs:
     defaults:
       run:
         working-directory: ${{ github.event.inputs.variante }}
-
+ 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
+ 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.7.0"
-
+ 
       - name: Terraform Init
         run: terraform init
-
+ 
       - name: Terraform Format Check
         run: terraform fmt -check
         continue-on-error: true
-
+ 
       - name: Terraform Validate
         run: terraform validate
-
+ 
       - name: Terraform Plan (apply)
         if: github.event.inputs.action == 'apply'
         run: |
           terraform plan \
             -var="windows_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}" \
             -var="linux_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}" \
+            -var="allowed_rdp_source_ip=${{ secrets.TF_MY_IP }}" \
             -out=tfplan
-
+ 
       - name: Terraform Apply
         if: github.event.inputs.action == 'apply'
         run: terraform apply -auto-approve tfplan
-
+ 
       - name: Terraform Destroy
         if: github.event.inputs.action == 'destroy'
         run: |
           terraform destroy -auto-approve \
             -var="windows_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}" \
-            -var="linux_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}"
+            -var="linux_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}" \
+            -var="allowed_rdp_source_ip=${{ secrets.TF_MY_IP }}"

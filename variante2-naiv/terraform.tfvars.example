@@ -1,0 +1,31 @@
+##############################################################################
+# terraform.tfvars.example
+#
+# Kopiere diese Datei nach "terraform.tfvars" und passe die Werte an.
+# WICHTIG: terraform.tfvars enthält Passwörter – NIEMALS in Git einchecken!
+#           Füge "terraform.tfvars" zur .gitignore hinzu.
+##############################################################################
+
+# --- Allgemein -------------------------------------------------------------
+location            = "germanywestcentral"
+resource_group_name = "rg-infrastruktur-prod"
+
+# --- Netzwerk --------------------------------------------------------------
+vnet_address_space   = ["10.0.0.0/16"]
+subnet_users_prefix  = ["10.0.1.0/24"]
+subnet_app_prefix    = ["10.0.2.0/24"]
+
+# --- Windows-VM ------------------------------------------------------------
+windows_vm_size       = "Standard_B2s"
+windows_admin_username = "azureadmin"
+windows_admin_password = "HIER_SICHERES_PASSWORT_EINSETZEN!"  # Min. 12 Zeichen, Groß+Klein+Zahl+Sonderzeichen
+
+# --- Linux-VM --------------------------------------------------------------
+linux_vm_size       = "Standard_B2s"
+linux_admin_username = "azureadmin"
+linux_admin_password = "HIER_SICHERES_PASSWORT_EINSETZEN!"   # Min. 12 Zeichen, Groß+Klein+Zahl+Sonderzeichen
+
+# --- Zugriffsbeschränkung --------------------------------------------------
+# Deine öffentliche Büro-IP-Adresse als CIDR, z. B. "203.0.113.50/32"
+# Auf https://ifconfig.me findest du deine aktuelle öffentliche IP.
+allowed_rdp_source_ip = "203.0.113.50/32"

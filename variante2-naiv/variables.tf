@@ -56,7 +56,7 @@ variable "allowed_rdp_source_ip" {
 variable "windows_vm_size" {
   description = "VM-Größe für die Windows-Maschine"
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_B2as_v2"  # B2s oft nicht verfügbar in Germany West Central
 }
 
 variable "windows_admin_username" {
@@ -76,7 +76,7 @@ variable "windows_admin_password" {
 variable "linux_vm_size" {
   description = "VM-Größe für die Linux-Maschine"
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_B2as_v2"  # B2s oft nicht verfügbar in Germany West Central
 }
 
 variable "linux_admin_username" {

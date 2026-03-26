@@ -56,7 +56,7 @@ variable "allowed_rdp_source_ip" {
 variable "windows_vm_size" {
   description = "VM-Größe für die Windows-Maschine"
   type        = string
-  default     = "Standard_DS1_v2"  # DSv2-Familie hat i.d.R. Default-Quota
+  default     = "Standard_D2s_v3"  # DSv3-Familie: 10 Cores Quota, Zone 1
 }
 
 variable "windows_admin_username" {
@@ -76,7 +76,7 @@ variable "windows_admin_password" {
 variable "linux_vm_size" {
   description = "VM-Größe für die Linux-Maschine"
   type        = string
-  default     = "Standard_DS1_v2"  # DSv2-Familie hat i.d.R. Default-Quota
+  default     = "Standard_D2s_v3"  # DSv3-Familie: 10 Cores Quota, Zone 1
 }
 
 variable "linux_admin_username" {

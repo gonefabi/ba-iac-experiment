@@ -182,6 +182,7 @@ resource "azurerm_public_ip" "windows" {
   resource_group_name = azurerm_resource_group.main.name
   allocation_method   = "Static"
   sku                 = "Standard"
+  zones               = ["1"]
 
   tags = var.common_tags
 }
@@ -206,6 +207,7 @@ resource "azurerm_windows_virtual_machine" "main" {
   location              = azurerm_resource_group.main.location
   resource_group_name   = azurerm_resource_group.main.name
   size                  = var.windows_vm_size
+  zone                  = "1"
   admin_username        = var.windows_admin_username
   admin_password        = var.windows_admin_password
   network_interface_ids = [azurerm_network_interface.windows.id]
@@ -250,6 +252,7 @@ resource "azurerm_linux_virtual_machine" "main" {
   location                        = azurerm_resource_group.main.location
   resource_group_name             = azurerm_resource_group.main.name
   size                            = var.linux_vm_size
+  zone                            = "1"
   admin_username                  = var.linux_admin_username
   disable_password_authentication = false
   admin_password                  = var.linux_admin_password

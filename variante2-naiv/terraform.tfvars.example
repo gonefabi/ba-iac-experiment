@@ -26,11 +26,11 @@ subnet_app_prefix     = "10.0.2.0/24"
 allowed_rdp_source_ip = "203.0.113.50/32"
 
 # Windows-VM
-windows_vm_size           = "Standard_DS1_v2"
+windows_vm_size           = "Standard_D2s_v3"
 windows_admin_username    = "winadmin"
 windows_admin_password    = "HIER-EIN-SICHERES-PASSWORT-EINTRAGEN!"
 
 # Linux-VM
-linux_vm_size           = "Standard_DS1_v2"
+linux_vm_size           = "Standard_D2s_v3"
 linux_admin_username    = "linuxadmin"
 linux_admin_password    = "HIER-EIN-SICHERES-PASSWORT-EINTRAGEN!"

@@ -37,7 +37,7 @@ variable "subnet_app_prefix" {
 variable "windows_vm_size" {
   description = "VM-Größe für die Windows-Maschine"
   type        = string
-  default     = "Standard_B2s_v2"
+  default     = "Standard_B2ms"
 }
 
 variable "windows_admin_username" {
@@ -57,7 +57,7 @@ variable "windows_admin_password" {
 variable "linux_vm_size" {
   description = "VM-Größe für die Linux-Maschine"
   type        = string
-  default     = "Standard_B2s_v2"
+  default     = "Standard_B2ms"
 }
 
 variable "linux_admin_username" {

@@ -16,12 +16,12 @@ subnet_users_prefix  = ["10.0.1.0/24"]
 subnet_app_prefix    = ["10.0.2.0/24"]
 
 # --- Windows-VM ------------------------------------------------------------
-windows_vm_size       = "Standard_B2s_v2"
+windows_vm_size       = "Standard_B2ms"
 windows_admin_username = "azureadmin"
 windows_admin_password = "HIER_SICHERES_PASSWORT_EINSETZEN!"  # Min. 12 Zeichen, Groß+Klein+Zahl+Sonderzeichen
 
 # --- Linux-VM --------------------------------------------------------------
-linux_vm_size       = "Standard_B2s_v2"
+linux_vm_size       = "Standard_B2ms"
 linux_admin_username = "azureadmin"
 linux_admin_password = "HIER_SICHERES_PASSWORT_EINSETZEN!"   # Min. 12 Zeichen, Groß+Klein+Zahl+Sonderzeichen
 

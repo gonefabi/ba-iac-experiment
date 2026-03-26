@@ -53,16 +53,10 @@ variable "allowed_rdp_source_ip" {
 
 # --- Windows-VM --------------------------------------------------------------
 
-variable "vm_zone" {
-  description = "Availability Zone für die VMs (1, 2 oder 3)"
-  type        = string
-  default     = "1"
-}
-
 variable "windows_vm_size" {
   description = "VM-Größe für die Windows-Maschine"
   type        = string
-  default     = "Standard_B2as_v2"  # B2s oft nicht verfügbar in Germany West Central
+  default     = "Standard_DS1_v2"  # DSv2-Familie hat i.d.R. Default-Quota
 }
 
 variable "windows_admin_username" {
@@ -82,7 +76,7 @@ variable "windows_admin_password" {
 variable "linux_vm_size" {
   description = "VM-Größe für die Linux-Maschine"
   type        = string
-  default     = "Standard_B2as_v2"  # B2s oft nicht verfügbar in Germany West Central
+  default     = "Standard_DS1_v2"  # DSv2-Familie hat i.d.R. Default-Quota
 }
 
 variable "linux_admin_username" {

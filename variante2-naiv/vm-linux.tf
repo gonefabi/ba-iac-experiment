@@ -31,6 +31,7 @@ resource "azurerm_linux_virtual_machine" "main" {
   admin_username                  = var.linux_admin_username
   admin_password                  = var.linux_admin_password
   disable_password_authentication = false
+  zone                            = "1"
 
   network_interface_ids = [
     azurerm_network_interface.linux.id

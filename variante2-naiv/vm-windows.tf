@@ -11,6 +11,7 @@ resource "azurerm_public_ip" "windows" {
   resource_group_name = azurerm_resource_group.main.name
   allocation_method   = "Static"
   sku                 = "Standard"
+  zones               = ["1"]
 
   tags = azurerm_resource_group.main.tags
 }
@@ -43,6 +44,7 @@ resource "azurerm_windows_virtual_machine" "main" {
   size                = var.windows_vm_size
   admin_username      = var.windows_admin_username
   admin_password      = var.windows_admin_password
+  zone                = "1"
 
   network_interface_ids = [
     azurerm_network_interface.windows.id

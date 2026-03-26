@@ -1,31 +1,36 @@
-##############################################################################
-# terraform.tfvars.example
+###############################################################################
+# terraform.tfvars – Kopiere diese Datei nach terraform.tfvars
+#                     und passe die Werte an dein Unternehmen an.
 #
-# Kopiere diese Datei nach "terraform.tfvars" und passe die Werte an.
-# WICHTIG: terraform.tfvars enthält Passwörter – NIEMALS in Git einchecken!
-#           Füge "terraform.tfvars" zur .gitignore hinzu.
-##############################################################################
+#   cp terraform.tfvars.example terraform.tfvars
+#
+# WICHTIG: terraform.tfvars enthält Passwörter – niemals in Git einchecken!
+###############################################################################
 
-# --- Allgemein -------------------------------------------------------------
-location            = "germanywestcentral"
-resource_group_name = "rg-infrastruktur-prod"
+prefix   = "meinefirma"
+location = "germanywestcentral"
 
-# --- Netzwerk --------------------------------------------------------------
-vnet_address_space   = ["10.0.0.0/16"]
-subnet_users_prefix  = ["10.0.1.0/24"]
-subnet_app_prefix    = ["10.0.2.0/24"]
+common_tags = {
+  Umgebung  = "Produktion"
+  Verwaltet = "Terraform"
+  Firma     = "Meine Firma GmbH"
+}
 
-# --- Windows-VM ------------------------------------------------------------
-windows_vm_size       = "Standard_D2s_v3"
-windows_admin_username = "azureadmin"
-windows_admin_password = "HIER_SICHERES_PASSWORT_EINSETZEN!"  # Min. 12 Zeichen, Groß+Klein+Zahl+Sonderzeichen
+# Netzwerk
+vnet_address_space    = "10.0.0.0/16"
+subnet_users_prefix   = "10.0.1.0/24"
+subnet_app_prefix     = "10.0.2.0/24"
 
-# --- Linux-VM --------------------------------------------------------------
-linux_vm_size       = "Standard_D2s_v3"
-linux_admin_username = "azureadmin"
-linux_admin_password = "HIER_SICHERES_PASSWORT_EINSETZEN!"   # Min. 12 Zeichen, Groß+Klein+Zahl+Sonderzeichen
-
-# --- Zugriffsbeschränkung --------------------------------------------------
-# Deine öffentliche Büro-IP-Adresse als CIDR, z. B. "203.0.113.50/32"
-# Auf https://ifconfig.me findest du deine aktuelle öffentliche IP.
+# RDP-Zugang einschränken – trage hier eure Büro-IP ein!
+# Beispiel: "203.0.113.50/32" für eine einzelne IP
 allowed_rdp_source_ip = "203.0.113.50/32"
+
+# Windows-VM
+windows_vm_size           = "Standard_B2s"
+windows_admin_username    = "winadmin"
+windows_admin_password    = "HIER-EIN-SICHERES-PASSWORT-EINTRAGEN!"
+
+# Linux-VM
+linux_vm_size           = "Standard_B2s"
+linux_admin_username    = "linuxadmin"
+linux_admin_password    = "HIER-EIN-SICHERES-PASSWORT-EINTRAGEN!"

@@ -53,6 +53,12 @@ variable "allowed_rdp_source_ip" {
 
 # --- Windows-VM --------------------------------------------------------------
 
+variable "vm_zone" {
+  description = "Availability Zone für die VMs (1, 2 oder 3)"
+  type        = string
+  default     = "1"
+}
+
 variable "windows_vm_size" {
   description = "VM-Größe für die Windows-Maschine"
   type        = string

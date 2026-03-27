@@ -57,7 +57,7 @@ jobs:
           terraform plan \
             -var="windows_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}" \
             -var="linux_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}" \
-            -var="allowed_rdp_source_ip=${{ secrets.TF_MY_IP }}" \
+            -var="admin_source_ip=${{ secrets.TF_MY_IP }}" \
             -out=tfplan
  
       - name: Terraform Apply
@@ -70,4 +70,4 @@ jobs:
           terraform destroy -auto-approve \
             -var="windows_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}" \
             -var="linux_admin_password=${{ secrets.TF_ADMIN_PASSWORD }}" \
-            -var="allowed_rdp_source_ip=${{ secrets.TF_MY_IP }}"
+            -var="admin_source_ip=${{ secrets.TF_MY_IP }}" \

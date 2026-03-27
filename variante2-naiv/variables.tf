@@ -48,7 +48,7 @@ variable "subnet_anwendung_prefix" {
 variable "admin_source_ip" {
   description = "Deine öffentliche IP-Adresse für RDP-Zugriff (z.B. 203.0.113.10/32)"
   type        = string
-  default     = "*" 
+  admin_source_ip
 }
 
 # --- Windows-VM --------------------------------------------------------------
@@ -56,7 +56,7 @@ variable "admin_source_ip" {
 variable "windows_vm_size" {
   description = "VM-Größe für die Windows-VM"
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_B2ms"
 }
 
 variable "windows_admin_user" {
@@ -76,7 +76,7 @@ variable "windows_admin_password" {
 variable "linux_vm_size" {
   description = "VM-Größe für die Linux-VM"
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_B2ms"
 }
 
 variable "linux_admin_user" {

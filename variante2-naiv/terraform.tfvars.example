@@ -21,5 +21,5 @@ linux_admin_password   = "SicheresPasswort456!"
 
 # --- Optionale Anpassungen --------------------------------------------------
 
-# windows_vm_size = "Standard_D4s_v5"   # Mehr RAM/CPU
-# linux_vm_size   = "Standard_D4s_v5"
+# windows_vm_size = "Standard_D4as_v4"   # Mehr RAM/CPU
+# linux_vm_size   = "Standard_D4as_v4"

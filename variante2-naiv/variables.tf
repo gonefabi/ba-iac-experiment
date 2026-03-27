@@ -48,7 +48,7 @@ variable "subnet_anwendung_prefix" {
 variable "admin_source_ip" {
   description = "Deine öffentliche IP-Adresse für RDP-Zugriff (z.B. 203.0.113.10/32)"
   type        = string
-  admin_source_ip
+  default     = "*"
 }
 
 # --- Windows-VM --------------------------------------------------------------

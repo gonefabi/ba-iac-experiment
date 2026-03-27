@@ -1,0 +1,25 @@
+###############################################################################
+# terraform.tfvars – Kopiere diese Datei nach terraform.tfvars und passe an
+#
+#   cp terraform.tfvars.example terraform.tfvars
+#
+# WICHTIG: terraform.tfvars niemals in Git einchecken (enthält Passwörter)!
+###############################################################################
+
+prefix   = "meinefirma"
+location = "germanywestcentral"
+
+# Deine öffentliche IP-Adresse (https://checkip.amazonaws.com)
+# Nur diese IP kann per RDP auf die Windows-VM zugreifen.
+admin_source_ip = "DEINE.OEFFENTLICHE.IP/32"
+
+# --- VM-Passwörter (Azure-Anforderungen: min. 12 Zeichen, Groß-/Klein-
+#     buchstaben, mindestens eine Zahl und ein Sonderzeichen) ----------------
+
+windows_admin_password = "SicheresPasswort123!"
+linux_admin_password   = "SicheresPasswort456!"
+
+# --- Optionale Anpassungen --------------------------------------------------
+
+# windows_vm_size = "Standard_B2ms"   # Mehr RAM/CPU
+# linux_vm_size   = "Standard_B2ms"

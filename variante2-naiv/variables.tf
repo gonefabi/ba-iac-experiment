@@ -56,7 +56,7 @@ variable "admin_source_ip" {
 variable "windows_vm_size" {
   description = "VM-Größe für die Windows-VM"
   type        = string
-  default     = "Standard_B2s_v2"
+  default     = "Standard_D2s_v5"
 }
 
 variable "windows_admin_user" {
@@ -76,7 +76,7 @@ variable "windows_admin_password" {
 variable "linux_vm_size" {
   description = "VM-Größe für die Linux-VM"
   type        = string
-  default     = "Standard_B2s_v2"
+  default     = "Standard_D2s_v5"
 }
 
 variable "linux_admin_user" {

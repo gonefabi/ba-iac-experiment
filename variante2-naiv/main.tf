@@ -16,12 +16,11 @@ terraform {
   # Remote-Backend: Speichert den Terraform-State in Azure Blob Storage,
   # damit er zwischen Pipeline-Läufen erhalten bleibt.
   #
-  # VORAUSSETZUNG: bootstrap-backend.sh einmalig ausführen, dann die
-  # Werte hier eintragen (insbesondere storage_account_name).
+  # VORAUSSETZUNG: bootstrap-backend.sh einmalig ausführen.
   # ---------------------------------------------------------------------------
   backend "azurerm" {
     resource_group_name  = "rg-terraform-state"
-    storage_account_name = "HIER_STORAGE_ACCOUNT_NAME"   # ← aus Bootstrap-Output
+    storage_account_name = "sttfstatefirma"
     container_name       = "tfstate"
     key                  = "firma-prod.tfstate"
   }

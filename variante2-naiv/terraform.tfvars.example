@@ -1,0 +1,27 @@
+# ==============================================================================
+# terraform.tfvars – Beispielwerte (ANPASSEN!)
+# ==============================================================================
+# Kopiere diese Datei nach "terraform.tfvars" und passe die Werte an.
+# WICHTIG: Committe NIEMALS echte Passwörter in Git!
+# ==============================================================================
+
+project_prefix = "firma"
+location       = "germanywestcentral"
+
+# Netzwerk
+vnet_address_space  = "10.0.0.0/16"
+subnet_user_prefix  = "10.0.1.0/24"
+subnet_app_prefix   = "10.0.2.0/24"
+
+# Windows-VM
+win_vm_size        = "Standard_B2s"
+win_admin_username = "azureadmin"
+win_admin_password = "HIER-SICHERES-PASSWORT-EINSETZEN!"   # min. 12 Zeichen
+
+# Linux-VM
+linux_vm_size        = "Standard_B2s"
+linux_admin_username = "azureadmin"
+linux_admin_password = "HIER-SICHERES-PASSWORT-EINSETZEN!"  # min. 12 Zeichen
+
+# Deine öffentliche IP-Adresse für RDP-Zugriff (https://ifconfig.me)
+allowed_rdp_source_ip = "203.0.113.50/32"

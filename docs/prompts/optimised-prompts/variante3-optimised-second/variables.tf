@@ -1,6 +1,6 @@
-##############################################################################
-# variables.tf – Variablen für BA-IaC-Experiment
-##############################################################################
+###############################################################################
+# variables.tf – Variablen für das KMU-Experiment
+###############################################################################
 
 variable "windows_admin_password" {
   description = "Administrator-Passwort für die Windows-VM (vm-kmu-jumpbox)"

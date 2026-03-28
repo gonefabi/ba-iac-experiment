@@ -1,18 +1,18 @@
-###############################################################################
-# outputs.tf – Ausgabewerte für das KMU-Experiment
-###############################################################################
+##############################################################################
+# outputs.tf – Ausgaben für BA-IaC-Experiment
+##############################################################################
 
-output "jumpbox_public_ip" {
-  description = "Öffentliche IP-Adresse der Windows-VM (vm-kmu-jumpbox)"
+output "windows_vm_public_ip" {
+  description = "Öffentliche IP-Adresse der Windows-Jumpbox (vm-kmu-jumpbox)"
   value       = azurerm_public_ip.jumpbox.ip_address
 }
 
-output "jumpbox_private_ip" {
-  description = "Private IP-Adresse der Windows-VM (vm-kmu-jumpbox)"
+output "windows_vm_private_ip" {
+  description = "Private IP-Adresse der Windows-Jumpbox (vm-kmu-jumpbox)"
   value       = azurerm_network_interface.jumpbox.private_ip_address
 }
 
-output "app_private_ip" {
-  description = "Private IP-Adresse der Linux-VM (vm-kmu-app)"
+output "linux_vm_private_ip" {
+  description = "Private IP-Adresse der Linux-App-VM (vm-kmu-app)"
   value       = azurerm_network_interface.app.private_ip_address
 }

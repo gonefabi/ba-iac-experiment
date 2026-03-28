@@ -1,12 +1,11 @@
-##############################################################################
-# main.tf – BA-IaC-Experiment / Azure-Infrastruktur
-# Provider: AzureRM >= 4.0 | Region: germanywestcentral
-##############################################################################
+###############################################################################
+# main.tf – KMU-Experiment: Netzwerk, NSGs, VMs (AzureRM >= 4.0)
+###############################################################################
 
-# ── Provider ────────────────────────────────────────────────────────────────
+# ─── Provider ────────────────────────────────────────────────────────────────
 
 terraform {
-  required_version = ">= 1.5"
+  required_version = ">= 1.5.0"
 
   required_providers {
     azurerm = {
@@ -20,12 +19,12 @@ provider "azurerm" {
   features {}
 }
 
-# ── Locals ──────────────────────────────────────────────────────────────────
+# ─── Lokale Werte ────────────────────────────────────────────────────────────
 
 locals {
   location = "germanywestcentral"
 
-  tags = {
+  mandatory_tags = {
     Environment = "Development"
     Owner       = "Fabian Klein"
     Project     = "BA-IaC-Experiment"
@@ -34,17 +33,17 @@ locals {
   admin_username = "kmuadmin"
 }
 
-# ── Bestehende Ressourcengruppe (Data Source – wird NICHT verwaltet) ────────
+# ─── Bestehende Ressourcengruppe (NUR Referenz, kein Lifecycle) ──────────────
 
 data "azurerm_resource_group" "main" {
   name = "rg-kmu-experiment"
 }
 
-# ═══════════════════════════════════════════════════════════════════════════
-# NETZWERK
-# ═══════════════════════════════════════════════════════════════════════════
+###############################################################################
+#  NETZWERK
+###############################################################################
 
-# ── Virtual Network ─────────────────────────────────────────────────────────
+# ─── Virtual Network ─────────────────────────────────────────────────────────
 
 resource "azurerm_virtual_network" "main" {
   name                = "vnet-kmu-main"
@@ -52,10 +51,10 @@ resource "azurerm_virtual_network" "main" {
   resource_group_name = data.azurerm_resource_group.main.name
   address_space       = ["10.0.0.0/16"]
 
-  tags = local.tags
+  tags = local.mandatory_tags
 }
 
-# ── Subnets ─────────────────────────────────────────────────────────────────
+# ─── Subnetze ────────────────────────────────────────────────────────────────
 
 resource "azurerm_subnet" "user" {
   name                 = "snet-user"
@@ -71,18 +70,18 @@ resource "azurerm_subnet" "app" {
   address_prefixes     = ["10.0.2.0/24"]
 }
 
-# ═══════════════════════════════════════════════════════════════════════════
-# NETWORK SECURITY GROUPS
-# ═══════════════════════════════════════════════════════════════════════════
+###############################################################################
+#  NETWORK SECURITY GROUPS
+###############################################################################
 
-# ── NSG: nsg-user ───────────────────────────────────────────────────────────
+# ─── NSG: nsg-user (RDP-Zugang für Jumpbox) ─────────────────────────────────
 
 resource "azurerm_network_security_group" "user" {
   name                = "nsg-user"
   location            = local.location
   resource_group_name = data.azurerm_resource_group.main.name
 
-  # Inbound – RDP erlauben von admin_source_ip
+  # Inbound – RDP erlauben
   security_rule {
     name                       = "Allow-RDP-Inbound"
     priority                   = 100
@@ -95,7 +94,7 @@ resource "azurerm_network_security_group" "user" {
     destination_address_prefix = "*"
   }
 
-  # Inbound – Alles andere verweigern
+  # Inbound – alles andere verbieten
   security_rule {
     name                       = "Deny-All-Inbound"
     priority                   = 4096
@@ -108,7 +107,7 @@ resource "azurerm_network_security_group" "user" {
     destination_address_prefix = "*"
   }
 
-  # Outbound – Alles erlauben
+  # Outbound – alles erlauben
   security_rule {
     name                       = "Allow-All-Outbound"
     priority                   = 100
@@ -121,10 +120,10 @@ resource "azurerm_network_security_group" "user" {
     destination_address_prefix = "*"
   }
 
-  tags = local.tags
+  tags = local.mandatory_tags
 }
 
-# ── NSG: nsg-app ────────────────────────────────────────────────────────────
+# ─── NSG: nsg-app (SSH + HTTP nur aus snet-user) ────────────────────────────
 
 resource "azurerm_network_security_group" "app" {
   name                = "nsg-app"
@@ -157,7 +156,7 @@ resource "azurerm_network_security_group" "app" {
     destination_address_prefix = "*"
   }
 
-  # Inbound – Alles andere verweigern
+  # Inbound – alles andere verbieten
   security_rule {
     name                       = "Deny-All-Inbound"
     priority                   = 4096
@@ -170,7 +169,7 @@ resource "azurerm_network_security_group" "app" {
     destination_address_prefix = "*"
   }
 
-  # Outbound – Alles erlauben
+  # Outbound – alles erlauben
   security_rule {
     name                       = "Allow-All-Outbound"
     priority                   = 100
@@ -183,10 +182,10 @@ resource "azurerm_network_security_group" "app" {
     destination_address_prefix = "*"
   }
 
-  tags = local.tags
+  tags = local.mandatory_tags
 }
 
-# ── NSG ↔ Subnet-Zuordnungen (auf Subnetz-Ebene, NICHT auf NIC) ───────────
+# ─── NSG ↔ Subnetz-Zuordnung (auf Subnetz-Ebene, NICHT NIC) ────────────────
 
 resource "azurerm_subnet_network_security_group_association" "user" {
   subnet_id                 = azurerm_subnet.user.id
@@ -198,9 +197,11 @@ resource "azurerm_subnet_network_security_group_association" "app" {
   network_security_group_id = azurerm_network_security_group.app.id
 }
 
-# ═══════════════════════════════════════════════════════════════════════════
-# PUBLIC IP
-# ═══════════════════════════════════════════════════════════════════════════
+###############################################################################
+#  WINDOWS VM – vm-kmu-jumpbox
+###############################################################################
+
+# ─── Public IP ───────────────────────────────────────────────────────────────
 
 resource "azurerm_public_ip" "jumpbox" {
   name                = "pip-vm-kmu-jumpbox"
@@ -210,12 +211,10 @@ resource "azurerm_public_ip" "jumpbox" {
   sku                 = "Standard"
   zones               = ["1"]
 
-  tags = local.tags
+  tags = local.mandatory_tags
 }
 
-# ═══════════════════════════════════════════════════════════════════════════
-# NETWORK INTERFACES
-# ═══════════════════════════════════════════════════════════════════════════
+# ─── NIC ─────────────────────────────────────────────────────────────────────
 
 resource "azurerm_network_interface" "jumpbox" {
   name                = "nic-vm-kmu-jumpbox"
@@ -223,34 +222,16 @@ resource "azurerm_network_interface" "jumpbox" {
   resource_group_name = data.azurerm_resource_group.main.name
 
   ip_configuration {
-    name                          = "internal"
+    name                          = "ipconfig-jumpbox"
     subnet_id                     = azurerm_subnet.user.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.jumpbox.id
   }
 
-  tags = local.tags
+  tags = local.mandatory_tags
 }
 
-resource "azurerm_network_interface" "app" {
-  name                = "nic-vm-kmu-app"
-  location            = local.location
-  resource_group_name = data.azurerm_resource_group.main.name
-
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.app.id
-    private_ip_address_allocation = "Dynamic"
-  }
-
-  tags = local.tags
-}
-
-# ═══════════════════════════════════════════════════════════════════════════
-# VIRTUAL MACHINES
-# ═══════════════════════════════════════════════════════════════════════════
-
-# ── Windows VM (Jumpbox) ────────────────────────────────────────────────────
+# ─── VM ──────────────────────────────────────────────────────────────────────
 
 resource "azurerm_windows_virtual_machine" "jumpbox" {
   name                = "vm-kmu-jumpbox"
@@ -262,9 +243,7 @@ resource "azurerm_windows_virtual_machine" "jumpbox" {
   admin_username = local.admin_username
   admin_password = var.windows_admin_password
 
-  network_interface_ids = [
-    azurerm_network_interface.jumpbox.id
-  ]
+  network_interface_ids = [azurerm_network_interface.jumpbox.id]
 
   os_disk {
     caching              = "ReadWrite"
@@ -278,10 +257,30 @@ resource "azurerm_windows_virtual_machine" "jumpbox" {
     version   = "latest"
   }
 
-  tags = local.tags
+  tags = local.mandatory_tags
 }
 
-# ── Linux VM (App-Server) ──────────────────────────────────────────────────
+###############################################################################
+#  LINUX VM – vm-kmu-app
+###############################################################################
+
+# ─── NIC (keine Public IP) ──────────────────────────────────────────────────
+
+resource "azurerm_network_interface" "app" {
+  name                = "nic-vm-kmu-app"
+  location            = local.location
+  resource_group_name = data.azurerm_resource_group.main.name
+
+  ip_configuration {
+    name                          = "ipconfig-app"
+    subnet_id                     = azurerm_subnet.app.id
+    private_ip_address_allocation = "Dynamic"
+  }
+
+  tags = local.mandatory_tags
+}
+
+# ─── VM ──────────────────────────────────────────────────────────────────────
 
 resource "azurerm_linux_virtual_machine" "app" {
   name                = "vm-kmu-app"
@@ -294,9 +293,7 @@ resource "azurerm_linux_virtual_machine" "app" {
   admin_password                  = var.linux_admin_password
   disable_password_authentication = false
 
-  network_interface_ids = [
-    azurerm_network_interface.app.id
-  ]
+  network_interface_ids = [azurerm_network_interface.app.id]
 
   os_disk {
     caching              = "ReadWrite"
@@ -310,5 +307,5 @@ resource "azurerm_linux_virtual_machine" "app" {
     version   = "latest"
   }
 
-  tags = local.tags
+  tags = local.mandatory_tags
 }

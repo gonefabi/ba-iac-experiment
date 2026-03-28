@@ -8,6 +8,7 @@ resource "azurerm_public_ip" "win" {
   resource_group_name = azurerm_resource_group.main.name
   allocation_method   = "Static"
   sku                 = "Standard"
+  zones               = ["1"]
 
   tags = azurerm_resource_group.main.tags
 }
@@ -32,6 +33,7 @@ resource "azurerm_windows_virtual_machine" "win" {
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   size                = var.win_vm_size
+  zone                = "1"
   admin_username      = var.win_admin_username
   admin_password      = var.win_admin_password
 

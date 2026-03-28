@@ -22,6 +22,7 @@ resource "azurerm_linux_virtual_machine" "linux" {
   location                        = azurerm_resource_group.main.location
   resource_group_name             = azurerm_resource_group.main.name
   size                            = var.linux_vm_size
+  zone                            = "1"
   admin_username                  = var.linux_admin_username
   admin_password                  = var.linux_admin_password
   disable_password_authentication = false

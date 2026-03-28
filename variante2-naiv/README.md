@@ -44,17 +44,22 @@ Internet
 ## Verwendung
 
 ```bash
-# 1. Beispiel-Variablen kopieren und anpassen
+# 1. Backend-Storage einmalig anlegen (speichert Terraform-State in Azure)
+chmod +x bootstrap-backend.sh
+./bootstrap-backend.sh
+#    → Den ausgegebenen Storage-Account-Namen in main.tf eintragen
+
+# 2. Beispiel-Variablen kopieren und anpassen
 cp terraform.tfvars.example terraform.tfvars
 #    → Passwörter und Firmen-IP eintragen
 
-# 2. Initialisieren
+# 3. Initialisieren
 terraform init
 
-# 3. Plan prüfen
+# 4. Plan prüfen
 terraform plan
 
-# 4. Anwenden
+# 5. Anwenden
 terraform apply
 
 # 5. RDP-Verbindung herstellen

@@ -11,6 +11,20 @@ terraform {
       version = "~> 3.100"
     }
   }
+
+  # ---------------------------------------------------------------------------
+  # Remote-Backend: Speichert den Terraform-State in Azure Blob Storage,
+  # damit er zwischen Pipeline-Läufen erhalten bleibt.
+  #
+  # VORAUSSETZUNG: bootstrap-backend.sh einmalig ausführen, dann die
+  # Werte hier eintragen (insbesondere storage_account_name).
+  # ---------------------------------------------------------------------------
+  backend "azurerm" {
+    resource_group_name  = "rg-terraform-state"
+    storage_account_name = "HIER_STORAGE_ACCOUNT_NAME"   # ← aus Bootstrap-Output
+    container_name       = "tfstate"
+    key                  = "firma-prod.tfstate"
+  }
 }
 
 provider "azurerm" {

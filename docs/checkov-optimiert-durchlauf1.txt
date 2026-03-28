@@ -1,0 +1,332 @@
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.513 
+
+terraform scan results:
+
+Passed checks: 21, Failed checks: 7, Skipped checks: 0
+
+Check: CKV_AZURE_183: "Ensure that VNET uses local DNS addresses"
+	PASSED for resource: azurerm_virtual_network.main
+	File: /main.tf:55-62
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-183
+Check: CKV_AZURE_182: "Ensure that VNET has at least 2 connected DNS Endpoints"
+	PASSED for resource: azurerm_virtual_network.main
+	File: /main.tf:55-62
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-182
+Check: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: azurerm_network_security_group.user
+	File: /main.tf:90-135
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+Check: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: azurerm_network_security_group.user
+	File: /main.tf:90-135
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+Check: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: azurerm_network_security_group.user
+	File: /main.tf:90-135
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+Check: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: azurerm_network_security_group.user
+	File: /main.tf:90-135
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+Check: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: azurerm_network_security_group.app
+	File: /main.tf:141-199
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+Check: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: azurerm_network_security_group.app
+	File: /main.tf:141-199
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+Check: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: azurerm_network_security_group.app
+	File: /main.tf:141-199
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+Check: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: azurerm_network_security_group.app
+	File: /main.tf:141-199
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+Check: CKV_AZURE_118: "Ensure that Network Interfaces disable IP forwarding"
+	PASSED for resource: azurerm_network_interface.jumpbox
+	File: /main.tf:238-251
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-disable-ip-forwarding
+Check: CKV_AZURE_118: "Ensure that Network Interfaces disable IP forwarding"
+	PASSED for resource: azurerm_network_interface.app
+	File: /main.tf:257-269
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-disable-ip-forwarding
+Check: CKV_AZURE_179: "Ensure VM agent is installed"
+	PASSED for resource: azurerm_windows_virtual_machine.jumpbox
+	File: /main.tf:279-307
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-179
+Check: CKV_AZURE_177: "Ensure Windows VM enables automatic updates"
+	PASSED for resource: azurerm_windows_virtual_machine.jumpbox
+	File: /main.tf:279-307
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-177
+Check: CKV_AZURE_92: "Ensure that Virtual Machines use managed disks"
+	PASSED for resource: azurerm_windows_virtual_machine.jumpbox
+	File: /main.tf:279-307
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-that-virtual-machines-use-managed-disks
+Check: CKV_AZURE_179: "Ensure VM agent is installed"
+	PASSED for resource: azurerm_linux_virtual_machine.app
+	File: /main.tf:313-342
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-179
+Check: CKV_AZURE_92: "Ensure that Virtual Machines use managed disks"
+	PASSED for resource: azurerm_linux_virtual_machine.app
+	File: /main.tf:313-342
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-that-virtual-machines-use-managed-disks
+Check: CKV_AZURE_119: "Ensure that Network Interfaces don't use public IPs"
+	PASSED for resource: azurerm_network_interface.app
+	File: /main.tf:257-269
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-dont-use-public-ips
+Check: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: azurerm_subnet.user
+	File: /main.tf:68-73
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+Check: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: azurerm_subnet.app
+	File: /main.tf:75-80
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+Check: CKV2_AZURE_39: "Ensure Azure VM is not configured with public IP and serial console access"
+	PASSED for resource: azurerm_network_interface.app
+	File: /main.tf:257-269
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-2-39
+Check: CKV_AZURE_50: "Ensure Virtual Machine Extensions are not Installed"
+	FAILED for resource: azurerm_windows_virtual_machine.jumpbox
+	File: /main.tf:279-307
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azr-general-14
+
+		279 | resource "azurerm_windows_virtual_machine" "jumpbox" {
+		280 |   name                = "vm-kmu-jumpbox"
+		281 |   location            = local.location
+		282 |   resource_group_name = data.azurerm_resource_group.main.name
+		283 |   size                = "Standard_D2as_v4"
+		284 |   zone                = "1"
+		285 | 
+		286 |   admin_username = "kmuadmin"
+		287 |   admin_password = var.windows_admin_password
+		288 | 
+		289 |   network_interface_ids = [
+		290 |     azurerm_network_interface.jumpbox.id,
+		291 |   ]
+		292 | 
+		293 |   os_disk {
+		294 |     name                 = "osdisk-vm-kmu-jumpbox"
+		295 |     caching              = "ReadWrite"
+		296 |     storage_account_type = "StandardSSD_LRS"
+		297 |   }
+		298 | 
+		299 |   source_image_reference {
+		300 |     publisher = "MicrosoftWindowsServer"
+		301 |     offer     = "WindowsServer"
+		302 |     sku       = "2022-Datacenter"
+		303 |     version   = "latest"
+		304 |   }
+		305 | 
+		306 |   tags = local.mandatory_tags
+		307 | }
+
+Check: CKV_AZURE_151: "Ensure Windows VM enables encryption"
+	FAILED for resource: azurerm_windows_virtual_machine.jumpbox
+	File: /main.tf:279-307
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/ensure-azure-windows-vm-enables-encryption
+
+		279 | resource "azurerm_windows_virtual_machine" "jumpbox" {
+		280 |   name                = "vm-kmu-jumpbox"
+		281 |   location            = local.location
+		282 |   resource_group_name = data.azurerm_resource_group.main.name
+		283 |   size                = "Standard_D2as_v4"
+		284 |   zone                = "1"
+		285 | 
+		286 |   admin_username = "kmuadmin"
+		287 |   admin_password = var.windows_admin_password
+		288 | 
+		289 |   network_interface_ids = [
+		290 |     azurerm_network_interface.jumpbox.id,
+		291 |   ]
+		292 | 
+		293 |   os_disk {
+		294 |     name                 = "osdisk-vm-kmu-jumpbox"
+		295 |     caching              = "ReadWrite"
+		296 |     storage_account_type = "StandardSSD_LRS"
+		297 |   }
+		298 | 
+		299 |   source_image_reference {
+		300 |     publisher = "MicrosoftWindowsServer"
+		301 |     offer     = "WindowsServer"
+		302 |     sku       = "2022-Datacenter"
+		303 |     version   = "latest"
+		304 |   }
+		305 | 
+		306 |   tags = local.mandatory_tags
+		307 | }
+
+Check: CKV_AZURE_149: "Ensure that Virtual machine does not enable password authentication"
+	FAILED for resource: azurerm_linux_virtual_machine.app
+	File: /main.tf:313-342
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-azure-virtual-machine-does-not-enable-password-authentication
+
+		313 | resource "azurerm_linux_virtual_machine" "app" {
+		314 |   name                = "vm-kmu-app"
+		315 |   location            = local.location
+		316 |   resource_group_name = data.azurerm_resource_group.main.name
+		317 |   size                = "Standard_D2as_v4"
+		318 |   zone                = "1"
+		319 | 
+		320 |   admin_username                  = "kmuadmin"
+		321 |   admin_password                  = var.linux_admin_password
+		322 |   disable_password_authentication = false
+		323 | 
+		324 |   network_interface_ids = [
+		325 |     azurerm_network_interface.app.id,
+		326 |   ]
+		327 | 
+		328 |   os_disk {
+		329 |     name                 = "osdisk-vm-kmu-app"
+		330 |     caching              = "ReadWrite"
+		331 |     storage_account_type = "StandardSSD_LRS"
+		332 |   }
+		333 | 
+		334 |   source_image_reference {
+		335 |     publisher = "Canonical"
+		336 |     offer     = "0001-com-ubuntu-server-jammy"
+		337 |     sku       = "22_04-lts"
+		338 |     version   = "latest"
+		339 |   }
+		340 | 
+		341 |   tags = local.mandatory_tags
+		342 | }
+
+Check: CKV_AZURE_1: "Ensure Azure Instance does not use basic authentication(Use SSH Key Instead)"
+	FAILED for resource: azurerm_linux_virtual_machine.app
+	File: /main.tf:313-342
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-1
+
+		313 | resource "azurerm_linux_virtual_machine" "app" {
+		314 |   name                = "vm-kmu-app"
+		315 |   location            = local.location
+		316 |   resource_group_name = data.azurerm_resource_group.main.name
+		317 |   size                = "Standard_D2as_v4"
+		318 |   zone                = "1"
+		319 | 
+		320 |   admin_username                  = "kmuadmin"
+		321 |   admin_password                  = var.linux_admin_password
+		322 |   disable_password_authentication = false
+		323 | 
+		324 |   network_interface_ids = [
+		325 |     azurerm_network_interface.app.id,
+		326 |   ]
+		327 | 
+		328 |   os_disk {
+		329 |     name                 = "osdisk-vm-kmu-app"
+		330 |     caching              = "ReadWrite"
+		331 |     storage_account_type = "StandardSSD_LRS"
+		332 |   }
+		333 | 
+		334 |   source_image_reference {
+		335 |     publisher = "Canonical"
+		336 |     offer     = "0001-com-ubuntu-server-jammy"
+		337 |     sku       = "22_04-lts"
+		338 |     version   = "latest"
+		339 |   }
+		340 | 
+		341 |   tags = local.mandatory_tags
+		342 | }
+
+Check: CKV_AZURE_50: "Ensure Virtual Machine Extensions are not Installed"
+	FAILED for resource: azurerm_linux_virtual_machine.app
+	File: /main.tf:313-342
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azr-general-14
+
+		313 | resource "azurerm_linux_virtual_machine" "app" {
+		314 |   name                = "vm-kmu-app"
+		315 |   location            = local.location
+		316 |   resource_group_name = data.azurerm_resource_group.main.name
+		317 |   size                = "Standard_D2as_v4"
+		318 |   zone                = "1"
+		319 | 
+		320 |   admin_username                  = "kmuadmin"
+		321 |   admin_password                  = var.linux_admin_password
+		322 |   disable_password_authentication = false
+		323 | 
+		324 |   network_interface_ids = [
+		325 |     azurerm_network_interface.app.id,
+		326 |   ]
+		327 | 
+		328 |   os_disk {
+		329 |     name                 = "osdisk-vm-kmu-app"
+		330 |     caching              = "ReadWrite"
+		331 |     storage_account_type = "StandardSSD_LRS"
+		332 |   }
+		333 | 
+		334 |   source_image_reference {
+		335 |     publisher = "Canonical"
+		336 |     offer     = "0001-com-ubuntu-server-jammy"
+		337 |     sku       = "22_04-lts"
+		338 |     version   = "latest"
+		339 |   }
+		340 | 
+		341 |   tags = local.mandatory_tags
+		342 | }
+
+Check: CKV_AZURE_178: "Ensure linux VM enables SSH with keys for secure communication"
+	FAILED for resource: azurerm_linux_virtual_machine.app
+	File: /main.tf:313-342
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-178
+
+		313 | resource "azurerm_linux_virtual_machine" "app" {
+		314 |   name                = "vm-kmu-app"
+		315 |   location            = local.location
+		316 |   resource_group_name = data.azurerm_resource_group.main.name
+		317 |   size                = "Standard_D2as_v4"
+		318 |   zone                = "1"
+		319 | 
+		320 |   admin_username                  = "kmuadmin"
+		321 |   admin_password                  = var.linux_admin_password
+		322 |   disable_password_authentication = false
+		323 | 
+		324 |   network_interface_ids = [
+		325 |     azurerm_network_interface.app.id,
+		326 |   ]
+		327 | 
+		328 |   os_disk {
+		329 |     name                 = "osdisk-vm-kmu-app"
+		330 |     caching              = "ReadWrite"
+		331 |     storage_account_type = "StandardSSD_LRS"
+		332 |   }
+		333 | 
+		334 |   source_image_reference {
+		335 |     publisher = "Canonical"
+		336 |     offer     = "0001-com-ubuntu-server-jammy"
+		337 |     sku       = "22_04-lts"
+		338 |     version   = "latest"
+		339 |   }
+		340 | 
+		341 |   tags = local.mandatory_tags
+		342 | }
+
+Check: CKV_AZURE_119: "Ensure that Network Interfaces don't use public IPs"
+	FAILED for resource: azurerm_network_interface.jumpbox
+	File: /main.tf:238-251
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-dont-use-public-ips
+
+		238 | resource "azurerm_network_interface" "jumpbox" {
+		239 |   name                = "nic-vm-kmu-jumpbox"
+		240 |   location            = local.location
+		241 |   resource_group_name = data.azurerm_resource_group.main.name
+		242 | 
+		243 |   ip_configuration {
+		244 |     name                          = "ipconfig-jumpbox"
+		245 |     subnet_id                     = azurerm_subnet.user.id
+		246 |     private_ip_address_allocation = "Dynamic"
+		247 |     public_ip_address_id          = azurerm_public_ip.jumpbox.id
+		248 |   }
+		249 | 
+		250 |   tags = local.mandatory_tags
+		251 | }
+
+

@@ -1,0 +1,12 @@
+﻿2026-03-27T23:17:54.2691278Z ##[group]Run hashicorp/setup-terraform@v3
+2026-03-27T23:17:54.2692054Z with:
+2026-03-27T23:17:54.2692525Z   terraform_version: 1.7.0
+2026-03-27T23:17:54.2693285Z   cli_config_credentials_hostname: app.terraform.io
+2026-03-27T23:17:54.2693916Z   terraform_wrapper: true
+2026-03-27T23:17:54.2694429Z env:
+2026-03-27T23:17:54.2694995Z   ARM_CLIENT_ID: ***
+2026-03-27T23:17:54.2695644Z   ARM_CLIENT_SECRET: ***
+2026-03-27T23:17:54.2696254Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T23:17:54.2696822Z   ARM_TENANT_ID: ***
+2026-03-27T23:17:54.2697276Z ##[endgroup]
+2026-03-27T23:17:54.8244775Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/abd6686d-77ac-4f27-9c0c-10360ac5b06d

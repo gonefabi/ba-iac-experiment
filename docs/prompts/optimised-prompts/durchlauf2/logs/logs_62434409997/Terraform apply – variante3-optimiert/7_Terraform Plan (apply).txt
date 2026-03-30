@@ -1,0 +1,449 @@
+﻿2026-03-28T18:20:42.8131176Z ##[group]Run terraform plan \
+2026-03-28T18:20:42.8131657Z [36;1mterraform plan \[0m
+2026-03-28T18:20:42.8132224Z [36;1m  -var="windows_admin_password=***" \[0m
+2026-03-28T18:20:42.8132589Z [36;1m  -var="linux_admin_password=***" \[0m
+2026-03-28T18:20:42.8132902Z [36;1m  -var="admin_source_ip=***" \[0m
+2026-03-28T18:20:42.8133160Z [36;1m  -out=tfplan[0m
+2026-03-28T18:20:42.8148723Z shell: /usr/bin/bash -e {0}
+2026-03-28T18:20:42.8148974Z env:
+2026-03-28T18:20:42.8149245Z   ARM_CLIENT_ID: ***
+2026-03-28T18:20:42.8149606Z   ARM_CLIENT_SECRET: ***
+2026-03-28T18:20:42.8149912Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-28T18:20:42.8150184Z   ARM_TENANT_ID: ***
+2026-03-28T18:20:42.8150503Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/462974b2-95f0-4e79-8a3b-cea9702c2e6a
+2026-03-28T18:20:42.8150866Z ##[endgroup]
+2026-03-28T18:20:49.3806888Z [0m[1mdata.azurerm_resource_group.main: Reading...[0m[0m
+2026-03-28T18:20:49.7480633Z [0m[1mdata.azurerm_resource_group.main: Read complete after 1s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment][0m
+2026-03-28T18:20:49.8150966Z 
+2026-03-28T18:20:49.8152785Z Terraform used the selected providers to generate the following execution
+2026-03-28T18:20:49.8154652Z plan. Resource actions are indicated with the following symbols:
+2026-03-28T18:20:49.8156585Z   [32m+[0m create[0m
+2026-03-28T18:20:49.8157798Z 
+2026-03-28T18:20:49.8158738Z Terraform will perform the following actions:
+2026-03-28T18:20:49.8178873Z 
+2026-03-28T18:20:49.8179520Z [1m  # azurerm_linux_virtual_machine.app[0m will be created
+2026-03-28T18:20:49.8180345Z [0m  [32m+[0m[0m resource "azurerm_linux_virtual_machine" "app" {
+2026-03-28T18:20:49.8181239Z       [32m+[0m[0m admin_password                                         = (sensitive value)
+2026-03-28T18:20:49.8182170Z       [32m+[0m[0m admin_username                                         = "kmuadmin"
+2026-03-28T18:20:49.8183069Z       [32m+[0m[0m allow_extension_operations                             = (known after apply)
+2026-03-28T18:20:49.8184028Z       [32m+[0m[0m bypass_platform_safety_checks_on_user_schedule_enabled = false
+2026-03-28T18:20:49.8184927Z       [32m+[0m[0m computer_name                                          = (known after apply)
+2026-03-28T18:20:49.8185768Z       [32m+[0m[0m disable_password_authentication                        = false
+2026-03-28T18:20:49.8186697Z       [32m+[0m[0m disk_controller_type                                   = (known after apply)
+2026-03-28T18:20:49.8187558Z       [32m+[0m[0m extensions_time_budget                                 = "PT1H30M"
+2026-03-28T18:20:49.8188463Z       [32m+[0m[0m id                                                     = (known after apply)
+2026-03-28T18:20:49.8189248Z       [32m+[0m[0m location                                               = "germanywestcentral"
+2026-03-28T18:20:49.8190068Z       [32m+[0m[0m max_bid_price                                          = -1
+2026-03-28T18:20:49.8190893Z       [32m+[0m[0m name                                                   = "vm-kmu-app"
+2026-03-28T18:20:49.8191852Z       [32m+[0m[0m network_interface_ids                                  = (known after apply)
+2026-03-28T18:20:49.8192857Z       [32m+[0m[0m os_managed_disk_id                                     = (known after apply)
+2026-03-28T18:20:49.8193856Z       [32m+[0m[0m patch_assessment_mode                                  = (known after apply)
+2026-03-28T18:20:49.8194720Z       [32m+[0m[0m patch_mode                                             = (known after apply)
+2026-03-28T18:20:49.8195459Z       [32m+[0m[0m platform_fault_domain                                  = -1
+2026-03-28T18:20:49.8196205Z       [32m+[0m[0m priority                                               = "Regular"
+2026-03-28T18:20:49.8196970Z       [32m+[0m[0m private_ip_address                                     = (known after apply)
+2026-03-28T18:20:49.8197793Z       [32m+[0m[0m private_ip_addresses                                   = (known after apply)
+2026-03-28T18:20:49.8199768Z       [32m+[0m[0m provision_vm_agent                                     = (known after apply)
+2026-03-28T18:20:49.8200610Z       [32m+[0m[0m public_ip_address                                      = (known after apply)
+2026-03-28T18:20:49.8201415Z       [32m+[0m[0m public_ip_addresses                                    = (known after apply)
+2026-03-28T18:20:49.8202681Z       [32m+[0m[0m resource_group_name                                    = "rg-kmu-experiment"
+2026-03-28T18:20:49.8203514Z       [32m+[0m[0m size                                                   = "Standard_D2as_v4"
+2026-03-28T18:20:49.8204265Z       [32m+[0m[0m tags                                                   = {
+2026-03-28T18:20:49.8204922Z           [32m+[0m[0m "Environment" = "Development"
+2026-03-28T18:20:49.8205499Z           [32m+[0m[0m "Owner"       = "Fabian Klein"
+2026-03-28T18:20:49.8206122Z           [32m+[0m[0m "Project"     = "BA-IaC-Experiment"
+2026-03-28T18:20:49.8206600Z         }
+2026-03-28T18:20:49.8207242Z       [32m+[0m[0m virtual_machine_id                                     = (known after apply)
+2026-03-28T18:20:49.8208444Z       [32m+[0m[0m vm_agent_platform_updates_enabled                      = (known after apply)
+2026-03-28T18:20:49.8209318Z       [32m+[0m[0m zone                                                   = "1"
+2026-03-28T18:20:49.8209713Z 
+2026-03-28T18:20:49.8209923Z       [32m+[0m[0m os_disk {
+2026-03-28T18:20:49.8210445Z           [32m+[0m[0m caching                   = "ReadWrite"
+2026-03-28T18:20:49.8211047Z           [32m+[0m[0m disk_size_gb              = (known after apply)
+2026-03-28T18:20:49.8211751Z           [32m+[0m[0m id                        = (known after apply)
+2026-03-28T18:20:49.8212424Z           [32m+[0m[0m name                      = (known after apply)
+2026-03-28T18:20:49.8213142Z           [32m+[0m[0m storage_account_type      = "StandardSSD_LRS"
+2026-03-28T18:20:49.8213824Z           [32m+[0m[0m write_accelerator_enabled = false
+2026-03-28T18:20:49.8214313Z         }
+2026-03-28T18:20:49.8214472Z 
+2026-03-28T18:20:49.8214735Z       [32m+[0m[0m source_image_reference {
+2026-03-28T18:20:49.8215359Z           [32m+[0m[0m offer     = "0001-com-ubuntu-server-jammy"
+2026-03-28T18:20:49.8215969Z           [32m+[0m[0m publisher = "Canonical"
+2026-03-28T18:20:49.8216505Z           [32m+[0m[0m sku       = "22_04-lts"
+2026-03-28T18:20:49.8217006Z           [32m+[0m[0m version   = "latest"
+2026-03-28T18:20:49.8217398Z         }
+2026-03-28T18:20:49.8217663Z     }
+2026-03-28T18:20:49.8217832Z 
+2026-03-28T18:20:49.8238784Z [1m  # azurerm_network_interface.app[0m will be created
+2026-03-28T18:20:49.8239650Z [0m  [32m+[0m[0m resource "azurerm_network_interface" "app" {
+2026-03-28T18:20:49.8240328Z       [32m+[0m[0m accelerated_networking_enabled = false
+2026-03-28T18:20:49.8240998Z       [32m+[0m[0m applied_dns_servers            = (known after apply)
+2026-03-28T18:20:49.8241762Z       [32m+[0m[0m id                             = (known after apply)
+2026-03-28T18:20:49.8242499Z       [32m+[0m[0m internal_domain_name_suffix    = (known after apply)
+2026-03-28T18:20:49.8243195Z       [32m+[0m[0m ip_forwarding_enabled          = false
+2026-03-28T18:20:49.8243930Z       [32m+[0m[0m location                       = "germanywestcentral"
+2026-03-28T18:20:49.8244580Z       [32m+[0m[0m mac_address                    = (known after apply)
+2026-03-28T18:20:49.8245272Z       [32m+[0m[0m name                           = "nic-vm-kmu-app"
+2026-03-28T18:20:49.8246065Z       [32m+[0m[0m private_ip_address             = (known after apply)
+2026-03-28T18:20:49.8246828Z       [32m+[0m[0m private_ip_addresses           = (known after apply)
+2026-03-28T18:20:49.8247495Z       [32m+[0m[0m resource_group_name            = "rg-kmu-experiment"
+2026-03-28T18:20:49.8258349Z       [32m+[0m[0m tags                           = {
+2026-03-28T18:20:49.8259227Z           [32m+[0m[0m "Environment" = "Development"
+2026-03-28T18:20:49.8260323Z           [32m+[0m[0m "Owner"       = "Fabian Klein"
+2026-03-28T18:20:49.8261231Z           [32m+[0m[0m "Project"     = "BA-IaC-Experiment"
+2026-03-28T18:20:49.8261897Z         }
+2026-03-28T18:20:49.8262460Z       [32m+[0m[0m virtual_machine_id             = (known after apply)
+2026-03-28T18:20:49.8262996Z 
+2026-03-28T18:20:49.8263332Z       [32m+[0m[0m ip_configuration {
+2026-03-28T18:20:49.8264199Z           [32m+[0m[0m gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+2026-03-28T18:20:49.8265149Z           [32m+[0m[0m name                                               = "ipconfig-app"
+2026-03-28T18:20:49.8279407Z           [32m+[0m[0m primary                                            = (known after apply)
+2026-03-28T18:20:49.8280407Z           [32m+[0m[0m private_ip_address                                 = (known after apply)
+2026-03-28T18:20:49.8281394Z           [32m+[0m[0m private_ip_address_allocation                      = "Dynamic"
+2026-03-28T18:20:49.8282408Z           [32m+[0m[0m private_ip_address_version                         = "IPv4"
+2026-03-28T18:20:49.8283302Z           [32m+[0m[0m subnet_id                                          = (known after apply)
+2026-03-28T18:20:49.8283912Z         }
+2026-03-28T18:20:49.8284196Z     }
+2026-03-28T18:20:49.8284372Z 
+2026-03-28T18:20:49.8284783Z [1m  # azurerm_network_interface.jumpbox[0m will be created
+2026-03-28T18:20:49.8285569Z [0m  [32m+[0m[0m resource "azurerm_network_interface" "jumpbox" {
+2026-03-28T18:20:49.8286330Z       [32m+[0m[0m accelerated_networking_enabled = false
+2026-03-28T18:20:49.8287039Z       [32m+[0m[0m applied_dns_servers            = (known after apply)
+2026-03-28T18:20:49.8287757Z       [32m+[0m[0m id                             = (known after apply)
+2026-03-28T18:20:49.8289797Z       [32m+[0m[0m internal_domain_name_suffix    = (known after apply)
+2026-03-28T18:20:49.8290429Z       [32m+[0m[0m ip_forwarding_enabled          = false
+2026-03-28T18:20:49.8291078Z       [32m+[0m[0m location                       = "germanywestcentral"
+2026-03-28T18:20:49.8291804Z       [32m+[0m[0m mac_address                    = (known after apply)
+2026-03-28T18:20:49.8292511Z       [32m+[0m[0m name                           = "nic-vm-kmu-jumpbox"
+2026-03-28T18:20:49.8293249Z       [32m+[0m[0m private_ip_address             = (known after apply)
+2026-03-28T18:20:49.8293973Z       [32m+[0m[0m private_ip_addresses           = (known after apply)
+2026-03-28T18:20:49.8294656Z       [32m+[0m[0m resource_group_name            = "rg-kmu-experiment"
+2026-03-28T18:20:49.8295241Z       [32m+[0m[0m tags                           = {
+2026-03-28T18:20:49.8295787Z           [32m+[0m[0m "Environment" = "Development"
+2026-03-28T18:20:49.8296321Z           [32m+[0m[0m "Owner"       = "Fabian Klein"
+2026-03-28T18:20:49.8296885Z           [32m+[0m[0m "Project"     = "BA-IaC-Experiment"
+2026-03-28T18:20:49.8297417Z         }
+2026-03-28T18:20:49.8298003Z       [32m+[0m[0m virtual_machine_id             = (known after apply)
+2026-03-28T18:20:49.8298549Z 
+2026-03-28T18:20:49.8298804Z       [32m+[0m[0m ip_configuration {
+2026-03-28T18:20:49.8299667Z           [32m+[0m[0m gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+2026-03-28T18:20:49.8300612Z           [32m+[0m[0m name                                               = "ipconfig-jumpbox"
+2026-03-28T18:20:49.8301466Z           [32m+[0m[0m primary                                            = (known after apply)
+2026-03-28T18:20:49.8302416Z           [32m+[0m[0m private_ip_address                                 = (known after apply)
+2026-03-28T18:20:49.8303326Z           [32m+[0m[0m private_ip_address_allocation                      = "Dynamic"
+2026-03-28T18:20:49.8304206Z           [32m+[0m[0m private_ip_address_version                         = "IPv4"
+2026-03-28T18:20:49.8305129Z           [32m+[0m[0m public_ip_address_id                               = (known after apply)
+2026-03-28T18:20:49.8306423Z           [32m+[0m[0m subnet_id                                          = (known after apply)
+2026-03-28T18:20:49.8307052Z         }
+2026-03-28T18:20:49.8307344Z     }
+2026-03-28T18:20:49.8307579Z 
+2026-03-28T18:20:49.8307954Z [1m  # azurerm_network_security_group.app[0m will be created
+2026-03-28T18:20:49.8309953Z [0m  [32m+[0m[0m resource "azurerm_network_security_group" "app" {
+2026-03-28T18:20:49.8310705Z       [32m+[0m[0m id                  = (known after apply)
+2026-03-28T18:20:49.8311384Z       [32m+[0m[0m location            = "germanywestcentral"
+2026-03-28T18:20:49.8312032Z       [32m+[0m[0m name                = "nsg-app"
+2026-03-28T18:20:49.8312633Z       [32m+[0m[0m resource_group_name = "rg-kmu-experiment"
+2026-03-28T18:20:49.8313254Z       [32m+[0m[0m security_rule       = [
+2026-03-28T18:20:49.8313733Z           [32m+[0m[0m {
+2026-03-28T18:20:49.8314286Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-28T18:20:49.8315074Z               [32m+[0m[0m description                                = ""
+2026-03-28T18:20:49.8315854Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-28T18:20:49.8316604Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-28T18:20:49.8317345Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-28T18:20:49.8318226Z               [32m+[0m[0m destination_port_range                     = "*"
+2026-03-28T18:20:49.8318982Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-28T18:20:49.8319754Z               [32m+[0m[0m direction                                  = "Outbound"
+2026-03-28T18:20:49.8320526Z               [32m+[0m[0m name                                       = "Allow-All-Outbound"
+2026-03-28T18:20:49.8321277Z               [32m+[0m[0m priority                                   = 100
+2026-03-28T18:20:49.8322013Z               [32m+[0m[0m protocol                                   = "*"
+2026-03-28T18:20:49.8322696Z               [32m+[0m[0m source_address_prefix                      = "*"
+2026-03-28T18:20:49.8324121Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-28T18:20:49.8324898Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-28T18:20:49.8325575Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-28T18:20:49.8326343Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-28T18:20:49.8326807Z             },
+2026-03-28T18:20:49.8327231Z           [32m+[0m[0m {
+2026-03-28T18:20:49.8327846Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-28T18:20:49.8328756Z               [32m+[0m[0m description                                = ""
+2026-03-28T18:20:49.8329467Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-28T18:20:49.8330261Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-28T18:20:49.8331055Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-28T18:20:49.8331877Z               [32m+[0m[0m destination_port_range                     = "22"
+2026-03-28T18:20:49.8332692Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-28T18:20:49.8333475Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-28T18:20:49.8334371Z               [32m+[0m[0m name                                       = "Allow-SSH-From-User-Subnet"
+2026-03-28T18:20:49.8335307Z               [32m+[0m[0m priority                                   = 100
+2026-03-28T18:20:49.8336084Z               [32m+[0m[0m protocol                                   = "Tcp"
+2026-03-28T18:20:49.8336917Z               [32m+[0m[0m source_address_prefix                      = "10.0.1.0/24"
+2026-03-28T18:20:49.8338393Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-28T18:20:49.8339193Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-28T18:20:49.8339982Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-28T18:20:49.8340758Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-28T18:20:49.8341264Z             },
+2026-03-28T18:20:49.8341588Z           [32m+[0m[0m {
+2026-03-28T18:20:49.8342152Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-28T18:20:49.8342885Z               [32m+[0m[0m description                                = ""
+2026-03-28T18:20:49.8343636Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-28T18:20:49.8344418Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-28T18:20:49.8345179Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-28T18:20:49.8346020Z               [32m+[0m[0m destination_port_range                     = "80"
+2026-03-28T18:20:49.8346780Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-28T18:20:49.8347587Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-28T18:20:49.8348927Z               [32m+[0m[0m name                                       = "Allow-HTTP-From-User-Subnet"
+2026-03-28T18:20:49.8349614Z               [32m+[0m[0m priority                                   = 110
+2026-03-28T18:20:49.8350312Z               [32m+[0m[0m protocol                                   = "Tcp"
+2026-03-28T18:20:49.8351082Z               [32m+[0m[0m source_address_prefix                      = "10.0.1.0/24"
+2026-03-28T18:20:49.8352813Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-28T18:20:49.8354430Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-28T18:20:49.8355210Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-28T18:20:49.8355942Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-28T18:20:49.8356471Z             },
+2026-03-28T18:20:49.8356852Z           [32m+[0m[0m {
+2026-03-28T18:20:49.8357469Z               [32m+[0m[0m access                                     = "Deny"
+2026-03-28T18:20:49.8358485Z               [32m+[0m[0m description                                = ""
+2026-03-28T18:20:49.8359297Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-28T18:20:49.8360100Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-28T18:20:49.8360914Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-28T18:20:49.8361696Z               [32m+[0m[0m destination_port_range                     = "*"
+2026-03-28T18:20:49.8362474Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-28T18:20:49.8363280Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-28T18:20:49.8364160Z               [32m+[0m[0m name                                       = "Deny-All-Inbound"
+2026-03-28T18:20:49.8364980Z               [32m+[0m[0m priority                                   = 4096
+2026-03-28T18:20:49.8365734Z               [32m+[0m[0m protocol                                   = "*"
+2026-03-28T18:20:49.8366476Z               [32m+[0m[0m source_address_prefix                      = "*"
+2026-03-28T18:20:49.8367246Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-28T18:20:49.8367988Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-28T18:20:49.8369377Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-28T18:20:49.8370130Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-28T18:20:49.8370976Z             },
+2026-03-28T18:20:49.8371345Z         ]
+2026-03-28T18:20:49.8371737Z       [32m+[0m[0m tags                = {
+2026-03-28T18:20:49.8372324Z           [32m+[0m[0m "Environment" = "Development"
+2026-03-28T18:20:49.8372939Z           [32m+[0m[0m "Owner"       = "Fabian Klein"
+2026-03-28T18:20:49.8373568Z           [32m+[0m[0m "Project"     = "BA-IaC-Experiment"
+2026-03-28T18:20:49.8374031Z         }
+2026-03-28T18:20:49.8374308Z     }
+2026-03-28T18:20:49.8374478Z 
+2026-03-28T18:20:49.8374829Z [1m  # azurerm_network_security_group.user[0m will be created
+2026-03-28T18:20:49.8375613Z [0m  [32m+[0m[0m resource "azurerm_network_security_group" "user" {
+2026-03-28T18:20:49.8376347Z       [32m+[0m[0m id                  = (known after apply)
+2026-03-28T18:20:49.8377008Z       [32m+[0m[0m location            = "germanywestcentral"
+2026-03-28T18:20:49.8377628Z       [32m+[0m[0m name                = "nsg-user"
+2026-03-28T18:20:49.8378518Z       [32m+[0m[0m resource_group_name = "rg-kmu-experiment"
+2026-03-28T18:20:49.8379119Z       [32m+[0m[0m security_rule       = [
+2026-03-28T18:20:49.8379621Z           [32m+[0m[0m {
+2026-03-28T18:20:49.8380204Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-28T18:20:49.8380957Z               [32m+[0m[0m description                                = ""
+2026-03-28T18:20:49.8381745Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-28T18:20:49.8382628Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-28T18:20:49.8383443Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-28T18:20:49.8384246Z               [32m+[0m[0m destination_port_range                     = "*"
+2026-03-28T18:20:49.8385021Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-28T18:20:49.8385903Z               [32m+[0m[0m direction                                  = "Outbound"
+2026-03-28T18:20:49.8386883Z               [32m+[0m[0m name                                       = "Allow-All-Outbound"
+2026-03-28T18:20:49.8387667Z               [32m+[0m[0m priority                                   = 100
+2026-03-28T18:20:49.8388584Z               [32m+[0m[0m protocol                                   = "*"
+2026-03-28T18:20:49.8389337Z               [32m+[0m[0m source_address_prefix                      = "*"
+2026-03-28T18:20:49.8390111Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-28T18:20:49.8390882Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-28T18:20:49.8391648Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-28T18:20:49.8392367Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-28T18:20:49.8392882Z             },
+2026-03-28T18:20:49.8393262Z           [32m+[0m[0m {
+2026-03-28T18:20:49.8393831Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-28T18:20:49.8394586Z               [32m+[0m[0m description                                = ""
+2026-03-28T18:20:49.8395448Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-28T18:20:49.8396189Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-28T18:20:49.8396979Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-28T18:20:49.8397806Z               [32m+[0m[0m destination_port_range                     = "3389"
+2026-03-28T18:20:49.8398702Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-28T18:20:49.8399480Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-28T18:20:49.8400307Z               [32m+[0m[0m name                                       = "Allow-RDP-Inbound"
+2026-03-28T18:20:49.8401338Z               [32m+[0m[0m priority                                   = 100
+2026-03-28T18:20:49.8402208Z               [32m+[0m[0m protocol                                   = "Tcp"
+2026-03-28T18:20:49.8403244Z               [32m+[0m[0m source_address_prefix                      = "***/32"
+2026-03-28T18:20:49.8404090Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-28T18:20:49.8404876Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-28T18:20:49.8405577Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-28T18:20:49.8406314Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-28T18:20:49.8406833Z             },
+2026-03-28T18:20:49.8407218Z           [32m+[0m[0m {
+2026-03-28T18:20:49.8407802Z               [32m+[0m[0m access                                     = "Deny"
+2026-03-28T18:20:49.8408703Z               [32m+[0m[0m description                                = ""
+2026-03-28T18:20:49.8409509Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-28T18:20:49.8410267Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-28T18:20:49.8410985Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-28T18:20:49.8411769Z               [32m+[0m[0m destination_port_range                     = "*"
+2026-03-28T18:20:49.8412528Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-28T18:20:49.8413331Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-28T18:20:49.8414162Z               [32m+[0m[0m name                                       = "Deny-All-Inbound"
+2026-03-28T18:20:49.8414967Z               [32m+[0m[0m priority                                   = 4096
+2026-03-28T18:20:49.8415710Z               [32m+[0m[0m protocol                                   = "*"
+2026-03-28T18:20:49.8416485Z               [32m+[0m[0m source_address_prefix                      = "*"
+2026-03-28T18:20:49.8417214Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-28T18:20:49.8417865Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-28T18:20:49.8419153Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-28T18:20:49.8419887Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-28T18:20:49.8420684Z             },
+2026-03-28T18:20:49.8420975Z         ]
+2026-03-28T18:20:49.8421346Z       [32m+[0m[0m tags                = {
+2026-03-28T18:20:49.8421859Z           [32m+[0m[0m "Environment" = "Development"
+2026-03-28T18:20:49.8422416Z           [32m+[0m[0m "Owner"       = "Fabian Klein"
+2026-03-28T18:20:49.8422999Z           [32m+[0m[0m "Project"     = "BA-IaC-Experiment"
+2026-03-28T18:20:49.8423457Z         }
+2026-03-28T18:20:49.8423738Z     }
+2026-03-28T18:20:49.8423913Z 
+2026-03-28T18:20:49.8424236Z [1m  # azurerm_public_ip.jumpbox[0m will be created
+2026-03-28T18:20:49.8424875Z [0m  [32m+[0m[0m resource "azurerm_public_ip" "jumpbox" {
+2026-03-28T18:20:49.8425500Z       [32m+[0m[0m allocation_method       = "Static"
+2026-03-28T18:20:49.8426204Z       [32m+[0m[0m ddos_protection_mode    = "VirtualNetworkInherited"
+2026-03-28T18:20:49.8426930Z       [32m+[0m[0m fqdn                    = (known after apply)
+2026-03-28T18:20:49.8427628Z       [32m+[0m[0m id                      = (known after apply)
+2026-03-28T18:20:49.8428400Z       [32m+[0m[0m idle_timeout_in_minutes = 4
+2026-03-28T18:20:49.8429047Z       [32m+[0m[0m ip_address              = (known after apply)
+2026-03-28T18:20:49.8429658Z       [32m+[0m[0m ip_version              = "IPv4"
+2026-03-28T18:20:49.8430255Z       [32m+[0m[0m location                = "germanywestcentral"
+2026-03-28T18:20:49.8430927Z       [32m+[0m[0m name                    = "pip-vm-kmu-jumpbox"
+2026-03-28T18:20:49.8431899Z       [32m+[0m[0m resource_group_name     = "rg-kmu-experiment"
+2026-03-28T18:20:49.8432651Z       [32m+[0m[0m sku                     = "Standard"
+2026-03-28T18:20:49.8433240Z       [32m+[0m[0m sku_tier                = "Regional"
+2026-03-28T18:20:49.8433795Z       [32m+[0m[0m tags                    = {
+2026-03-28T18:20:49.8434353Z           [32m+[0m[0m "Environment" = "Development"
+2026-03-28T18:20:49.8434907Z           [32m+[0m[0m "Owner"       = "Fabian Klein"
+2026-03-28T18:20:49.8435487Z           [32m+[0m[0m "Project"     = "BA-IaC-Experiment"
+2026-03-28T18:20:49.8435932Z         }
+2026-03-28T18:20:49.8436345Z       [32m+[0m[0m zones                   = [
+2026-03-28T18:20:49.8436841Z           [32m+[0m[0m "1",
+2026-03-28T18:20:49.8437195Z         ]
+2026-03-28T18:20:49.8437470Z     }
+2026-03-28T18:20:49.8437634Z 
+2026-03-28T18:20:49.8437888Z [1m  # azurerm_subnet.app[0m will be created
+2026-03-28T18:20:49.8438712Z [0m  [32m+[0m[0m resource "azurerm_subnet" "app" {
+2026-03-28T18:20:49.8439397Z       [32m+[0m[0m address_prefixes                              = [
+2026-03-28T18:20:49.8439987Z           [32m+[0m[0m "10.0.2.0/24",
+2026-03-28T18:20:49.8440356Z         ]
+2026-03-28T18:20:49.8440835Z       [32m+[0m[0m default_outbound_access_enabled               = true
+2026-03-28T18:20:49.8441552Z       [32m+[0m[0m id                                            = (known after apply)
+2026-03-28T18:20:49.8442226Z       [32m+[0m[0m name                                          = "snet-app"
+2026-03-28T18:20:49.8442999Z       [32m+[0m[0m private_endpoint_network_policies             = "Disabled"
+2026-03-28T18:20:49.8443793Z       [32m+[0m[0m private_link_service_network_policies_enabled = true
+2026-03-28T18:20:49.8444615Z       [32m+[0m[0m resource_group_name                           = "rg-kmu-experiment"
+2026-03-28T18:20:49.8445489Z       [32m+[0m[0m virtual_network_name                          = "vnet-kmu-main"
+2026-03-28T18:20:49.8446062Z     }
+2026-03-28T18:20:49.8446237Z 
+2026-03-28T18:20:49.8446500Z [1m  # azurerm_subnet.user[0m will be created
+2026-03-28T18:20:49.8447099Z [0m  [32m+[0m[0m resource "azurerm_subnet" "user" {
+2026-03-28T18:20:49.8447725Z       [32m+[0m[0m address_prefixes                              = [
+2026-03-28T18:20:49.8448454Z           [32m+[0m[0m "10.0.1.0/24",
+2026-03-28T18:20:49.8448827Z         ]
+2026-03-28T18:20:49.8449333Z       [32m+[0m[0m default_outbound_access_enabled               = true
+2026-03-28T18:20:49.8450047Z       [32m+[0m[0m id                                            = (known after apply)
+2026-03-28T18:20:49.8450776Z       [32m+[0m[0m name                                          = "snet-user"
+2026-03-28T18:20:49.8451538Z       [32m+[0m[0m private_endpoint_network_policies             = "Disabled"
+2026-03-28T18:20:49.8452288Z       [32m+[0m[0m private_link_service_network_policies_enabled = true
+2026-03-28T18:20:49.8453158Z       [32m+[0m[0m resource_group_name                           = "rg-kmu-experiment"
+2026-03-28T18:20:49.8454068Z       [32m+[0m[0m virtual_network_name                          = "vnet-kmu-main"
+2026-03-28T18:20:49.8454650Z     }
+2026-03-28T18:20:49.8454817Z 
+2026-03-28T18:20:49.8455312Z [1m  # azurerm_subnet_network_security_group_association.app[0m will be created
+2026-03-28T18:20:49.8456359Z [0m  [32m+[0m[0m resource "azurerm_subnet_network_security_group_association" "app" {
+2026-03-28T18:20:49.8457265Z       [32m+[0m[0m id                        = (known after apply)
+2026-03-28T18:20:49.8458276Z       [32m+[0m[0m network_security_group_id = (known after apply)
+2026-03-28T18:20:49.8459023Z       [32m+[0m[0m subnet_id                 = (known after apply)
+2026-03-28T18:20:49.8459517Z     }
+2026-03-28T18:20:49.8459680Z 
+2026-03-28T18:20:49.8460144Z [1m  # azurerm_subnet_network_security_group_association.user[0m will be created
+2026-03-28T18:20:49.8461145Z [0m  [32m+[0m[0m resource "azurerm_subnet_network_security_group_association" "user" {
+2026-03-28T18:20:49.8462354Z       [32m+[0m[0m id                        = (known after apply)
+2026-03-28T18:20:49.8463099Z       [32m+[0m[0m network_security_group_id = (known after apply)
+2026-03-28T18:20:49.8463786Z       [32m+[0m[0m subnet_id                 = (known after apply)
+2026-03-28T18:20:49.8464305Z     }
+2026-03-28T18:20:49.8464480Z 
+2026-03-28T18:20:49.8464781Z [1m  # azurerm_virtual_network.main[0m will be created
+2026-03-28T18:20:49.8465475Z [0m  [32m+[0m[0m resource "azurerm_virtual_network" "main" {
+2026-03-28T18:20:49.8466141Z       [32m+[0m[0m address_space                  = [
+2026-03-28T18:20:49.8466765Z           [32m+[0m[0m "10.0.0.0/16",
+2026-03-28T18:20:49.8467170Z         ]
+2026-03-28T18:20:49.8467662Z       [32m+[0m[0m dns_servers                    = (known after apply)
+2026-03-28T18:20:49.8468555Z       [32m+[0m[0m guid                           = (known after apply)
+2026-03-28T18:20:49.8469280Z       [32m+[0m[0m id                             = (known after apply)
+2026-03-28T18:20:49.8470037Z       [32m+[0m[0m location                       = "germanywestcentral"
+2026-03-28T18:20:49.8470803Z       [32m+[0m[0m name                           = "vnet-kmu-main"
+2026-03-28T18:20:49.8471498Z       [32m+[0m[0m private_endpoint_vnet_policies = "Disabled"
+2026-03-28T18:20:49.8472258Z       [32m+[0m[0m resource_group_name            = "rg-kmu-experiment"
+2026-03-28T18:20:49.8473018Z       [32m+[0m[0m subnet                         = (known after apply)
+2026-03-28T18:20:49.8473679Z       [32m+[0m[0m tags                           = {
+2026-03-28T18:20:49.8474264Z           [32m+[0m[0m "Environment" = "Development"
+2026-03-28T18:20:49.8474880Z           [32m+[0m[0m "Owner"       = "Fabian Klein"
+2026-03-28T18:20:49.8475538Z           [32m+[0m[0m "Project"     = "BA-IaC-Experiment"
+2026-03-28T18:20:49.8476043Z         }
+2026-03-28T18:20:49.8476331Z     }
+2026-03-28T18:20:49.8476501Z 
+2026-03-28T18:20:49.8476908Z [1m  # azurerm_windows_virtual_machine.jumpbox[0m will be created
+2026-03-28T18:20:49.8477777Z [0m  [32m+[0m[0m resource "azurerm_windows_virtual_machine" "jumpbox" {
+2026-03-28T18:20:49.8478956Z       [32m+[0m[0m admin_password                                         = (sensitive value)
+2026-03-28T18:20:49.8479861Z       [32m+[0m[0m admin_username                                         = "kmuadmin"
+2026-03-28T18:20:49.8480830Z       [32m+[0m[0m allow_extension_operations                             = (known after apply)
+2026-03-28T18:20:49.8481887Z       [32m+[0m[0m automatic_updates_enabled                              = (known after apply)
+2026-03-28T18:20:49.8482833Z       [32m+[0m[0m bypass_platform_safety_checks_on_user_schedule_enabled = false
+2026-03-28T18:20:49.8483658Z       [32m+[0m[0m computer_name                                          = (known after apply)
+2026-03-28T18:20:49.8484526Z       [32m+[0m[0m disk_controller_type                                   = (known after apply)
+2026-03-28T18:20:49.8485490Z       [32m+[0m[0m enable_automatic_updates                               = (known after apply)
+2026-03-28T18:20:49.8486505Z       [32m+[0m[0m extensions_time_budget                                 = "PT1H30M"
+2026-03-28T18:20:49.8487442Z       [32m+[0m[0m hotpatching_enabled                                    = (known after apply)
+2026-03-28T18:20:49.8488459Z       [32m+[0m[0m id                                                     = (known after apply)
+2026-03-28T18:20:49.8489308Z       [32m+[0m[0m location                                               = "germanywestcentral"
+2026-03-28T18:20:49.8490150Z       [32m+[0m[0m max_bid_price                                          = -1
+2026-03-28T18:20:49.8490944Z       [32m+[0m[0m name                                                   = "vm-kmu-jumpbox"
+2026-03-28T18:20:49.8491778Z       [32m+[0m[0m network_interface_ids                                  = (known after apply)
+2026-03-28T18:20:49.8492885Z       [32m+[0m[0m os_managed_disk_id                                     = (known after apply)
+2026-03-28T18:20:49.8493938Z       [32m+[0m[0m patch_assessment_mode                                  = (known after apply)
+2026-03-28T18:20:49.8494849Z       [32m+[0m[0m patch_mode                                             = (known after apply)
+2026-03-28T18:20:49.8495677Z       [32m+[0m[0m platform_fault_domain                                  = -1
+2026-03-28T18:20:49.8496487Z       [32m+[0m[0m priority                                               = "Regular"
+2026-03-28T18:20:49.8497321Z       [32m+[0m[0m private_ip_address                                     = (known after apply)
+2026-03-28T18:20:49.8498330Z       [32m+[0m[0m private_ip_addresses                                   = (known after apply)
+2026-03-28T18:20:49.8499239Z       [32m+[0m[0m provision_vm_agent                                     = (known after apply)
+2026-03-28T18:20:49.8500154Z       [32m+[0m[0m public_ip_address                                      = (known after apply)
+2026-03-28T18:20:49.8501094Z       [32m+[0m[0m public_ip_addresses                                    = (known after apply)
+2026-03-28T18:20:49.8502017Z       [32m+[0m[0m resource_group_name                                    = "rg-kmu-experiment"
+2026-03-28T18:20:49.8502881Z       [32m+[0m[0m size                                                   = "Standard_D2as_v4"
+2026-03-28T18:20:49.8503616Z       [32m+[0m[0m tags                                                   = {
+2026-03-28T18:20:49.8504211Z           [32m+[0m[0m "Environment" = "Development"
+2026-03-28T18:20:49.8504785Z           [32m+[0m[0m "Owner"       = "Fabian Klein"
+2026-03-28T18:20:49.8505391Z           [32m+[0m[0m "Project"     = "BA-IaC-Experiment"
+2026-03-28T18:20:49.8505856Z         }
+2026-03-28T18:20:49.8506474Z       [32m+[0m[0m virtual_machine_id                                     = (known after apply)
+2026-03-28T18:20:49.8507468Z       [32m+[0m[0m vm_agent_platform_updates_enabled                      = (known after apply)
+2026-03-28T18:20:49.8508539Z       [32m+[0m[0m zone                                                   = "1"
+2026-03-28T18:20:49.8508954Z 
+2026-03-28T18:20:49.8509170Z       [32m+[0m[0m os_disk {
+2026-03-28T18:20:49.8509738Z           [32m+[0m[0m caching                   = "ReadWrite"
+2026-03-28T18:20:49.8510451Z           [32m+[0m[0m disk_size_gb              = (known after apply)
+2026-03-28T18:20:49.8511158Z           [32m+[0m[0m id                        = (known after apply)
+2026-03-28T18:20:49.8511845Z           [32m+[0m[0m name                      = (known after apply)
+2026-03-28T18:20:49.8512566Z           [32m+[0m[0m storage_account_type      = "StandardSSD_LRS"
+2026-03-28T18:20:49.8513230Z           [32m+[0m[0m write_accelerator_enabled = false
+2026-03-28T18:20:49.8513707Z         }
+2026-03-28T18:20:49.8513884Z 
+2026-03-28T18:20:49.8514132Z       [32m+[0m[0m source_image_reference {
+2026-03-28T18:20:49.8514710Z           [32m+[0m[0m offer     = "WindowsServer"
+2026-03-28T18:20:49.8515360Z           [32m+[0m[0m publisher = "MicrosoftWindowsServer"
+2026-03-28T18:20:49.8515984Z           [32m+[0m[0m sku       = "2022-Datacenter"
+2026-03-28T18:20:49.8516532Z           [32m+[0m[0m version   = "latest"
+2026-03-28T18:20:49.8516960Z         }
+2026-03-28T18:20:49.8517248Z     }
+2026-03-28T18:20:49.8517397Z 
+2026-03-28T18:20:49.8517684Z [1mPlan:[0m 12 to add, 0 to change, 0 to destroy.
+2026-03-28T18:20:49.8518351Z [0m
+2026-03-28T18:20:49.8518644Z Changes to Outputs:
+2026-03-28T18:20:49.8519159Z   [32m+[0m[0m app_private_ip     = (known after apply)
+2026-03-28T18:20:49.8519828Z   [32m+[0m[0m jumpbox_private_ip = (known after apply)
+2026-03-28T18:20:49.8520448Z   [32m+[0m[0m jumpbox_public_ip  = (known after apply)
+2026-03-28T18:20:49.8520913Z [90m
+2026-03-28T18:20:49.8521551Z ─────────────────────────────────────────────────────────────────────────────[0m
+2026-03-28T18:20:49.8522230Z 
+2026-03-28T18:20:49.8522495Z Saved the plan to: tfplan
+2026-03-28T18:20:49.8522728Z 
+2026-03-28T18:20:49.8523003Z To perform exactly these actions, run the following command to apply:
+2026-03-28T18:20:49.8523556Z     terraform apply "tfplan"

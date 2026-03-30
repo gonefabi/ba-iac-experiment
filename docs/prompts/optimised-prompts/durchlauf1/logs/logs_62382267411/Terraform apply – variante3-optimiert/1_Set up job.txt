@@ -1,0 +1,32 @@
+﻿2026-03-27T23:17:52.1249576Z Current runner version: '2.333.0'
+2026-03-27T23:17:52.1286214Z ##[group]Runner Image Provisioner
+2026-03-27T23:17:52.1287809Z Hosted Compute Agent
+2026-03-27T23:17:52.1288808Z Version: 20260213.493
+2026-03-27T23:17:52.1290526Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-27T23:17:52.1292065Z Build Date: 2026-02-13T00:28:41Z
+2026-03-27T23:17:52.1293308Z Worker ID: {637868f2-4856-4fb2-84ed-0dfae486898f}
+2026-03-27T23:17:52.1294565Z Azure Region: westus
+2026-03-27T23:17:52.1295628Z ##[endgroup]
+2026-03-27T23:17:52.1297831Z ##[group]Operating System
+2026-03-27T23:17:52.1299020Z Ubuntu
+2026-03-27T23:17:52.1300164Z 24.04.4
+2026-03-27T23:17:52.1301038Z LTS
+2026-03-27T23:17:52.1301935Z ##[endgroup]
+2026-03-27T23:17:52.1302822Z ##[group]Runner Image
+2026-03-27T23:17:52.1303777Z Image: ubuntu-24.04
+2026-03-27T23:17:52.1304783Z Version: 20260323.65.1
+2026-03-27T23:17:52.1306619Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-27T23:17:52.1309630Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+2026-03-27T23:17:52.1311718Z ##[endgroup]
+2026-03-27T23:17:52.1313775Z ##[group]GITHUB_TOKEN Permissions
+2026-03-27T23:17:52.1316424Z Contents: read
+2026-03-27T23:17:52.1317477Z Metadata: read
+2026-03-27T23:17:52.1318398Z Packages: read
+2026-03-27T23:17:52.1319242Z ##[endgroup]
+2026-03-27T23:17:52.1322792Z Secret source: Actions
+2026-03-27T23:17:52.1324229Z Prepare workflow directory
+2026-03-27T23:17:52.2318524Z Prepare all required actions
+2026-03-27T23:17:52.2378414Z Getting action download info
+2026-03-27T23:17:52.7430988Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-03-27T23:17:52.8789677Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+2026-03-27T23:17:53.5353613Z Complete job name: Terraform apply – variante3-optimiert

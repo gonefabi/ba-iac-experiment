@@ -1,0 +1,60 @@
+﻿2026-03-27T23:18:08.2908243Z ##[group]Run terraform apply -auto-approve tfplan
+2026-03-27T23:18:08.2908661Z [36;1mterraform apply -auto-approve tfplan[0m
+2026-03-27T23:18:08.2934925Z shell: /usr/bin/bash -e {0}
+2026-03-27T23:18:08.2935175Z env:
+2026-03-27T23:18:08.2935475Z   ARM_CLIENT_ID: ***
+2026-03-27T23:18:08.2935833Z   ARM_CLIENT_SECRET: ***
+2026-03-27T23:18:08.2936144Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T23:18:08.2936452Z   ARM_TENANT_ID: ***
+2026-03-27T23:18:08.2936802Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/f104c4c6-5fcf-4051-bf81-898e4b906ae6
+2026-03-27T23:18:08.2937210Z ##[endgroup]
+2026-03-27T23:18:17.3927953Z [0m[1mazurerm_virtual_network.main: Creating...[0m[0m
+2026-03-27T23:18:17.3956917Z [0m[1mazurerm_public_ip.jumpbox: Creating...[0m[0m
+2026-03-27T23:18:17.3968170Z [0m[1mazurerm_network_security_group.user: Creating...[0m[0m
+2026-03-27T23:18:17.4041376Z [0m[1mazurerm_network_security_group.app: Creating...[0m[0m
+2026-03-27T23:18:20.0207871Z [0m[1mazurerm_public_ip.jumpbox: Creation complete after 3s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/publicIPAddresses/pip-vm-kmu-jumpbox][0m
+2026-03-27T23:18:20.5071671Z [0m[1mazurerm_network_security_group.user: Creation complete after 4s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/networkSecurityGroups/nsg-user][0m
+2026-03-27T23:18:20.7346131Z [0m[1mazurerm_network_security_group.app: Creation complete after 4s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/networkSecurityGroups/nsg-app][0m
+2026-03-27T23:18:22.6927509Z [0m[1mazurerm_virtual_network.main: Creation complete after 6s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/virtualNetworks/vnet-kmu-main][0m
+2026-03-27T23:18:22.7012828Z [0m[1mazurerm_subnet.app: Creating...[0m[0m
+2026-03-27T23:18:28.0451627Z [0m[1mazurerm_subnet.user: Creating...[0m[0m
+2026-03-27T23:18:28.0454154Z [0m[1mazurerm_subnet.app: Creation complete after 5s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/virtualNetworks/vnet-kmu-main/subnets/snet-app][0m
+2026-03-27T23:18:28.0521034Z [0m[1mazurerm_network_interface.app: Creating...[0m[0m
+2026-03-27T23:18:28.0526133Z [0m[1mazurerm_subnet_network_security_group_association.app: Creating...[0m[0m
+2026-03-27T23:18:32.7023972Z [0m[1mazurerm_subnet.user: Still creating... [10s elapsed][0m[0m
+2026-03-27T23:18:32.7416342Z [0m[1mazurerm_subnet.user: Creation complete after 10s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/virtualNetworks/vnet-kmu-main/subnets/snet-user][0m
+2026-03-27T23:18:32.7484787Z [0m[1mazurerm_subnet_network_security_group_association.user: Creating...[0m[0m
+2026-03-27T23:18:32.7492329Z [0m[1mazurerm_network_interface.jumpbox: Creating...[0m[0m
+2026-03-27T23:18:38.0521720Z [0m[1mazurerm_network_interface.app: Still creating... [10s elapsed][0m[0m
+2026-03-27T23:18:38.0541785Z [0m[1mazurerm_subnet_network_security_group_association.app: Still creating... [10s elapsed][0m[0m
+2026-03-27T23:18:38.0613660Z [0m[1mazurerm_subnet_network_security_group_association.app: Creation complete after 10s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/virtualNetworks/vnet-kmu-main/subnets/snet-app][0m
+2026-03-27T23:18:42.7487682Z [0m[1mazurerm_subnet_network_security_group_association.user: Still creating... [10s elapsed][0m[0m
+2026-03-27T23:18:42.7496989Z [0m[1mazurerm_network_interface.jumpbox: Still creating... [10s elapsed][0m[0m
+2026-03-27T23:18:48.0522690Z [0m[1mazurerm_network_interface.app: Still creating... [20s elapsed][0m[0m
+2026-03-27T23:18:49.4356467Z [0m[1mazurerm_network_interface.app: Creation complete after 21s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/networkInterfaces/nic-vm-kmu-app][0m
+2026-03-27T23:18:49.4460909Z [0m[1mazurerm_linux_virtual_machine.app: Creating...[0m[0m
+2026-03-27T23:18:52.7489056Z [0m[1mazurerm_subnet_network_security_group_association.user: Still creating... [20s elapsed][0m[0m
+2026-03-27T23:18:52.7498611Z [0m[1mazurerm_network_interface.jumpbox: Still creating... [20s elapsed][0m[0m
+2026-03-27T23:18:54.5386251Z [0m[1mazurerm_subnet_network_security_group_association.user: Creation complete after 22s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/virtualNetworks/vnet-kmu-main/subnets/snet-user][0m
+2026-03-27T23:18:58.1691964Z [0m[1mazurerm_network_interface.jumpbox: Creation complete after 25s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Network/networkInterfaces/nic-vm-kmu-jumpbox][0m
+2026-03-27T23:18:58.1760991Z [0m[1mazurerm_windows_virtual_machine.jumpbox: Creating...[0m[0m
+2026-03-27T23:18:59.4470574Z [0m[1mazurerm_linux_virtual_machine.app: Still creating... [10s elapsed][0m[0m
+2026-03-27T23:19:08.1759660Z [0m[1mazurerm_windows_virtual_machine.jumpbox: Still creating... [10s elapsed][0m[0m
+2026-03-27T23:19:09.4471314Z [0m[1mazurerm_linux_virtual_machine.app: Still creating... [20s elapsed][0m[0m
+2026-03-27T23:19:18.1770941Z [0m[1mazurerm_windows_virtual_machine.jumpbox: Still creating... [20s elapsed][0m[0m
+2026-03-27T23:19:19.4473775Z [0m[1mazurerm_linux_virtual_machine.app: Still creating... [30s elapsed][0m[0m
+2026-03-27T23:19:28.1774526Z [0m[1mazurerm_windows_virtual_machine.jumpbox: Still creating... [30s elapsed][0m[0m
+2026-03-27T23:19:29.4482229Z [0m[1mazurerm_linux_virtual_machine.app: Still creating... [40s elapsed][0m[0m
+2026-03-27T23:19:38.1781654Z [0m[1mazurerm_windows_virtual_machine.jumpbox: Still creating... [40s elapsed][0m[0m
+2026-03-27T23:19:39.2682293Z [0m[1mazurerm_linux_virtual_machine.app: Creation complete after 50s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Compute/virtualMachines/vm-kmu-app][0m
+2026-03-27T23:19:48.1783245Z [0m[1mazurerm_windows_virtual_machine.jumpbox: Still creating... [50s elapsed][0m[0m
+2026-03-27T23:19:58.1786079Z [0m[1mazurerm_windows_virtual_machine.jumpbox: Still creating... [1m0s elapsed][0m[0m
+2026-03-27T23:20:04.2747815Z [0m[1mazurerm_windows_virtual_machine.jumpbox: Creation complete after 1m6s [id=/subscriptions/***/resourceGroups/rg-kmu-experiment/providers/Microsoft.Compute/virtualMachines/vm-kmu-jumpbox][0m
+2026-03-27T23:20:04.2818598Z [0m[1m[32m
+2026-03-27T23:20:04.2819243Z Apply complete! Resources: 12 added, 0 changed, 0 destroyed.
+2026-03-27T23:20:04.2820049Z [0m[0m[1m[32m
+2026-03-27T23:20:04.2820418Z Outputs:
+2026-03-27T23:20:04.2820534Z 
+2026-03-27T23:20:04.2822522Z [0mapp_private_ip = "10.0.2.4"
+2026-03-27T23:20:04.2824860Z jumpbox_private_ip = "10.0.1.4"
+2026-03-27T23:20:04.2826233Z jumpbox_public_ip = "20.79.153.241"

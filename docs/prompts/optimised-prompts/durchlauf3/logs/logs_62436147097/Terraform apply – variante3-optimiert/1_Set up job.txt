@@ -1,0 +1,32 @@
+﻿2026-03-28T18:57:31.0631440Z Current runner version: '2.333.0'
+2026-03-28T18:57:31.0688305Z ##[group]Runner Image Provisioner
+2026-03-28T18:57:31.0689674Z Hosted Compute Agent
+2026-03-28T18:57:31.0690664Z Version: 20260213.493
+2026-03-28T18:57:31.0691817Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-28T18:57:31.0693181Z Build Date: 2026-02-13T00:28:41Z
+2026-03-28T18:57:31.0694514Z Worker ID: {d839eb6d-7fb8-48ad-9659-871c0764305b}
+2026-03-28T18:57:31.0716497Z Azure Region: centralus
+2026-03-28T18:57:31.0717572Z ##[endgroup]
+2026-03-28T18:57:31.0720236Z ##[group]Operating System
+2026-03-28T18:57:31.0721422Z Ubuntu
+2026-03-28T18:57:31.0722350Z 24.04.4
+2026-03-28T18:57:31.0723365Z LTS
+2026-03-28T18:57:31.0724398Z ##[endgroup]
+2026-03-28T18:57:31.0725789Z ##[group]Runner Image
+2026-03-28T18:57:31.0727100Z Image: ubuntu-24.04
+2026-03-28T18:57:31.0728140Z Version: 20260323.65.1
+2026-03-28T18:57:31.0730171Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-28T18:57:31.0733264Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+2026-03-28T18:57:31.0755709Z ##[endgroup]
+2026-03-28T18:57:31.0757705Z ##[group]GITHUB_TOKEN Permissions
+2026-03-28T18:57:31.0761022Z Contents: read
+2026-03-28T18:57:31.0761987Z Metadata: read
+2026-03-28T18:57:31.0762964Z Packages: read
+2026-03-28T18:57:31.0763973Z ##[endgroup]
+2026-03-28T18:57:31.0767814Z Secret source: Actions
+2026-03-28T18:57:31.0769155Z Prepare workflow directory
+2026-03-28T18:57:31.2378034Z Prepare all required actions
+2026-03-28T18:57:31.2497448Z Getting action download info
+2026-03-28T18:57:31.6408620Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-03-28T18:57:31.7807958Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+2026-03-28T18:57:32.3943932Z Complete job name: Terraform apply – variante3-optimiert

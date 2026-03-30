@@ -1,0 +1,62 @@
+﻿2026-03-26T21:32:35.8638064Z ##[group]Run terraform apply -auto-approve tfplan
+2026-03-26T21:32:35.8638468Z [36;1mterraform apply -auto-approve tfplan[0m
+2026-03-26T21:32:35.8687878Z shell: /usr/bin/bash -e {0}
+2026-03-26T21:32:35.8688143Z env:
+2026-03-26T21:32:35.8688475Z   ARM_CLIENT_ID: ***
+2026-03-26T21:32:35.8689085Z   ARM_CLIENT_SECRET: ***
+2026-03-26T21:32:35.8689439Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-26T21:32:35.8689732Z   ARM_TENANT_ID: ***
+2026-03-26T21:32:35.8690091Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/0e61856e-403a-4334-8178-001bd9de5643
+2026-03-26T21:32:35.8690506Z ##[endgroup]
+2026-03-26T21:32:41.0217837Z [0m[1mazurerm_resource_group.main: Creating...[0m[0m
+2026-03-26T21:32:51.0222998Z [0m[1mazurerm_resource_group.main: Still creating... [10s elapsed][0m[0m
+2026-03-26T21:32:53.6968601Z [0m[1mazurerm_resource_group.main: Creation complete after 13s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod][0m
+2026-03-26T21:32:53.7149769Z [0m[1mazurerm_network_security_group.users: Creating...[0m[0m
+2026-03-26T21:32:53.7192661Z [0m[1mazurerm_virtual_network.main: Creating...[0m[0m
+2026-03-26T21:32:53.7193707Z [0m[1mazurerm_public_ip.windows: Creating...[0m[0m
+2026-03-26T21:32:53.7367200Z [0m[1mazurerm_network_security_group.app: Creating...[0m[0m
+2026-03-26T21:32:56.6015418Z [0m[1mazurerm_public_ip.windows: Creation complete after 3s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/publicIPAddresses/pip-vm-windows][0m
+2026-03-26T21:32:57.0079221Z [0m[1mazurerm_network_security_group.app: Creation complete after 3s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-anwendung][0m
+2026-03-26T21:32:59.8972843Z [0m[1mazurerm_virtual_network.main: Creation complete after 6s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/virtualNetworks/vnet-unternehmen][0m
+2026-03-26T21:32:59.9033056Z [0m[1mazurerm_subnet.app: Creating...[0m[0m
+2026-03-26T21:32:59.9046320Z [0m[1mazurerm_subnet.users: Creating...[0m[0m
+2026-03-26T21:33:00.0219382Z [0m[1mazurerm_network_security_group.users: Creation complete after 6s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-benutzer][0m
+2026-03-26T21:33:05.3004834Z [0m[1mazurerm_subnet.users: Creation complete after 5s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/virtualNetworks/vnet-unternehmen/subnets/snet-benutzer][0m
+2026-03-26T21:33:05.3061987Z [0m[1mazurerm_subnet_network_security_group_association.users: Creating...[0m[0m
+2026-03-26T21:33:05.3094205Z [0m[1mazurerm_network_interface.windows: Creating...[0m[0m
+2026-03-26T21:33:09.9036876Z [0m[1mazurerm_subnet.app: Still creating... [10s elapsed][0m[0m
+2026-03-26T21:33:10.0840516Z [0m[1mazurerm_subnet.app: Creation complete after 10s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/virtualNetworks/vnet-unternehmen/subnets/snet-anwendung][0m
+2026-03-26T21:33:10.0899428Z [0m[1mazurerm_subnet_network_security_group_association.app: Creating...[0m[0m
+2026-03-26T21:33:10.0933041Z [0m[1mazurerm_network_interface.linux: Creating...[0m[0m
+2026-03-26T21:33:15.2270858Z [0m[1mazurerm_subnet_network_security_group_association.users: Creation complete after 10s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/virtualNetworks/vnet-unternehmen/subnets/snet-benutzer][0m
+2026-03-26T21:33:15.3108001Z [0m[1mazurerm_network_interface.windows: Still creating... [10s elapsed][0m[0m
+2026-03-26T21:33:17.9043505Z [0m[1mazurerm_network_interface.windows: Creation complete after 13s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/networkInterfaces/nic-vm-windows][0m
+2026-03-26T21:33:17.9213109Z [0m[1mazurerm_windows_virtual_machine.main: Creating...[0m[0m
+2026-03-26T21:33:20.0918926Z [0m[1mazurerm_subnet_network_security_group_association.app: Still creating... [10s elapsed][0m[0m
+2026-03-26T21:33:20.0921042Z [0m[1mazurerm_network_interface.linux: Still creating... [10s elapsed][0m[0m
+2026-03-26T21:33:23.0427582Z [0m[1mazurerm_subnet_network_security_group_association.app: Creation complete after 13s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/virtualNetworks/vnet-unternehmen/subnets/snet-anwendung][0m
+2026-03-26T21:33:30.0941472Z [0m[1mazurerm_network_interface.linux: Still creating... [20s elapsed][0m[0m
+2026-03-26T21:33:34.1873842Z [0m[1mazurerm_network_interface.linux: Creation complete after 24s [id=/subscriptions/***/resourceGroups/rg-infrastruktur-prod/providers/Microsoft.Network/networkInterfaces/nic-vm-linux][0m
+2026-03-26T21:33:34.1982430Z [0m[1mazurerm_linux_virtual_machine.main: Creating...[0m[0m
+2026-03-26T21:33:36.5977266Z [31m╷[0m[0m
+2026-03-26T21:33:36.5980885Z [31m│[0m [0m[1m[31mError: [0m[0m[1mcreating Linux Virtual Machine (Subscription: "***"
+2026-03-26T21:33:36.5982949Z [31m│[0m [0mResource Group Name: "rg-infrastruktur-prod"
+2026-03-26T21:33:36.5986816Z [31m│[0m [0mVirtual Machine Name: "vm-linux-01"): performing CreateOrUpdate: unexpected status 409 (409 Conflict) with error: SkuNotAvailable: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_D2s_v3' is currently not available in location 'GermanyWestCentral'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.[0m
+2026-03-26T21:33:36.5990729Z [31m│[0m [0m
+2026-03-26T21:33:36.5991442Z [31m│[0m [0m[0m  with azurerm_linux_virtual_machine.main,
+2026-03-26T21:33:36.5992524Z [31m│[0m [0m  on vm-linux.tf line 26, in resource "azurerm_linux_virtual_machine" "main":
+2026-03-26T21:33:36.5993831Z [31m│[0m [0m  26: resource "azurerm_linux_virtual_machine" "main" [4m{[0m[0m
+2026-03-26T21:33:36.5994653Z [31m│[0m [0m
+2026-03-26T21:33:36.5995008Z [31m╵[0m[0m
+2026-03-26T21:33:36.5996315Z [31m╷[0m[0m
+2026-03-26T21:33:36.5997492Z [31m│[0m [0m[1m[31mError: [0m[0m[1mcreating Windows Virtual Machine (Subscription: "***"
+2026-03-26T21:33:36.5998864Z [31m│[0m [0mResource Group Name: "rg-infrastruktur-prod"
+2026-03-26T21:33:36.6003148Z [31m│[0m [0mVirtual Machine Name: "vm-windows-01"): performing CreateOrUpdate: unexpected status 409 (409 Conflict) with error: SkuNotAvailable: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_D2s_v3' is currently not available in location 'GermanyWestCentral'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.[0m
+2026-03-26T21:33:36.6007430Z [31m│[0m [0m
+2026-03-26T21:33:36.6007972Z [31m│[0m [0m[0m  with azurerm_windows_virtual_machine.main,
+2026-03-26T21:33:36.6009377Z [31m│[0m [0m  on vm-windows.tf line 40, in resource "azurerm_windows_virtual_machine" "main":
+2026-03-26T21:33:36.6010671Z [31m│[0m [0m  40: resource "azurerm_windows_virtual_machine" "main" [4m{[0m[0m
+2026-03-26T21:33:36.6011358Z [31m│[0m [0m
+2026-03-26T21:33:36.6011710Z [31m╵[0m[0m
+2026-03-26T21:33:36.6114651Z ##[error]Terraform exited with code 1.
+2026-03-26T21:33:36.6161299Z ##[error]Process completed with exit code 1.

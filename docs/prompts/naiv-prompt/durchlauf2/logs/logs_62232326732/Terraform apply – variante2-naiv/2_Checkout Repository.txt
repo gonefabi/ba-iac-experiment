@@ -1,0 +1,77 @@
+﻿2026-03-26T22:41:57.6664953Z ##[group]Run actions/checkout@v4
+2026-03-26T22:41:57.6665869Z with:
+2026-03-26T22:41:57.6666323Z   repository: gonefabi/ba-iac-experiment
+2026-03-26T22:41:57.6667048Z   token: ***
+2026-03-26T22:41:57.6667460Z   ssh-strict: true
+2026-03-26T22:41:57.6667881Z   ssh-user: git
+2026-03-26T22:41:57.6668308Z   persist-credentials: true
+2026-03-26T22:41:57.6668787Z   clean: true
+2026-03-26T22:41:57.6669478Z   sparse-checkout-cone-mode: true
+2026-03-26T22:41:57.6670137Z   fetch-depth: 1
+2026-03-26T22:41:57.6670559Z   fetch-tags: false
+2026-03-26T22:41:57.6670988Z   show-progress: true
+2026-03-26T22:41:57.6671421Z   lfs: false
+2026-03-26T22:41:57.6671819Z   submodules: false
+2026-03-26T22:41:57.6672250Z   set-safe-directory: true
+2026-03-26T22:41:57.6673020Z env:
+2026-03-26T22:41:57.6673546Z   ARM_CLIENT_ID: ***
+2026-03-26T22:41:57.6674145Z   ARM_CLIENT_SECRET: ***
+2026-03-26T22:41:57.6674724Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-26T22:41:57.6675279Z   ARM_TENANT_ID: ***
+2026-03-26T22:41:57.6675711Z ##[endgroup]
+2026-03-26T22:41:57.7875378Z Syncing repository: gonefabi/ba-iac-experiment
+2026-03-26T22:41:57.7878162Z ##[group]Getting Git version info
+2026-03-26T22:41:57.7879774Z Working directory is '/home/runner/work/ba-iac-experiment/ba-iac-experiment'
+2026-03-26T22:41:57.7883177Z [command]/usr/bin/git version
+2026-03-26T22:41:57.7950986Z git version 2.53.0
+2026-03-26T22:41:57.7980138Z ##[endgroup]
+2026-03-26T22:41:57.7998223Z Temporarily overriding HOME='/home/runner/work/_temp/a8e18e89-6e93-4642-949b-a748640a0ab3' before making global git config changes
+2026-03-26T22:41:57.8002752Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-26T22:41:57.8018090Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-26T22:41:57.8063466Z Deleting the contents of '/home/runner/work/ba-iac-experiment/ba-iac-experiment'
+2026-03-26T22:41:57.8068216Z ##[group]Initializing the repository
+2026-03-26T22:41:57.8074157Z [command]/usr/bin/git init /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-26T22:41:57.8184126Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-03-26T22:41:57.8187607Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-03-26T22:41:57.8189959Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-03-26T22:41:57.8191396Z hint: call:
+2026-03-26T22:41:57.8192254Z hint:
+2026-03-26T22:41:57.8193270Z hint: 	git config --global init.defaultBranch <name>
+2026-03-26T22:41:57.8194505Z hint:
+2026-03-26T22:41:57.8195807Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-03-26T22:41:57.8197529Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-03-26T22:41:57.8198876Z hint:
+2026-03-26T22:41:57.8199960Z hint: 	git branch -m <name>
+2026-03-26T22:41:57.8200840Z hint:
+2026-03-26T22:41:57.8201923Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-03-26T22:41:57.8204834Z Initialized empty Git repository in /home/runner/work/ba-iac-experiment/ba-iac-experiment/.git/
+2026-03-26T22:41:57.8208905Z [command]/usr/bin/git remote add origin https://github.com/gonefabi/ba-iac-experiment
+2026-03-26T22:41:57.8248284Z ##[endgroup]
+2026-03-26T22:41:57.8249935Z ##[group]Disabling automatic garbage collection
+2026-03-26T22:41:57.8253047Z [command]/usr/bin/git config --local gc.auto 0
+2026-03-26T22:41:57.8287931Z ##[endgroup]
+2026-03-26T22:41:57.8289171Z ##[group]Setting up auth
+2026-03-26T22:41:57.8295565Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-26T22:41:57.8331766Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-26T22:41:57.8696816Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-26T22:41:57.8733852Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-26T22:41:57.8989479Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-26T22:41:57.9025922Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-26T22:41:57.9299875Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-03-26T22:41:57.9340100Z ##[endgroup]
+2026-03-26T22:41:57.9343327Z ##[group]Fetching the repository
+2026-03-26T22:41:57.9352101Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7c0afb332d11eac786592fc3cc473470ae164577:refs/remotes/origin/master
+2026-03-26T22:41:58.1110881Z From https://github.com/gonefabi/ba-iac-experiment
+2026-03-26T22:41:58.1114928Z  * [new ref]         7c0afb332d11eac786592fc3cc473470ae164577 -> origin/master
+2026-03-26T22:41:58.1145990Z ##[endgroup]
+2026-03-26T22:41:58.1147622Z ##[group]Determining the checkout info
+2026-03-26T22:41:58.1151560Z ##[endgroup]
+2026-03-26T22:41:58.1160856Z [command]/usr/bin/git sparse-checkout disable
+2026-03-26T22:41:58.1200701Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-03-26T22:41:58.1233564Z ##[group]Checking out the ref
+2026-03-26T22:41:58.1237144Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-03-26T22:41:58.1290616Z Reset branch 'master'
+2026-03-26T22:41:58.1296040Z branch 'master' set up to track 'origin/master'.
+2026-03-26T22:41:58.1305121Z ##[endgroup]
+2026-03-26T22:41:58.1343994Z [command]/usr/bin/git log -1 --format=%H
+2026-03-26T22:41:58.1370076Z 7c0afb332d11eac786592fc3cc473470ae164577

@@ -1,0 +1,32 @@
+﻿2026-03-27T21:03:28.9105972Z Current runner version: '2.333.0'
+2026-03-27T21:03:28.9183333Z ##[group]Runner Image Provisioner
+2026-03-27T21:03:28.9184742Z Hosted Compute Agent
+2026-03-27T21:03:28.9185918Z Version: 20260213.493
+2026-03-27T21:03:28.9187095Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-27T21:03:28.9209044Z Build Date: 2026-02-13T00:28:41Z
+2026-03-27T21:03:28.9210243Z Worker ID: {b01535cb-3f9a-4d9d-9e68-82ecc963649d}
+2026-03-27T21:03:28.9211569Z Azure Region: eastus
+2026-03-27T21:03:28.9212517Z ##[endgroup]
+2026-03-27T21:03:28.9214774Z ##[group]Operating System
+2026-03-27T21:03:28.9215892Z Ubuntu
+2026-03-27T21:03:28.9216735Z 24.04.4
+2026-03-27T21:03:28.9217535Z LTS
+2026-03-27T21:03:28.9218744Z ##[endgroup]
+2026-03-27T21:03:28.9219639Z ##[group]Runner Image
+2026-03-27T21:03:28.9220597Z Image: ubuntu-24.04
+2026-03-27T21:03:28.9221616Z Version: 20260323.65.1
+2026-03-27T21:03:28.9223380Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-27T21:03:28.9226440Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+2026-03-27T21:03:28.9248777Z ##[endgroup]
+2026-03-27T21:03:28.9250915Z ##[group]GITHUB_TOKEN Permissions
+2026-03-27T21:03:28.9254001Z Contents: read
+2026-03-27T21:03:28.9255013Z Metadata: read
+2026-03-27T21:03:28.9256002Z Packages: read
+2026-03-27T21:03:28.9257247Z ##[endgroup]
+2026-03-27T21:03:28.9260816Z Secret source: Actions
+2026-03-27T21:03:28.9262106Z Prepare workflow directory
+2026-03-27T21:03:29.0257018Z Prepare all required actions
+2026-03-27T21:03:29.0314600Z Getting action download info
+2026-03-27T21:03:29.3020875Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-03-27T21:03:29.4705804Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+2026-03-27T21:03:29.7774146Z Complete job name: Terraform apply – variante2-naiv

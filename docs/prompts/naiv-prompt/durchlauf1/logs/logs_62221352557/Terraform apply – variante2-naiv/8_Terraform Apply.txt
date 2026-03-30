@@ -1,0 +1,21 @@
+﻿2026-03-26T21:04:36.9260462Z ##[group]Run terraform apply -auto-approve tfplan
+2026-03-26T21:04:36.9260877Z [36;1mterraform apply -auto-approve tfplan[0m
+2026-03-26T21:04:36.9286829Z shell: /usr/bin/bash -e {0}
+2026-03-26T21:04:36.9287085Z env:
+2026-03-26T21:04:36.9287380Z   ARM_CLIENT_ID: ***
+2026-03-26T21:04:36.9287771Z   ARM_CLIENT_SECRET: ***
+2026-03-26T21:04:36.9288079Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-26T21:04:36.9288361Z   ARM_TENANT_ID: ***
+2026-03-26T21:04:36.9288709Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/65e90139-e67c-4811-908b-1eaa2d624d89
+2026-03-26T21:04:36.9289114Z ##[endgroup]
+2026-03-26T21:04:45.4091905Z [0m[1mazurerm_resource_group.main: Creating...[0m[0m
+2026-03-26T21:04:45.6463334Z [31m╷[0m[0m
+2026-03-26T21:04:45.6487400Z [31m│[0m [0m[1m[31mError: [0m[0m[1mA resource with the ID "/subscriptions/***/resourceGroups/rg-infrastruktur-prod" already exists - to be managed via Terraform this resource needs to be imported into the State. Please see the resource documentation for "azurerm_resource_group" for more information.[0m
+2026-03-26T21:04:45.6489088Z [31m│[0m [0m
+2026-03-26T21:04:45.6489744Z [31m│[0m [0m[0m  with azurerm_resource_group.main,
+2026-03-26T21:04:45.6490538Z [31m│[0m [0m  on main.tf line 23, in resource "azurerm_resource_group" "main":
+2026-03-26T21:04:45.6491339Z [31m│[0m [0m  23: resource "azurerm_resource_group" "main" [4m{[0m[0m
+2026-03-26T21:04:45.6491728Z [31m│[0m [0m
+2026-03-26T21:04:45.6491948Z [31m╵[0m[0m
+2026-03-26T21:04:45.6547891Z ##[error]Terraform exited with code 1.
+2026-03-26T21:04:45.6598259Z ##[error]Process completed with exit code 1.

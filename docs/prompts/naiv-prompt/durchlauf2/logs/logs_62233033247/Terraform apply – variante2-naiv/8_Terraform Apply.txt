@@ -1,0 +1,67 @@
+﻿2026-03-26T22:49:45.1420499Z ##[group]Run terraform apply -auto-approve tfplan
+2026-03-26T22:49:45.1420904Z [36;1mterraform apply -auto-approve tfplan[0m
+2026-03-26T22:49:45.1468975Z shell: /usr/bin/bash -e {0}
+2026-03-26T22:49:45.1469217Z env:
+2026-03-26T22:49:45.1469514Z   ARM_CLIENT_ID: ***
+2026-03-26T22:49:45.1469906Z   ARM_CLIENT_SECRET: ***
+2026-03-26T22:49:45.1470210Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-26T22:49:45.1470486Z   ARM_TENANT_ID: ***
+2026-03-26T22:49:45.1470823Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82f8fea4-b127-407b-96c0-747cc9c6b851
+2026-03-26T22:49:45.1471204Z ##[endgroup]
+2026-03-26T22:49:55.2286932Z [0m[1mazurerm_resource_group.main: Creating...[0m[0m
+2026-03-26T22:50:05.2285847Z [0m[1mazurerm_resource_group.main: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:50:08.5477737Z [0m[1mazurerm_resource_group.main: Creation complete after 14s [id=/subscriptions/***/resourceGroups/firma-rg][0m
+2026-03-26T22:50:08.5601508Z [0m[1mazurerm_virtual_network.main: Creating...[0m[0m
+2026-03-26T22:50:08.5608821Z [0m[1mazurerm_public_ip.windows: Creating...[0m[0m
+2026-03-26T22:50:08.5664268Z [0m[1mazurerm_network_security_group.users: Creating...[0m[0m
+2026-03-26T22:50:08.5748312Z [0m[1mazurerm_network_security_group.app: Creating...[0m[0m
+2026-03-26T22:50:11.5809307Z [0m[1mazurerm_network_security_group.app: Creation complete after 3s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkSecurityGroups/firma-nsg-app][0m
+2026-03-26T22:50:12.1434163Z [0m[1mazurerm_public_ip.windows: Creation complete after 3s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/publicIPAddresses/firma-pip-win][0m
+2026-03-26T22:50:12.2825860Z [0m[1mazurerm_network_security_group.users: Creation complete after 3s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkSecurityGroups/firma-nsg-users][0m
+2026-03-26T22:50:14.8602696Z [0m[1mazurerm_virtual_network.main: Creation complete after 6s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet][0m
+2026-03-26T22:50:14.8648246Z [0m[1mazurerm_subnet.app: Creating...[0m[0m
+2026-03-26T22:50:14.8664899Z [0m[1mazurerm_subnet.users: Creating...[0m[0m
+2026-03-26T22:50:20.4917840Z [0m[1mazurerm_subnet.app: Creation complete after 5s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-app][0m
+2026-03-26T22:50:20.4983139Z [0m[1mazurerm_subnet_network_security_group_association.app: Creating...[0m[0m
+2026-03-26T22:50:20.4985660Z [0m[1mazurerm_network_interface.linux: Creating...[0m[0m
+2026-03-26T22:50:24.8673623Z [0m[1mazurerm_subnet.users: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:50:25.7219861Z [0m[1mazurerm_subnet.users: Creation complete after 11s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-users][0m
+2026-03-26T22:50:25.7282602Z [0m[1mazurerm_subnet_network_security_group_association.users: Creating...[0m[0m
+2026-03-26T22:50:25.7285785Z [0m[1mazurerm_network_interface.windows: Creating...[0m[0m
+2026-03-26T22:50:30.4989966Z [0m[1mazurerm_network_interface.linux: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:50:30.4991168Z [0m[1mazurerm_subnet_network_security_group_association.app: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:50:31.3343034Z [0m[1mazurerm_subnet_network_security_group_association.app: Creation complete after 11s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-app][0m
+2026-03-26T22:50:35.7277293Z [0m[1mazurerm_subnet_network_security_group_association.users: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:50:35.7297786Z [0m[1mazurerm_network_interface.windows: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:50:40.5011139Z [0m[1mazurerm_network_interface.linux: Still creating... [21s elapsed][0m[0m
+2026-03-26T22:50:42.8502672Z [0m[1mazurerm_network_interface.linux: Creation complete after 23s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkInterfaces/firma-nic-linux][0m
+2026-03-26T22:50:42.8580021Z [0m[1mazurerm_linux_virtual_machine.main: Creating...[0m[0m
+2026-03-26T22:50:45.7289167Z [0m[1mazurerm_subnet_network_security_group_association.users: Still creating... [20s elapsed][0m[0m
+2026-03-26T22:50:45.7308280Z [0m[1mazurerm_network_interface.windows: Still creating... [20s elapsed][0m[0m
+2026-03-26T22:50:48.3863637Z [0m[1mazurerm_subnet_network_security_group_association.users: Creation complete after 22s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-users][0m
+2026-03-26T22:50:51.4970529Z [0m[1mazurerm_network_interface.windows: Creation complete after 25s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkInterfaces/firma-nic-win][0m
+2026-03-26T22:50:51.5190417Z [0m[1mazurerm_windows_virtual_machine.main: Creating...[0m[0m
+2026-03-26T22:50:52.8589602Z [0m[1mazurerm_linux_virtual_machine.main: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:51:01.5185560Z [0m[1mazurerm_windows_virtual_machine.main: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:51:02.8591518Z [0m[1mazurerm_linux_virtual_machine.main: Still creating... [20s elapsed][0m[0m
+2026-03-26T22:51:11.5189165Z [0m[1mazurerm_windows_virtual_machine.main: Still creating... [20s elapsed][0m[0m
+2026-03-26T22:51:12.8603278Z [0m[1mazurerm_linux_virtual_machine.main: Still creating... [30s elapsed][0m[0m
+2026-03-26T22:51:21.5194324Z [0m[1mazurerm_windows_virtual_machine.main: Still creating... [30s elapsed][0m[0m
+2026-03-26T22:51:22.8608824Z [0m[1mazurerm_linux_virtual_machine.main: Still creating... [40s elapsed][0m[0m
+2026-03-26T22:51:31.5199102Z [0m[1mazurerm_windows_virtual_machine.main: Still creating... [40s elapsed][0m[0m
+2026-03-26T22:51:32.8613673Z [0m[1mazurerm_linux_virtual_machine.main: Still creating... [50s elapsed][0m[0m
+2026-03-26T22:51:34.2509606Z [0m[1mazurerm_linux_virtual_machine.main: Creation complete after 51s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Compute/virtualMachines/firma-vm-linux][0m
+2026-03-26T22:51:41.5201592Z [0m[1mazurerm_windows_virtual_machine.main: Still creating... [50s elapsed][0m[0m
+2026-03-26T22:51:51.5209756Z [0m[1mazurerm_windows_virtual_machine.main: Still creating... [1m0s elapsed][0m[0m
+2026-03-26T22:51:56.9243239Z [0m[1mazurerm_windows_virtual_machine.main: Creation complete after 1m5s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Compute/virtualMachines/firma-vm-win][0m
+2026-03-26T22:51:56.9342507Z [0m[1m[32m
+2026-03-26T22:51:56.9346954Z Apply complete! Resources: 13 added, 0 changed, 0 destroyed.
+2026-03-26T22:51:56.9348203Z [0m[0m[1m[32m
+2026-03-26T22:51:56.9349045Z Outputs:
+2026-03-26T22:51:56.9349465Z 
+2026-03-26T22:51:56.9353709Z [0mlinux_vm_private_ip = "10.0.2.4"
+2026-03-26T22:51:56.9354660Z rdp_connection_string = "mstsc /v:20.218.234.16"
+2026-03-26T22:51:56.9355608Z resource_group_name = "firma-rg"
+2026-03-26T22:51:56.9356413Z vnet_name = "firma-vnet"
+2026-03-26T22:51:56.9360868Z windows_vm_private_ip = "10.0.1.4"
+2026-03-26T22:51:56.9361325Z windows_vm_public_ip = "20.218.234.16"

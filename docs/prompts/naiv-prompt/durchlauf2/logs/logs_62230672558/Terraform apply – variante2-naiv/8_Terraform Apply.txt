@@ -1,0 +1,61 @@
+﻿2026-03-26T22:25:09.0811854Z ##[group]Run terraform apply -auto-approve tfplan
+2026-03-26T22:25:09.0881963Z [36;1mterraform apply -auto-approve tfplan[0m
+2026-03-26T22:25:09.0917557Z shell: /usr/bin/bash -e {0}
+2026-03-26T22:25:09.0917816Z env:
+2026-03-26T22:25:09.0918152Z   ARM_CLIENT_ID: ***
+2026-03-26T22:25:09.0918543Z   ARM_CLIENT_SECRET: ***
+2026-03-26T22:25:09.0918827Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-26T22:25:09.0919098Z   ARM_TENANT_ID: ***
+2026-03-26T22:25:09.0919416Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/422150c6-64d6-4e13-ab48-107898b7a8e2
+2026-03-26T22:25:09.0919778Z ##[endgroup]
+2026-03-26T22:25:16.2399666Z [0m[1mazurerm_resource_group.main: Creating...[0m[0m
+2026-03-26T22:25:26.2389153Z [0m[1mazurerm_resource_group.main: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:25:29.1296681Z [0m[1mazurerm_resource_group.main: Creation complete after 13s [id=/subscriptions/***/resourceGroups/firma-rg][0m
+2026-03-26T22:25:29.1401307Z [0m[1mazurerm_virtual_network.main: Creating...[0m[0m
+2026-03-26T22:25:29.1402753Z [0m[1mazurerm_public_ip.windows: Creating...[0m[0m
+2026-03-26T22:25:29.1461572Z [0m[1mazurerm_network_security_group.users: Creating...[0m[0m
+2026-03-26T22:25:29.1477713Z [0m[1mazurerm_network_security_group.app: Creating...[0m[0m
+2026-03-26T22:25:31.8011504Z [0m[1mazurerm_network_security_group.users: Creation complete after 3s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkSecurityGroups/firma-nsg-users][0m
+2026-03-26T22:25:32.3567708Z [0m[1mazurerm_public_ip.windows: Creation complete after 3s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/publicIPAddresses/firma-pip-win][0m
+2026-03-26T22:25:32.3982415Z [0m[1mazurerm_network_security_group.app: Creation complete after 3s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkSecurityGroups/firma-nsg-app][0m
+2026-03-26T22:25:34.5354736Z [0m[1mazurerm_virtual_network.main: Creation complete after 6s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet][0m
+2026-03-26T22:25:34.5436276Z [0m[1mazurerm_subnet.users: Creating...[0m[0m
+2026-03-26T22:25:34.5491009Z [0m[1mazurerm_subnet.app: Creating...[0m[0m
+2026-03-26T22:25:39.7960508Z [0m[1mazurerm_subnet.users: Creation complete after 5s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-users][0m
+2026-03-26T22:25:39.8015526Z [0m[1mazurerm_subnet_network_security_group_association.users: Creating...[0m[0m
+2026-03-26T22:25:39.8023408Z [0m[1mazurerm_network_interface.windows: Creating...[0m[0m
+2026-03-26T22:25:44.4720266Z [0m[1mazurerm_subnet.app: Creation complete after 9s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-app][0m
+2026-03-26T22:25:44.4777032Z [0m[1mazurerm_network_interface.linux: Creating...[0m[0m
+2026-03-26T22:25:44.4781673Z [0m[1mazurerm_subnet_network_security_group_association.app: Creating...[0m[0m
+2026-03-26T22:25:49.6825179Z [0m[1mazurerm_subnet_network_security_group_association.users: Creation complete after 10s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-users][0m
+2026-03-26T22:25:49.8026283Z [0m[1mazurerm_network_interface.windows: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:25:52.3001842Z [0m[1mazurerm_network_interface.windows: Creation complete after 12s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkInterfaces/firma-nic-win][0m
+2026-03-26T22:25:52.3094282Z [0m[1mazurerm_windows_virtual_machine.main: Creating...[0m[0m
+2026-03-26T22:25:54.4784155Z [0m[1mazurerm_network_interface.linux: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:25:54.4793550Z [0m[1mazurerm_subnet_network_security_group_association.app: Still creating... [10s elapsed][0m[0m
+2026-03-26T22:25:57.5123857Z [0m[1mazurerm_subnet_network_security_group_association.app: Creation complete after 14s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-app][0m
+2026-03-26T22:26:04.4786278Z [0m[1mazurerm_network_interface.linux: Still creating... [20s elapsed][0m[0m
+2026-03-26T22:26:08.6555389Z [0m[1mazurerm_network_interface.linux: Creation complete after 25s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkInterfaces/firma-nic-linux][0m
+2026-03-26T22:26:08.6624311Z [0m[1mazurerm_linux_virtual_machine.main: Creating...[0m[0m
+2026-03-26T22:26:10.4976377Z [31m╷[0m[0m
+2026-03-26T22:26:10.4989150Z [31m│[0m [0m[1m[31mError: [0m[0m[1mcreating Windows Virtual Machine (Subscription: "***"
+2026-03-26T22:26:10.4990029Z [31m│[0m [0mResource Group Name: "firma-rg"
+2026-03-26T22:26:10.5000190Z [31m│[0m [0mVirtual Machine Name: "firma-vm-win"): performing CreateOrUpdate: unexpected status 409 (409 Conflict) with error: OperationNotAllowed: Operation could not be completed as it results in exceeding approved standardBasv2Family Cores quota. Additional details - Deployment Model: Resource Manager, Location: GermanyWestCentral, Current Limit: 0, Current Usage: 0, Additional Required: 2, (Minimum) New Limit Required: 2. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22***%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22GermanyWestCentral%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22standardBasv2Family%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:2,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22standardBasv2Family%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/per-vm-quota-requests[0m
+2026-03-26T22:26:10.5008786Z [31m│[0m [0m
+2026-03-26T22:26:10.5009276Z [31m│[0m [0m[0m  with azurerm_windows_virtual_machine.main,
+2026-03-26T22:26:10.5010147Z [31m│[0m [0m  on main.tf line 205, in resource "azurerm_windows_virtual_machine" "main":
+2026-03-26T22:26:10.5021455Z [31m│[0m [0m 205: resource "azurerm_windows_virtual_machine" "main" [4m{[0m[0m
+2026-03-26T22:26:10.5022105Z [31m│[0m [0m
+2026-03-26T22:26:10.5022423Z [31m╵[0m[0m
+2026-03-26T22:26:10.5022749Z [31m╷[0m[0m
+2026-03-26T22:26:10.5023684Z [31m│[0m [0m[1m[31mError: [0m[0m[1mcreating Linux Virtual Machine (Subscription: "***"
+2026-03-26T22:26:10.5024465Z [31m│[0m [0mResource Group Name: "firma-rg"
+2026-03-26T22:26:10.5033095Z [31m│[0m [0mVirtual Machine Name: "firma-vm-linux"): performing CreateOrUpdate: unexpected status 409 (409 Conflict) with error: OperationNotAllowed: Operation could not be completed as it results in exceeding approved standardBasv2Family Cores quota. Additional details - Deployment Model: Resource Manager, Location: GermanyWestCentral, Current Limit: 0, Current Usage: 0, Additional Required: 2, (Minimum) New Limit Required: 2. Setup Alerts when Quota reaches threshold. Learn more at https://aka.ms/quotamonitoringalerting . Submit a request for Quota increase at https://aka.ms/ProdportalCRP/#blade/Microsoft_Azure_Capacity/UsageAndQuota.ReactView/Parameters/%7B%22subscriptionId%22:%22***%22,%22command%22:%22openQuotaApprovalBlade%22,%22quotas%22:[%7B%22location%22:%22GermanyWestCentral%22,%22providerId%22:%22Microsoft.Compute%22,%22resourceName%22:%22standardBasv2Family%22,%22quotaRequest%22:%7B%22properties%22:%7B%22limit%22:2,%22unit%22:%22Count%22,%22name%22:%7B%22value%22:%22standardBasv2Family%22%7D%7D%7D%7D]%7D by specifying parameters listed in the ‘Details’ section for deployment to succeed. Please read more about quota limits at https://docs.microsoft.com/en-us/azure/azure-supportability/per-vm-quota-requests[0m
+2026-03-26T22:26:10.5041270Z [31m│[0m [0m
+2026-03-26T22:26:10.5041842Z [31m│[0m [0m[0m  with azurerm_linux_virtual_machine.main,
+2026-03-26T22:26:10.5042753Z [31m│[0m [0m  on main.tf line 250, in resource "azurerm_linux_virtual_machine" "main":
+2026-03-26T22:26:10.5043773Z [31m│[0m [0m 250: resource "azurerm_linux_virtual_machine" "main" [4m{[0m[0m
+2026-03-26T22:26:10.5044473Z [31m│[0m [0m
+2026-03-26T22:26:10.5044840Z [31m╵[0m[0m
+2026-03-26T22:26:10.5122799Z ##[error]Terraform exited with code 1.
+2026-03-26T22:26:10.5153245Z ##[error]Process completed with exit code 1.

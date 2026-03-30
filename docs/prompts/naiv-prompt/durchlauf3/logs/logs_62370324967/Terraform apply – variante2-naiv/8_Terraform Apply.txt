@@ -1,0 +1,21 @@
+﻿2026-03-27T21:03:40.1237511Z ##[group]Run terraform apply -auto-approve tfplan
+2026-03-27T21:03:40.1238387Z [36;1mterraform apply -auto-approve tfplan[0m
+2026-03-27T21:03:40.1274552Z shell: /usr/bin/bash -e {0}
+2026-03-27T21:03:40.1274897Z env:
+2026-03-27T21:03:40.1275336Z   ARM_CLIENT_ID: ***
+2026-03-27T21:03:40.1275842Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:03:40.1276270Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:03:40.1276721Z   ARM_TENANT_ID: ***
+2026-03-27T21:03:40.1277281Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/c2c10345-465d-4132-9282-4f981b5fce98
+2026-03-27T21:03:40.1278450Z ##[endgroup]
+2026-03-27T21:03:47.1337301Z [0m[1mazurerm_resource_group.main: Creating...[0m[0m
+2026-03-27T21:03:47.4336769Z [31m╷[0m[0m
+2026-03-27T21:03:47.4343484Z [31m│[0m [0m[1m[31mError: [0m[0m[1mA resource with the ID "/subscriptions/***/resourceGroups/firma-rg" already exists - to be managed via Terraform this resource needs to be imported into the State. Please see the resource documentation for "azurerm_resource_group" for more information.[0m
+2026-03-27T21:03:47.4345750Z [31m│[0m [0m
+2026-03-27T21:03:47.4346555Z [31m│[0m [0m[0m  with azurerm_resource_group.main,
+2026-03-27T21:03:47.4348648Z [31m│[0m [0m  on main.tf line 32, in resource "azurerm_resource_group" "main":
+2026-03-27T21:03:47.4349598Z [31m│[0m [0m  32: resource "azurerm_resource_group" "main" [4m{[0m[0m
+2026-03-27T21:03:47.4350225Z [31m│[0m [0m
+2026-03-27T21:03:47.4350587Z [31m╵[0m[0m
+2026-03-27T21:03:47.4444815Z ##[error]Terraform exited with code 1.
+2026-03-27T21:03:47.4518386Z ##[error]Process completed with exit code 1.

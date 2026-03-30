@@ -1,0 +1,32 @@
+﻿2026-03-27T20:54:40.0970510Z Current runner version: '2.333.0'
+2026-03-27T20:54:40.1005405Z ##[group]Runner Image Provisioner
+2026-03-27T20:54:40.1006746Z Hosted Compute Agent
+2026-03-27T20:54:40.1007657Z Version: 20260213.493
+2026-03-27T20:54:40.1008784Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-27T20:54:40.1010013Z Build Date: 2026-02-13T00:28:41Z
+2026-03-27T20:54:40.1011482Z Worker ID: {e1194bcc-0fa0-4e4a-8889-e6be746d233a}
+2026-03-27T20:54:40.1012745Z Azure Region: northcentralus
+2026-03-27T20:54:40.1013819Z ##[endgroup]
+2026-03-27T20:54:40.1016191Z ##[group]Operating System
+2026-03-27T20:54:40.1017268Z Ubuntu
+2026-03-27T20:54:40.1018119Z 24.04.4
+2026-03-27T20:54:40.1019161Z LTS
+2026-03-27T20:54:40.1020304Z ##[endgroup]
+2026-03-27T20:54:40.1021437Z ##[group]Runner Image
+2026-03-27T20:54:40.1022612Z Image: ubuntu-24.04
+2026-03-27T20:54:40.1023641Z Version: 20260323.65.1
+2026-03-27T20:54:40.1025730Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-27T20:54:40.1028756Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+2026-03-27T20:54:40.1030995Z ##[endgroup]
+2026-03-27T20:54:40.1033151Z ##[group]GITHUB_TOKEN Permissions
+2026-03-27T20:54:40.1035901Z Contents: read
+2026-03-27T20:54:40.1036896Z Metadata: read
+2026-03-27T20:54:40.1037795Z Packages: read
+2026-03-27T20:54:40.1039016Z ##[endgroup]
+2026-03-27T20:54:40.1060992Z Secret source: Actions
+2026-03-27T20:54:40.1062318Z Prepare workflow directory
+2026-03-27T20:54:40.2019136Z Prepare all required actions
+2026-03-27T20:54:40.2134181Z Getting action download info
+2026-03-27T20:54:40.5251363Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-03-27T20:54:40.6812973Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+2026-03-27T20:54:41.2581623Z Complete job name: Terraform apply – variante2-naiv

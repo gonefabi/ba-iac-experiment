@@ -1,0 +1,8 @@
+2026-03-27T21:11:45.9890000Z Evaluating terraform.if
+2026-03-27T21:11:45.9890000Z Evaluating: success()
+2026-03-27T21:11:45.9890000Z Result: true
+2026-03-27T21:11:45.9910000Z Requested labels: ubuntu-latest
+2026-03-27T21:11:45.9910000Z Job defined at: gonefabi/ba-iac-experiment/.github/workflows/terraform.yml@refs/heads/master
+2026-03-27T21:11:45.9910000Z Waiting for a runner to pick up this job...
+2026-03-27T21:11:46.8090000Z Job is about to start running on the hosted runner: GitHub Actions 1000000300
+2026-03-27T21:11:46.8090000Z Job is waiting for a hosted runner to come online.

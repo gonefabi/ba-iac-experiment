@@ -1,0 +1,77 @@
+﻿2026-03-27T21:07:27.5380821Z ##[group]Run actions/checkout@v4
+2026-03-27T21:07:27.5381923Z with:
+2026-03-27T21:07:27.5382433Z   repository: gonefabi/ba-iac-experiment
+2026-03-27T21:07:27.5383238Z   token: ***
+2026-03-27T21:07:27.5383693Z   ssh-strict: true
+2026-03-27T21:07:27.5384149Z   ssh-user: git
+2026-03-27T21:07:27.5384620Z   persist-credentials: true
+2026-03-27T21:07:27.5385353Z   clean: true
+2026-03-27T21:07:27.5385832Z   sparse-checkout-cone-mode: true
+2026-03-27T21:07:27.5386377Z   fetch-depth: 1
+2026-03-27T21:07:27.5386863Z   fetch-tags: false
+2026-03-27T21:07:27.5387343Z   show-progress: true
+2026-03-27T21:07:27.5387813Z   lfs: false
+2026-03-27T21:07:27.5388245Z   submodules: false
+2026-03-27T21:07:27.5388740Z   set-safe-directory: true
+2026-03-27T21:07:27.5389577Z env:
+2026-03-27T21:07:27.5390158Z   ARM_CLIENT_ID: ***
+2026-03-27T21:07:27.5390836Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:07:27.5391492Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:07:27.5392098Z   ARM_TENANT_ID: ***
+2026-03-27T21:07:27.5392570Z ##[endgroup]
+2026-03-27T21:07:27.6626643Z Syncing repository: gonefabi/ba-iac-experiment
+2026-03-27T21:07:27.6629930Z ##[group]Getting Git version info
+2026-03-27T21:07:27.6631526Z Working directory is '/home/runner/work/ba-iac-experiment/ba-iac-experiment'
+2026-03-27T21:07:27.6633853Z [command]/usr/bin/git version
+2026-03-27T21:07:27.6658713Z git version 2.53.0
+2026-03-27T21:07:27.6690743Z ##[endgroup]
+2026-03-27T21:07:27.6708621Z Temporarily overriding HOME='/home/runner/work/_temp/decc8d94-030b-4006-86aa-f3e83f7538ff' before making global git config changes
+2026-03-27T21:07:27.6713127Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-27T21:07:27.6716000Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-27T21:07:27.6758634Z Deleting the contents of '/home/runner/work/ba-iac-experiment/ba-iac-experiment'
+2026-03-27T21:07:27.6761903Z ##[group]Initializing the repository
+2026-03-27T21:07:27.6768451Z [command]/usr/bin/git init /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-27T21:07:27.6859872Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-03-27T21:07:27.6866804Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-03-27T21:07:27.6868824Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-03-27T21:07:27.6870394Z hint: call:
+2026-03-27T21:07:27.6871248Z hint:
+2026-03-27T21:07:27.6872243Z hint: 	git config --global init.defaultBranch <name>
+2026-03-27T21:07:27.6873428Z hint:
+2026-03-27T21:07:27.6874524Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-03-27T21:07:27.6876691Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-03-27T21:07:27.6878190Z hint:
+2026-03-27T21:07:27.6879056Z hint: 	git branch -m <name>
+2026-03-27T21:07:27.6880082Z hint:
+2026-03-27T21:07:27.6881289Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-03-27T21:07:27.6883476Z Initialized empty Git repository in /home/runner/work/ba-iac-experiment/ba-iac-experiment/.git/
+2026-03-27T21:07:27.6887218Z [command]/usr/bin/git remote add origin https://github.com/gonefabi/ba-iac-experiment
+2026-03-27T21:07:27.6924601Z ##[endgroup]
+2026-03-27T21:07:27.6927368Z ##[group]Disabling automatic garbage collection
+2026-03-27T21:07:27.6929057Z [command]/usr/bin/git config --local gc.auto 0
+2026-03-27T21:07:27.6963594Z ##[endgroup]
+2026-03-27T21:07:27.6967988Z ##[group]Setting up auth
+2026-03-27T21:07:27.6970655Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-27T21:07:27.7006776Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-27T21:07:27.8119530Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-27T21:07:27.8126185Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-27T21:07:27.8133558Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-27T21:07:27.8139072Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-27T21:07:27.8167160Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-03-27T21:07:27.8207385Z ##[endgroup]
+2026-03-27T21:07:27.8210675Z ##[group]Fetching the repository
+2026-03-27T21:07:27.8219935Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c51c3bc8c4506111796dc22f838b6cf2f8dd021e:refs/remotes/origin/master
+2026-03-27T21:07:28.2469835Z From https://github.com/gonefabi/ba-iac-experiment
+2026-03-27T21:07:28.2473165Z  * [new ref]         c51c3bc8c4506111796dc22f838b6cf2f8dd021e -> origin/master
+2026-03-27T21:07:28.2478419Z ##[endgroup]
+2026-03-27T21:07:28.2480340Z ##[group]Determining the checkout info
+2026-03-27T21:07:28.2483633Z ##[endgroup]
+2026-03-27T21:07:28.2486199Z [command]/usr/bin/git sparse-checkout disable
+2026-03-27T21:07:28.2518935Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-03-27T21:07:28.2552288Z ##[group]Checking out the ref
+2026-03-27T21:07:28.2556211Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-03-27T21:07:28.2608513Z Reset branch 'master'
+2026-03-27T21:07:28.2611896Z branch 'master' set up to track 'origin/master'.
+2026-03-27T21:07:28.2622846Z ##[endgroup]
+2026-03-27T21:07:28.2658236Z [command]/usr/bin/git log -1 --format=%H
+2026-03-27T21:07:28.2683428Z c51c3bc8c4506111796dc22f838b6cf2f8dd021e

@@ -1,0 +1,32 @@
+﻿2026-03-26T21:16:58.1385342Z Current runner version: '2.333.0'
+2026-03-26T21:16:58.1420583Z ##[group]Runner Image Provisioner
+2026-03-26T21:16:58.1422068Z Hosted Compute Agent
+2026-03-26T21:16:58.1423004Z Version: 20260213.493
+2026-03-26T21:16:58.1423980Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-26T21:16:58.1425279Z Build Date: 2026-02-13T00:28:41Z
+2026-03-26T21:16:58.1426484Z Worker ID: {7c1c415d-3440-4047-895e-81e88f123c74}
+2026-03-26T21:16:58.1428132Z Azure Region: eastus2
+2026-03-26T21:16:58.1429254Z ##[endgroup]
+2026-03-26T21:16:58.1431689Z ##[group]Operating System
+2026-03-26T21:16:58.1432803Z Ubuntu
+2026-03-26T21:16:58.1433687Z 24.04.4
+2026-03-26T21:16:58.1434582Z LTS
+2026-03-26T21:16:58.1435573Z ##[endgroup]
+2026-03-26T21:16:58.1436566Z ##[group]Runner Image
+2026-03-26T21:16:58.1437839Z Image: ubuntu-24.04
+2026-03-26T21:16:58.1438957Z Version: 20260323.65.1
+2026-03-26T21:16:58.1440874Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-26T21:16:58.1443918Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+2026-03-26T21:16:58.1445681Z ##[endgroup]
+2026-03-26T21:16:58.1448152Z ##[group]GITHUB_TOKEN Permissions
+2026-03-26T21:16:58.1450838Z Contents: read
+2026-03-26T21:16:58.1451931Z Metadata: read
+2026-03-26T21:16:58.1452890Z Packages: read
+2026-03-26T21:16:58.1453757Z ##[endgroup]
+2026-03-26T21:16:58.1456672Z Secret source: Actions
+2026-03-26T21:16:58.1458240Z Prepare workflow directory
+2026-03-26T21:16:58.2341885Z Prepare all required actions
+2026-03-26T21:16:58.2400279Z Getting action download info
+2026-03-26T21:16:58.6288734Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-03-26T21:16:59.8815753Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+2026-03-26T21:17:00.2398937Z Complete job name: Terraform apply – variante2-naiv

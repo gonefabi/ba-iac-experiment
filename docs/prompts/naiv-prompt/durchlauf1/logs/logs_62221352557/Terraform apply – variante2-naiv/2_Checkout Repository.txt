@@ -1,0 +1,77 @@
+﻿2026-03-26T21:04:21.9496233Z ##[group]Run actions/checkout@v4
+2026-03-26T21:04:21.9497580Z with:
+2026-03-26T21:04:21.9498386Z   repository: gonefabi/ba-iac-experiment
+2026-03-26T21:04:21.9499714Z   token: ***
+2026-03-26T21:04:21.9500462Z   ssh-strict: true
+2026-03-26T21:04:21.9501227Z   ssh-user: git
+2026-03-26T21:04:21.9502015Z   persist-credentials: true
+2026-03-26T21:04:21.9502901Z   clean: true
+2026-03-26T21:04:21.9503692Z   sparse-checkout-cone-mode: true
+2026-03-26T21:04:21.9504878Z   fetch-depth: 1
+2026-03-26T21:04:21.9505650Z   fetch-tags: false
+2026-03-26T21:04:21.9506444Z   show-progress: true
+2026-03-26T21:04:21.9507242Z   lfs: false
+2026-03-26T21:04:21.9507963Z   submodules: false
+2026-03-26T21:04:21.9508784Z   set-safe-directory: true
+2026-03-26T21:04:21.9509911Z env:
+2026-03-26T21:04:21.9510816Z   ARM_CLIENT_ID: ***
+2026-03-26T21:04:21.9512003Z   ARM_CLIENT_SECRET: ***
+2026-03-26T21:04:21.9513108Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-26T21:04:21.9514366Z   ARM_TENANT_ID: ***
+2026-03-26T21:04:21.9515162Z ##[endgroup]
+2026-03-26T21:04:22.0693456Z Syncing repository: gonefabi/ba-iac-experiment
+2026-03-26T21:04:22.0729181Z ##[group]Getting Git version info
+2026-03-26T21:04:22.0731539Z Working directory is '/home/runner/work/ba-iac-experiment/ba-iac-experiment'
+2026-03-26T21:04:22.0735125Z [command]/usr/bin/git version
+2026-03-26T21:04:22.1406250Z git version 2.53.0
+2026-03-26T21:04:22.1467658Z ##[endgroup]
+2026-03-26T21:04:22.1540058Z Temporarily overriding HOME='/home/runner/work/_temp/92a44fe7-c603-4098-90c9-b1a481445192' before making global git config changes
+2026-03-26T21:04:22.1546412Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-26T21:04:22.1551596Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-26T21:04:22.1860092Z Deleting the contents of '/home/runner/work/ba-iac-experiment/ba-iac-experiment'
+2026-03-26T21:04:22.1866141Z ##[group]Initializing the repository
+2026-03-26T21:04:22.1869965Z [command]/usr/bin/git init /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-26T21:04:22.2033100Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-03-26T21:04:22.2047887Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-03-26T21:04:22.2052190Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-03-26T21:04:22.2054822Z hint: call:
+2026-03-26T21:04:22.2055951Z hint:
+2026-03-26T21:04:22.2057378Z hint: 	git config --global init.defaultBranch <name>
+2026-03-26T21:04:22.2059245Z hint:
+2026-03-26T21:04:22.2060970Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-03-26T21:04:22.2063854Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-03-26T21:04:22.2077351Z hint:
+2026-03-26T21:04:22.2078573Z hint: 	git branch -m <name>
+2026-03-26T21:04:22.2079954Z hint:
+2026-03-26T21:04:22.2081833Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-03-26T21:04:22.2091260Z Initialized empty Git repository in /home/runner/work/ba-iac-experiment/ba-iac-experiment/.git/
+2026-03-26T21:04:22.2098228Z [command]/usr/bin/git remote add origin https://github.com/gonefabi/ba-iac-experiment
+2026-03-26T21:04:22.5865158Z ##[endgroup]
+2026-03-26T21:04:22.5867382Z ##[group]Disabling automatic garbage collection
+2026-03-26T21:04:22.5875495Z [command]/usr/bin/git config --local gc.auto 0
+2026-03-26T21:04:22.5908374Z ##[endgroup]
+2026-03-26T21:04:22.5915905Z ##[group]Setting up auth
+2026-03-26T21:04:22.5927385Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-26T21:04:22.5979928Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-26T21:04:23.2021054Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-26T21:04:23.2055593Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-26T21:04:23.2297193Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-26T21:04:23.2340716Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-26T21:04:23.2588313Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-03-26T21:04:23.2625951Z ##[endgroup]
+2026-03-26T21:04:23.2629022Z ##[group]Fetching the repository
+2026-03-26T21:04:23.2637062Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +239a850d726966f793bfc929922864a14d9b5f51:refs/remotes/origin/master
+2026-03-26T21:04:23.4908702Z From https://github.com/gonefabi/ba-iac-experiment
+2026-03-26T21:04:23.4917520Z  * [new ref]         239a850d726966f793bfc929922864a14d9b5f51 -> origin/master
+2026-03-26T21:04:23.4971494Z ##[endgroup]
+2026-03-26T21:04:23.4986079Z ##[group]Determining the checkout info
+2026-03-26T21:04:23.4989344Z ##[endgroup]
+2026-03-26T21:04:23.4995949Z [command]/usr/bin/git sparse-checkout disable
+2026-03-26T21:04:23.5070468Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-03-26T21:04:23.5118247Z ##[group]Checking out the ref
+2026-03-26T21:04:23.5129504Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-03-26T21:04:23.5200501Z Reset branch 'master'
+2026-03-26T21:04:23.5210009Z branch 'master' set up to track 'origin/master'.
+2026-03-26T21:04:23.5227438Z ##[endgroup]
+2026-03-26T21:04:23.5292047Z [command]/usr/bin/git log -1 --format=%H
+2026-03-26T21:04:23.5328716Z 239a850d726966f793bfc929922864a14d9b5f51

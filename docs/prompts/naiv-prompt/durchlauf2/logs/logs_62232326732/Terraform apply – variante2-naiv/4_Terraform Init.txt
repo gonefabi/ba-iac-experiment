@@ -1,0 +1,32 @@
+﻿2026-03-26T22:41:59.4276972Z ##[group]Run terraform init
+2026-03-26T22:41:59.4277471Z [36;1mterraform init[0m
+2026-03-26T22:41:59.4333069Z shell: /usr/bin/bash -e {0}
+2026-03-26T22:41:59.4333712Z env:
+2026-03-26T22:41:59.4334852Z   ARM_CLIENT_ID: ***
+2026-03-26T22:41:59.4335826Z   ARM_CLIENT_SECRET: ***
+2026-03-26T22:41:59.4336456Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-26T22:41:59.4337141Z   ARM_TENANT_ID: ***
+2026-03-26T22:41:59.4338248Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/68a3615a-c04c-420f-a0a0-be03dce3db01
+2026-03-26T22:41:59.4339492Z ##[endgroup]
+2026-03-26T22:41:59.6554203Z 
+2026-03-26T22:41:59.6561378Z [0m[1mInitializing the backend...[0m
+2026-03-26T22:41:59.6567620Z 
+2026-03-26T22:41:59.6568071Z [0m[1mInitializing provider plugins...[0m
+2026-03-26T22:41:59.6568881Z - Finding hashicorp/azurerm versions matching "~> 3.100"...
+2026-03-26T22:41:59.7836259Z - Installing hashicorp/azurerm v3.117.1...
+2026-03-26T22:42:01.4820755Z - Installed hashicorp/azurerm v3.117.1 (signed by HashiCorp)
+2026-03-26T22:42:01.4821999Z 
+2026-03-26T22:42:01.4823221Z Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+2026-03-26T22:42:01.4824601Z selections it made above. Include this file in your version control repository
+2026-03-26T22:42:01.4825844Z so that Terraform can guarantee to make the same selections by default when
+2026-03-26T22:42:01.4826972Z you run "terraform init" in the future.[0m
+2026-03-26T22:42:01.4827569Z 
+2026-03-26T22:42:01.4828386Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+2026-03-26T22:42:01.4829116Z [0m[32m
+2026-03-26T22:42:01.4829943Z You may now begin working with Terraform. Try running "terraform plan" to see
+2026-03-26T22:42:01.4831143Z any changes that are required for your infrastructure. All Terraform commands
+2026-03-26T22:42:01.4851348Z should now work.
+2026-03-26T22:42:01.4851633Z 
+2026-03-26T22:42:01.4852064Z If you ever set or change modules or backend configuration for Terraform,
+2026-03-26T22:42:01.4853148Z rerun this command to reinitialize your working directory. If you forget, other
+2026-03-26T22:42:01.4854566Z commands will detect it and remind you to do so if necessary.[0m

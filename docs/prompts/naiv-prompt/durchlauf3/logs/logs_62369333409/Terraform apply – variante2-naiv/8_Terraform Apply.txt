@@ -1,0 +1,71 @@
+﻿2026-03-27T20:54:57.4939640Z ##[group]Run terraform apply -auto-approve tfplan
+2026-03-27T20:54:57.4940312Z [36;1mterraform apply -auto-approve tfplan[0m
+2026-03-27T20:54:57.4966503Z shell: /usr/bin/bash -e {0}
+2026-03-27T20:54:57.4966746Z env:
+2026-03-27T20:54:57.4967044Z   ARM_CLIENT_ID: ***
+2026-03-27T20:54:57.4967395Z   ARM_CLIENT_SECRET: ***
+2026-03-27T20:54:57.4967740Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T20:54:57.4968017Z   ARM_TENANT_ID: ***
+2026-03-27T20:54:57.4968360Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/9a9caa9e-80fc-4e0e-abf0-6c307ba60bfe
+2026-03-27T20:54:57.4968754Z ##[endgroup]
+2026-03-27T20:55:06.4769630Z [0m[1mazurerm_resource_group.main: Creating...[0m[0m
+2026-03-27T20:55:16.4775072Z [0m[1mazurerm_resource_group.main: Still creating... [10s elapsed][0m[0m
+2026-03-27T20:55:18.3547638Z [0m[1mazurerm_resource_group.main: Creation complete after 12s [id=/subscriptions/***/resourceGroups/firma-rg][0m
+2026-03-27T20:55:18.3713662Z [0m[1mazurerm_virtual_network.main: Creating...[0m[0m
+2026-03-27T20:55:18.3718531Z [0m[1mazurerm_public_ip.windows: Creating...[0m[0m
+2026-03-27T20:55:18.3722790Z [0m[1mazurerm_route_table.anwendung: Creating...[0m[0m
+2026-03-27T20:55:18.3811229Z [0m[1mazurerm_network_security_group.anwendung: Creating...[0m[0m
+2026-03-27T20:55:18.3846830Z [0m[1mazurerm_network_security_group.benutzer: Creating...[0m[0m
+2026-03-27T20:55:21.2879779Z [0m[1mazurerm_network_security_group.benutzer: Creation complete after 3s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkSecurityGroups/firma-nsg-benutzer][0m
+2026-03-27T20:55:21.4693910Z [0m[1mazurerm_public_ip.windows: Creation complete after 3s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/publicIPAddresses/firma-pip-win][0m
+2026-03-27T20:55:21.6188366Z [0m[1mazurerm_network_security_group.anwendung: Creation complete after 4s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkSecurityGroups/firma-nsg-anwendung][0m
+2026-03-27T20:55:22.6684125Z [0m[1mazurerm_route_table.anwendung: Creation complete after 5s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/routeTables/firma-rt-anwendung][0m
+2026-03-27T20:55:23.7660379Z [0m[1mazurerm_virtual_network.main: Creation complete after 6s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet][0m
+2026-03-27T20:55:23.7726631Z [0m[1mazurerm_subnet.anwendung: Creating...[0m[0m
+2026-03-27T20:55:23.7727151Z [0m[1mazurerm_subnet.benutzer: Creating...[0m[0m
+2026-03-27T20:55:29.1867221Z [0m[1mazurerm_subnet.anwendung: Creation complete after 5s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-anwendung][0m
+2026-03-27T20:55:29.1941767Z [0m[1mazurerm_subnet_network_security_group_association.anwendung: Creating...[0m[0m
+2026-03-27T20:55:29.1945276Z [0m[1mazurerm_subnet_route_table_association.anwendung: Creating...[0m[0m
+2026-03-27T20:55:29.1955886Z [0m[1mazurerm_network_interface.linux: Creating...[0m[0m
+2026-03-27T20:55:33.7714859Z [0m[1mazurerm_subnet.benutzer: Still creating... [10s elapsed][0m[0m
+2026-03-27T20:55:34.2800327Z [0m[1mazurerm_subnet.benutzer: Creation complete after 10s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-benutzer][0m
+2026-03-27T20:55:34.2876215Z [0m[1mazurerm_subnet_network_security_group_association.benutzer: Creating...[0m[0m
+2026-03-27T20:55:34.2907997Z [0m[1mazurerm_network_interface.windows: Creating...[0m[0m
+2026-03-27T20:55:39.1951217Z [0m[1mazurerm_subnet_network_security_group_association.anwendung: Still creating... [10s elapsed][0m[0m
+2026-03-27T20:55:39.1973700Z [0m[1mazurerm_subnet_route_table_association.anwendung: Still creating... [10s elapsed][0m[0m
+2026-03-27T20:55:39.1975459Z [0m[1mazurerm_network_interface.linux: Still creating... [10s elapsed][0m[0m
+2026-03-27T20:55:39.4696112Z [0m[1mazurerm_subnet_network_security_group_association.anwendung: Creation complete after 10s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-anwendung][0m
+2026-03-27T20:55:44.2883675Z [0m[1mazurerm_subnet_network_security_group_association.benutzer: Still creating... [10s elapsed][0m[0m
+2026-03-27T20:55:44.2913676Z [0m[1mazurerm_network_interface.windows: Still creating... [10s elapsed][0m[0m
+2026-03-27T20:55:45.4930694Z [0m[1mazurerm_subnet_route_table_association.anwendung: Creation complete after 16s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-anwendung][0m
+2026-03-27T20:55:49.1984017Z [0m[1mazurerm_network_interface.linux: Still creating... [20s elapsed][0m[0m
+2026-03-27T20:55:54.2886168Z [0m[1mazurerm_subnet_network_security_group_association.benutzer: Still creating... [20s elapsed][0m[0m
+2026-03-27T20:55:54.2916715Z [0m[1mazurerm_network_interface.windows: Still creating... [20s elapsed][0m[0m
+2026-03-27T20:55:56.9322746Z [0m[1mazurerm_network_interface.linux: Creation complete after 28s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkInterfaces/firma-nic-linux][0m
+2026-03-27T20:55:56.9469741Z [0m[1mazurerm_linux_virtual_machine.main: Creating...[0m[0m
+2026-03-27T20:56:02.5062614Z [0m[1mazurerm_subnet_network_security_group_association.benutzer: Creation complete after 29s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/virtualNetworks/firma-vnet/subnets/snet-benutzer][0m
+2026-03-27T20:56:04.2927991Z [0m[1mazurerm_network_interface.windows: Still creating... [30s elapsed][0m[0m
+2026-03-27T20:56:04.8887153Z [0m[1mazurerm_network_interface.windows: Creation complete after 31s [id=/subscriptions/***/resourceGroups/firma-rg/providers/Microsoft.Network/networkInterfaces/firma-nic-win][0m
+2026-03-27T20:56:04.8958382Z [0m[1mazurerm_windows_virtual_machine.main: Creating...[0m[0m
+2026-03-27T20:56:07.1425619Z [31m╷[0m[0m
+2026-03-27T20:56:07.1426881Z [31m│[0m [0m[1m[31mError: [0m[0m[1mcreating Windows Virtual Machine (Subscription: "***"
+2026-03-27T20:56:07.1427712Z [31m│[0m [0mResource Group Name: "firma-rg"
+2026-03-27T20:56:07.1430498Z [31m│[0m [0mVirtual Machine Name: "firma-vm-win"): performing CreateOrUpdate: unexpected status 409 (409 Conflict) with error: SkuNotAvailable: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2s' is currently not available in location 'GermanyWestCentral'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.[0m
+2026-03-27T20:56:07.1434317Z [31m│[0m [0m
+2026-03-27T20:56:07.1435563Z [31m│[0m [0m[0m  with azurerm_windows_virtual_machine.main,
+2026-03-27T20:56:07.1436511Z [31m│[0m [0m  on main.tf line 244, in resource "azurerm_windows_virtual_machine" "main":
+2026-03-27T20:56:07.1437573Z [31m│[0m [0m 244: resource "azurerm_windows_virtual_machine" "main" [4m{[0m[0m
+2026-03-27T20:56:07.1438263Z [31m│[0m [0m
+2026-03-27T20:56:07.1438604Z [31m╵[0m[0m
+2026-03-27T20:56:07.1438925Z [31m╷[0m[0m
+2026-03-27T20:56:07.1439874Z [31m│[0m [0m[1m[31mError: [0m[0m[1mcreating Linux Virtual Machine (Subscription: "***"
+2026-03-27T20:56:07.1441017Z [31m│[0m [0mResource Group Name: "firma-rg"
+2026-03-27T20:56:07.1444431Z [31m│[0m [0mVirtual Machine Name: "firma-vm-linux"): performing CreateOrUpdate: unexpected status 409 (409 Conflict) with error: SkuNotAvailable: The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard_B2s' is currently not available in location 'GermanyWestCentral'. Please try another size or deploy to a different location or different zone. See https://aka.ms/azureskunotavailable for details.[0m
+2026-03-27T20:56:07.1447360Z [31m│[0m [0m
+2026-03-27T20:56:07.1447831Z [31m│[0m [0m[0m  with azurerm_linux_virtual_machine.main,
+2026-03-27T20:56:07.1448855Z [31m│[0m [0m  on main.tf line 288, in resource "azurerm_linux_virtual_machine" "main":
+2026-03-27T20:56:07.1449702Z [31m│[0m [0m 288: resource "azurerm_linux_virtual_machine" "main" [4m{[0m[0m
+2026-03-27T20:56:07.1450606Z [31m│[0m [0m
+2026-03-27T20:56:07.1450924Z [31m╵[0m[0m
+2026-03-27T20:56:07.1521876Z ##[error]Terraform exited with code 1.
+2026-03-27T20:56:07.1568065Z ##[error]Process completed with exit code 1.

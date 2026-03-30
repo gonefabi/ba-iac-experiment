@@ -1,0 +1,709 @@
+﻿2026-03-27T21:03:28.9106912Z Current runner version: '2.333.0'
+2026-03-27T21:03:28.9183368Z ##[group]Runner Image Provisioner
+2026-03-27T21:03:28.9184763Z Hosted Compute Agent
+2026-03-27T21:03:28.9185937Z Version: 20260213.493
+2026-03-27T21:03:28.9187115Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-27T21:03:28.9209071Z Build Date: 2026-02-13T00:28:41Z
+2026-03-27T21:03:28.9210252Z Worker ID: {b01535cb-3f9a-4d9d-9e68-82ecc963649d}
+2026-03-27T21:03:28.9211578Z Azure Region: eastus
+2026-03-27T21:03:28.9212524Z ##[endgroup]
+2026-03-27T21:03:28.9214793Z ##[group]Operating System
+2026-03-27T21:03:28.9215900Z Ubuntu
+2026-03-27T21:03:28.9216741Z 24.04.4
+2026-03-27T21:03:28.9217542Z LTS
+2026-03-27T21:03:28.9218756Z ##[endgroup]
+2026-03-27T21:03:28.9219647Z ##[group]Runner Image
+2026-03-27T21:03:28.9220607Z Image: ubuntu-24.04
+2026-03-27T21:03:28.9221624Z Version: 20260323.65.1
+2026-03-27T21:03:28.9223692Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-27T21:03:28.9226451Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+2026-03-27T21:03:28.9248808Z ##[endgroup]
+2026-03-27T21:03:28.9250946Z ##[group]GITHUB_TOKEN Permissions
+2026-03-27T21:03:28.9254027Z Contents: read
+2026-03-27T21:03:28.9255027Z Metadata: read
+2026-03-27T21:03:28.9256021Z Packages: read
+2026-03-27T21:03:28.9257273Z ##[endgroup]
+2026-03-27T21:03:28.9260844Z Secret source: Actions
+2026-03-27T21:03:28.9262124Z Prepare workflow directory
+2026-03-27T21:03:29.0257063Z Prepare all required actions
+2026-03-27T21:03:29.0314636Z Getting action download info
+2026-03-27T21:03:29.3020927Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-03-27T21:03:29.4705840Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+2026-03-27T21:03:29.7774172Z Complete job name: Terraform apply – variante2-naiv
+2026-03-27T21:03:29.8500746Z ##[group]Run actions/checkout@v4
+2026-03-27T21:03:29.8502281Z with:
+2026-03-27T21:03:29.8503090Z   repository: gonefabi/ba-iac-experiment
+2026-03-27T21:03:29.8504324Z   token: ***
+2026-03-27T21:03:29.8505153Z   ssh-strict: true
+2026-03-27T21:03:29.8505940Z   ssh-user: git
+2026-03-27T21:03:29.8506743Z   persist-credentials: true
+2026-03-27T21:03:29.8507663Z   clean: true
+2026-03-27T21:03:29.8508823Z   sparse-checkout-cone-mode: true
+2026-03-27T21:03:29.8509770Z   fetch-depth: 1
+2026-03-27T21:03:29.8510533Z   fetch-tags: false
+2026-03-27T21:03:29.8511330Z   show-progress: true
+2026-03-27T21:03:29.8512143Z   lfs: false
+2026-03-27T21:03:29.8512877Z   submodules: false
+2026-03-27T21:03:29.8513673Z   set-safe-directory: true
+2026-03-27T21:03:29.8514875Z env:
+2026-03-27T21:03:29.8515770Z   ARM_CLIENT_ID: ***
+2026-03-27T21:03:29.8516824Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:03:29.8518125Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:03:29.8519132Z   ARM_TENANT_ID: ***
+2026-03-27T21:03:29.8519887Z ##[endgroup]
+2026-03-27T21:03:30.0178798Z Syncing repository: gonefabi/ba-iac-experiment
+2026-03-27T21:03:30.0182457Z ##[group]Getting Git version info
+2026-03-27T21:03:30.0366632Z Working directory is '/home/runner/work/ba-iac-experiment/ba-iac-experiment'
+2026-03-27T21:03:30.0369991Z [command]/usr/bin/git version
+2026-03-27T21:03:30.0371783Z git version 2.53.0
+2026-03-27T21:03:30.0375919Z ##[endgroup]
+2026-03-27T21:03:30.0382817Z Temporarily overriding HOME='/home/runner/work/_temp/d547310a-29dd-40ac-ba25-e58a04cc6222' before making global git config changes
+2026-03-27T21:03:30.0384970Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-27T21:03:30.0387296Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-27T21:03:30.0392345Z Deleting the contents of '/home/runner/work/ba-iac-experiment/ba-iac-experiment'
+2026-03-27T21:03:30.0394749Z ##[group]Initializing the repository
+2026-03-27T21:03:30.0396465Z [command]/usr/bin/git init /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-27T21:03:30.0404139Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-03-27T21:03:30.0405173Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-03-27T21:03:30.0406099Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-03-27T21:03:30.0406814Z hint: call:
+2026-03-27T21:03:30.0407205Z hint:
+2026-03-27T21:03:30.0407710Z hint: 	git config --global init.defaultBranch <name>
+2026-03-27T21:03:30.0409064Z hint:
+2026-03-27T21:03:30.0410025Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-03-27T21:03:30.0411587Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-03-27T21:03:30.0412890Z hint:
+2026-03-27T21:03:30.0413634Z hint: 	git branch -m <name>
+2026-03-27T21:03:30.0414702Z hint:
+2026-03-27T21:03:30.0415882Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-03-27T21:03:30.0418587Z Initialized empty Git repository in /home/runner/work/ba-iac-experiment/ba-iac-experiment/.git/
+2026-03-27T21:03:30.0430160Z [command]/usr/bin/git remote add origin https://github.com/gonefabi/ba-iac-experiment
+2026-03-27T21:03:30.0468505Z ##[endgroup]
+2026-03-27T21:03:30.0471243Z ##[group]Disabling automatic garbage collection
+2026-03-27T21:03:30.0472824Z [command]/usr/bin/git config --local gc.auto 0
+2026-03-27T21:03:30.0508428Z ##[endgroup]
+2026-03-27T21:03:30.0511050Z ##[group]Setting up auth
+2026-03-27T21:03:30.0515558Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-27T21:03:30.0549880Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-27T21:03:30.0902243Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-27T21:03:30.0939049Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-27T21:03:30.1210075Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-27T21:03:30.1232814Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-27T21:03:30.1481798Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-03-27T21:03:30.1520315Z ##[endgroup]
+2026-03-27T21:03:30.1523148Z ##[group]Fetching the repository
+2026-03-27T21:03:30.1531560Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2cee1f5167ef86979ddbb7ffa6d5255b2002a10d:refs/remotes/origin/master
+2026-03-27T21:03:30.3315755Z From https://github.com/gonefabi/ba-iac-experiment
+2026-03-27T21:03:30.3317712Z  * [new ref]         2cee1f5167ef86979ddbb7ffa6d5255b2002a10d -> origin/master
+2026-03-27T21:03:30.3353486Z ##[endgroup]
+2026-03-27T21:03:30.3355069Z ##[group]Determining the checkout info
+2026-03-27T21:03:30.3358337Z ##[endgroup]
+2026-03-27T21:03:30.3359434Z [command]/usr/bin/git sparse-checkout disable
+2026-03-27T21:03:30.3401844Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-03-27T21:03:30.3436236Z ##[group]Checking out the ref
+2026-03-27T21:03:30.3440216Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-03-27T21:03:30.3499130Z Reset branch 'master'
+2026-03-27T21:03:30.3501271Z branch 'master' set up to track 'origin/master'.
+2026-03-27T21:03:30.3511659Z ##[endgroup]
+2026-03-27T21:03:30.3553740Z [command]/usr/bin/git log -1 --format=%H
+2026-03-27T21:03:30.3580442Z 2cee1f5167ef86979ddbb7ffa6d5255b2002a10d
+2026-03-27T21:03:30.3810554Z ##[group]Run hashicorp/setup-terraform@v3
+2026-03-27T21:03:30.3811273Z with:
+2026-03-27T21:03:30.3811717Z   terraform_version: 1.7.0
+2026-03-27T21:03:30.3812537Z   cli_config_credentials_hostname: app.terraform.io
+2026-03-27T21:03:30.3813217Z   terraform_wrapper: true
+2026-03-27T21:03:30.3813702Z env:
+2026-03-27T21:03:30.3814312Z   ARM_CLIENT_ID: ***
+2026-03-27T21:03:30.3814991Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:03:30.3815630Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:03:30.3816240Z   ARM_TENANT_ID: ***
+2026-03-27T21:03:30.3816723Z ##[endgroup]
+2026-03-27T21:03:30.9998936Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/9b92de10-c121-415b-ab69-ec9dfff8e865
+2026-03-27T21:03:31.6132444Z ##[group]Run terraform init
+2026-03-27T21:03:31.6132882Z [36;1mterraform init[0m
+2026-03-27T21:03:31.6165542Z shell: /usr/bin/bash -e {0}
+2026-03-27T21:03:31.6165885Z env:
+2026-03-27T21:03:31.6166473Z   ARM_CLIENT_ID: ***
+2026-03-27T21:03:31.6167049Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:03:31.6167411Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:03:31.6168099Z   ARM_TENANT_ID: ***
+2026-03-27T21:03:31.6168583Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/c2c10345-465d-4132-9282-4f981b5fce98
+2026-03-27T21:03:31.6169050Z ##[endgroup]
+2026-03-27T21:03:31.8967496Z 
+2026-03-27T21:03:31.8970506Z [0m[1mInitializing the backend...[0m
+2026-03-27T21:03:31.8978102Z 
+2026-03-27T21:03:31.8979000Z [0m[1mInitializing provider plugins...[0m
+2026-03-27T21:03:31.8979872Z - Finding hashicorp/azurerm versions matching "~> 3.100"...
+2026-03-27T21:03:32.0206691Z - Installing hashicorp/azurerm v3.117.1...
+2026-03-27T21:03:33.5281053Z - Installed hashicorp/azurerm v3.117.1 (signed by HashiCorp)
+2026-03-27T21:03:33.5281959Z 
+2026-03-27T21:03:33.5282752Z Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+2026-03-27T21:03:33.5283777Z selections it made above. Include this file in your version control repository
+2026-03-27T21:03:33.5284704Z so that Terraform can guarantee to make the same selections by default when
+2026-03-27T21:03:33.5285517Z you run "terraform init" in the future.[0m
+2026-03-27T21:03:33.5289075Z 
+2026-03-27T21:03:33.5289623Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+2026-03-27T21:03:33.5290243Z [0m[32m
+2026-03-27T21:03:33.5308394Z You may now begin working with Terraform. Try running "terraform plan" to see
+2026-03-27T21:03:33.5309344Z any changes that are required for your infrastructure. All Terraform commands
+2026-03-27T21:03:33.5310076Z should now work.
+2026-03-27T21:03:33.5310299Z 
+2026-03-27T21:03:33.5310667Z If you ever set or change modules or backend configuration for Terraform,
+2026-03-27T21:03:33.5312066Z rerun this command to reinitialize your working directory. If you forget, other
+2026-03-27T21:03:33.5313442Z commands will detect it and remind you to do so if necessary.[0m
+2026-03-27T21:03:33.5511126Z ##[group]Run terraform fmt -check
+2026-03-27T21:03:33.5511682Z [36;1mterraform fmt -check[0m
+2026-03-27T21:03:33.5543100Z shell: /usr/bin/bash -e {0}
+2026-03-27T21:03:33.5543354Z env:
+2026-03-27T21:03:33.5543722Z   ARM_CLIENT_ID: ***
+2026-03-27T21:03:33.5544091Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:03:33.5544407Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:03:33.5544684Z   ARM_TENANT_ID: ***
+2026-03-27T21:03:33.5545014Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/c2c10345-465d-4132-9282-4f981b5fce98
+2026-03-27T21:03:33.5545402Z ##[endgroup]
+2026-03-27T21:03:33.6642015Z main.tf
+2026-03-27T21:03:33.6643632Z variables.tf
+2026-03-27T21:03:33.6709332Z ##[error]Terraform exited with code 3.
+2026-03-27T21:03:33.6740901Z ##[error]Process completed with exit code 1.
+2026-03-27T21:03:33.6783597Z ##[group]Run terraform validate
+2026-03-27T21:03:33.6783920Z [36;1mterraform validate[0m
+2026-03-27T21:03:33.6811896Z shell: /usr/bin/bash -e {0}
+2026-03-27T21:03:33.6812197Z env:
+2026-03-27T21:03:33.6812574Z   ARM_CLIENT_ID: ***
+2026-03-27T21:03:33.6812964Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:03:33.6813270Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:03:33.6813553Z   ARM_TENANT_ID: ***
+2026-03-27T21:03:33.6813886Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/c2c10345-465d-4132-9282-4f981b5fce98
+2026-03-27T21:03:33.6814521Z ##[endgroup]
+2026-03-27T21:03:34.4059291Z [32m[1mSuccess![0m The configuration is valid.
+2026-03-27T21:03:34.4060850Z [0m
+2026-03-27T21:03:34.4219843Z ##[group]Run terraform plan \
+2026-03-27T21:03:34.4220162Z [36;1mterraform plan \[0m
+2026-03-27T21:03:34.4220619Z [36;1m  -var="windows_admin_password=***" \[0m
+2026-03-27T21:03:34.4221002Z [36;1m  -var="linux_admin_password=***" \[0m
+2026-03-27T21:03:34.4221315Z [36;1m  -var="admin_source_ip=***" \[0m
+2026-03-27T21:03:34.4221575Z [36;1m  -out=tfplan[0m
+2026-03-27T21:03:34.4247981Z shell: /usr/bin/bash -e {0}
+2026-03-27T21:03:34.4248275Z env:
+2026-03-27T21:03:34.4248571Z   ARM_CLIENT_ID: ***
+2026-03-27T21:03:34.4248935Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:03:34.4249246Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:03:34.4249526Z   ARM_TENANT_ID: ***
+2026-03-27T21:03:34.4249869Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/c2c10345-465d-4132-9282-4f981b5fce98
+2026-03-27T21:03:34.4250304Z ##[endgroup]
+2026-03-27T21:03:40.0840551Z 
+2026-03-27T21:03:40.0847591Z Terraform used the selected providers to generate the following execution
+2026-03-27T21:03:40.0853136Z plan. Resource actions are indicated with the following symbols:
+2026-03-27T21:03:40.0853986Z   [32m+[0m create[0m
+2026-03-27T21:03:40.0854217Z 
+2026-03-27T21:03:40.0854425Z Terraform will perform the following actions:
+2026-03-27T21:03:40.0854760Z 
+2026-03-27T21:03:40.0855145Z [1m  # azurerm_linux_virtual_machine.main[0m will be created
+2026-03-27T21:03:40.0855975Z [0m  [32m+[0m[0m resource "azurerm_linux_virtual_machine" "main" {
+2026-03-27T21:03:40.0856906Z       [32m+[0m[0m admin_password                                         = (sensitive value)
+2026-03-27T21:03:40.0858267Z       [32m+[0m[0m admin_username                                         = "adminuser"
+2026-03-27T21:03:40.0859192Z       [32m+[0m[0m allow_extension_operations                             = true
+2026-03-27T21:03:40.0860102Z       [32m+[0m[0m bypass_platform_safety_checks_on_user_schedule_enabled = false
+2026-03-27T21:03:40.0861027Z       [32m+[0m[0m computer_name                                          = (known after apply)
+2026-03-27T21:03:40.0861887Z       [32m+[0m[0m disable_password_authentication                        = false
+2026-03-27T21:03:40.0862787Z       [32m+[0m[0m disk_controller_type                                   = (known after apply)
+2026-03-27T21:03:40.0863783Z       [32m+[0m[0m extensions_time_budget                                 = "PT1H30M"
+2026-03-27T21:03:40.0864649Z       [32m+[0m[0m id                                                     = (known after apply)
+2026-03-27T21:03:40.0865502Z       [32m+[0m[0m location                                               = "germanywestcentral"
+2026-03-27T21:03:40.0866353Z       [32m+[0m[0m max_bid_price                                          = -1
+2026-03-27T21:03:40.0867170Z       [32m+[0m[0m name                                                   = "firma-vm-linux"
+2026-03-27T21:03:40.0871696Z       [32m+[0m[0m network_interface_ids                                  = (known after apply)
+2026-03-27T21:03:40.0888459Z       [32m+[0m[0m patch_assessment_mode                                  = "ImageDefault"
+2026-03-27T21:03:40.0889566Z       [32m+[0m[0m patch_mode                                             = "ImageDefault"
+2026-03-27T21:03:40.0890549Z       [32m+[0m[0m platform_fault_domain                                  = -1
+2026-03-27T21:03:40.0891497Z       [32m+[0m[0m priority                                               = "Regular"
+2026-03-27T21:03:40.0892512Z       [32m+[0m[0m private_ip_address                                     = (known after apply)
+2026-03-27T21:03:40.0893607Z       [32m+[0m[0m private_ip_addresses                                   = (known after apply)
+2026-03-27T21:03:40.0894622Z       [32m+[0m[0m provision_vm_agent                                     = true
+2026-03-27T21:03:40.0895633Z       [32m+[0m[0m public_ip_address                                      = (known after apply)
+2026-03-27T21:03:40.0897404Z       [32m+[0m[0m public_ip_addresses                                    = (known after apply)
+2026-03-27T21:03:40.0910373Z       [32m+[0m[0m resource_group_name                                    = "firma-rg"
+2026-03-27T21:03:40.0911282Z       [32m+[0m[0m size                                                   = "Standard_B2ms"
+2026-03-27T21:03:40.0912072Z       [32m+[0m[0m tags                                                   = {
+2026-03-27T21:03:40.0912800Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.0913428Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.0913883Z         }
+2026-03-27T21:03:40.0914576Z       [32m+[0m[0m virtual_machine_id                                     = (known after apply)
+2026-03-27T21:03:40.0915597Z       [32m+[0m[0m vm_agent_platform_updates_enabled                      = false
+2026-03-27T21:03:40.0916464Z       [32m+[0m[0m zone                                                   = "1"
+2026-03-27T21:03:40.0916901Z 
+2026-03-27T21:03:40.0917115Z       [32m+[0m[0m os_disk {
+2026-03-27T21:03:40.0917721Z           [32m+[0m[0m caching                   = "ReadWrite"
+2026-03-27T21:03:40.0919049Z           [32m+[0m[0m disk_size_gb              = 64
+2026-03-27T21:03:40.0919794Z           [32m+[0m[0m name                      = (known after apply)
+2026-03-27T21:03:40.0920504Z           [32m+[0m[0m storage_account_type      = "StandardSSD_LRS"
+2026-03-27T21:03:40.0921160Z           [32m+[0m[0m write_accelerator_enabled = false
+2026-03-27T21:03:40.0921592Z         }
+2026-03-27T21:03:40.0921751Z 
+2026-03-27T21:03:40.0922059Z       [32m+[0m[0m source_image_reference {
+2026-03-27T21:03:40.0922688Z           [32m+[0m[0m offer     = "ubuntu-24_04-lts"
+2026-03-27T21:03:40.0923296Z           [32m+[0m[0m publisher = "Canonical"
+2026-03-27T21:03:40.0923891Z           [32m+[0m[0m sku       = "server"
+2026-03-27T21:03:40.0924442Z           [32m+[0m[0m version   = "latest"
+2026-03-27T21:03:40.0924898Z         }
+2026-03-27T21:03:40.0925194Z     }
+2026-03-27T21:03:40.0925351Z 
+2026-03-27T21:03:40.0925715Z [1m  # azurerm_network_interface.linux[0m will be created
+2026-03-27T21:03:40.0926503Z [0m  [32m+[0m[0m resource "azurerm_network_interface" "linux" {
+2026-03-27T21:03:40.0927373Z       [32m+[0m[0m accelerated_networking_enabled = (known after apply)
+2026-03-27T21:03:40.0940590Z       [32m+[0m[0m applied_dns_servers            = (known after apply)
+2026-03-27T21:03:40.0941745Z       [32m+[0m[0m dns_servers                    = (known after apply)
+2026-03-27T21:03:40.0942582Z       [32m+[0m[0m enable_accelerated_networking  = (known after apply)
+2026-03-27T21:03:40.0943386Z       [32m+[0m[0m enable_ip_forwarding           = (known after apply)
+2026-03-27T21:03:40.0944135Z       [32m+[0m[0m id                             = (known after apply)
+2026-03-27T21:03:40.0944923Z       [32m+[0m[0m internal_domain_name_suffix    = (known after apply)
+2026-03-27T21:03:40.0945759Z       [32m+[0m[0m ip_forwarding_enabled          = (known after apply)
+2026-03-27T21:03:40.0946672Z       [32m+[0m[0m location                       = "germanywestcentral"
+2026-03-27T21:03:40.0947380Z       [32m+[0m[0m mac_address                    = (known after apply)
+2026-03-27T21:03:40.0948383Z       [32m+[0m[0m name                           = "firma-nic-linux"
+2026-03-27T21:03:40.0949090Z       [32m+[0m[0m private_ip_address             = (known after apply)
+2026-03-27T21:03:40.0949801Z       [32m+[0m[0m private_ip_addresses           = (known after apply)
+2026-03-27T21:03:40.0950565Z       [32m+[0m[0m resource_group_name            = "firma-rg"
+2026-03-27T21:03:40.0951226Z       [32m+[0m[0m tags                           = {
+2026-03-27T21:03:40.0951790Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.0952324Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.0952712Z         }
+2026-03-27T21:03:40.0953407Z       [32m+[0m[0m virtual_machine_id             = (known after apply)
+2026-03-27T21:03:40.0953799Z 
+2026-03-27T21:03:40.0954223Z       [32m+[0m[0m ip_configuration {
+2026-03-27T21:03:40.0955088Z           [32m+[0m[0m gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+2026-03-27T21:03:40.0956118Z           [32m+[0m[0m name                                               = "internal"
+2026-03-27T21:03:40.0956975Z           [32m+[0m[0m primary                                            = (known after apply)
+2026-03-27T21:03:40.0958104Z           [32m+[0m[0m private_ip_address                                 = (known after apply)
+2026-03-27T21:03:40.0959000Z           [32m+[0m[0m private_ip_address_allocation                      = "Dynamic"
+2026-03-27T21:03:40.0959857Z           [32m+[0m[0m private_ip_address_version                         = "IPv4"
+2026-03-27T21:03:40.0960696Z           [32m+[0m[0m subnet_id                                          = (known after apply)
+2026-03-27T21:03:40.0961353Z         }
+2026-03-27T21:03:40.0961609Z     }
+2026-03-27T21:03:40.0961758Z 
+2026-03-27T21:03:40.0962084Z [1m  # azurerm_network_interface.windows[0m will be created
+2026-03-27T21:03:40.0962770Z [0m  [32m+[0m[0m resource "azurerm_network_interface" "windows" {
+2026-03-27T21:03:40.0963491Z       [32m+[0m[0m accelerated_networking_enabled = (known after apply)
+2026-03-27T21:03:40.0964270Z       [32m+[0m[0m applied_dns_servers            = (known after apply)
+2026-03-27T21:03:40.0964992Z       [32m+[0m[0m dns_servers                    = (known after apply)
+2026-03-27T21:03:40.0965728Z       [32m+[0m[0m enable_accelerated_networking  = (known after apply)
+2026-03-27T21:03:40.0966483Z       [32m+[0m[0m enable_ip_forwarding           = (known after apply)
+2026-03-27T21:03:40.0967159Z       [32m+[0m[0m id                             = (known after apply)
+2026-03-27T21:03:40.0970334Z       [32m+[0m[0m internal_domain_name_suffix    = (known after apply)
+2026-03-27T21:03:40.0971255Z       [32m+[0m[0m ip_forwarding_enabled          = (known after apply)
+2026-03-27T21:03:40.0972056Z       [32m+[0m[0m location                       = "germanywestcentral"
+2026-03-27T21:03:40.0972795Z       [32m+[0m[0m mac_address                    = (known after apply)
+2026-03-27T21:03:40.0973529Z       [32m+[0m[0m name                           = "firma-nic-win"
+2026-03-27T21:03:40.0974236Z       [32m+[0m[0m private_ip_address             = (known after apply)
+2026-03-27T21:03:40.0975048Z       [32m+[0m[0m private_ip_addresses           = (known after apply)
+2026-03-27T21:03:40.0975805Z       [32m+[0m[0m resource_group_name            = "firma-rg"
+2026-03-27T21:03:40.0976464Z       [32m+[0m[0m tags                           = {
+2026-03-27T21:03:40.0977042Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.0977608Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.0978268Z         }
+2026-03-27T21:03:40.0978788Z       [32m+[0m[0m virtual_machine_id             = (known after apply)
+2026-03-27T21:03:40.0979207Z 
+2026-03-27T21:03:40.0979435Z       [32m+[0m[0m ip_configuration {
+2026-03-27T21:03:40.0980216Z           [32m+[0m[0m gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+2026-03-27T21:03:40.0981092Z           [32m+[0m[0m name                                               = "internal"
+2026-03-27T21:03:40.0981976Z           [32m+[0m[0m primary                                            = (known after apply)
+2026-03-27T21:03:40.0982868Z           [32m+[0m[0m private_ip_address                                 = (known after apply)
+2026-03-27T21:03:40.0983752Z           [32m+[0m[0m private_ip_address_allocation                      = "Dynamic"
+2026-03-27T21:03:40.0984638Z           [32m+[0m[0m private_ip_address_version                         = "IPv4"
+2026-03-27T21:03:40.0985536Z           [32m+[0m[0m public_ip_address_id                               = (known after apply)
+2026-03-27T21:03:40.0987616Z           [32m+[0m[0m subnet_id                                          = (known after apply)
+2026-03-27T21:03:40.0988775Z         }
+2026-03-27T21:03:40.0989065Z     }
+2026-03-27T21:03:40.0989224Z 
+2026-03-27T21:03:40.0989652Z [1m  # azurerm_network_security_group.anwendung[0m will be created
+2026-03-27T21:03:40.0990481Z [0m  [32m+[0m[0m resource "azurerm_network_security_group" "anwendung" {
+2026-03-27T21:03:40.0991225Z       [32m+[0m[0m id                  = (known after apply)
+2026-03-27T21:03:40.0991900Z       [32m+[0m[0m location            = "germanywestcentral"
+2026-03-27T21:03:40.0992385Z       [32m+[0m[0m name                = "firma-nsg-anwendung"
+2026-03-27T21:03:40.0992803Z       [32m+[0m[0m resource_group_name = "firma-rg"
+2026-03-27T21:03:40.0993144Z       [32m+[0m[0m security_rule       = [
+2026-03-27T21:03:40.0993425Z           [32m+[0m[0m {
+2026-03-27T21:03:40.0993757Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-27T21:03:40.0994200Z               [32m+[0m[0m description                                = ""
+2026-03-27T21:03:40.0994636Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-27T21:03:40.0995066Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-27T21:03:40.0995495Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-27T21:03:40.0995937Z               [32m+[0m[0m destination_port_range                     = ""
+2026-03-27T21:03:40.0996362Z               [32m+[0m[0m destination_port_ranges                    = [
+2026-03-27T21:03:40.0996714Z                   [32m+[0m[0m "443",
+2026-03-27T21:03:40.0996996Z                   [32m+[0m[0m "80",
+2026-03-27T21:03:40.0997226Z                 ]
+2026-03-27T21:03:40.0997539Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-27T21:03:40.0998491Z               [32m+[0m[0m name                                       = "Allow-HTTP-From-User-Subnet"
+2026-03-27T21:03:40.0999020Z               [32m+[0m[0m priority                                   = 200
+2026-03-27T21:03:40.0999471Z               [32m+[0m[0m protocol                                   = "Tcp"
+2026-03-27T21:03:40.0999944Z               [32m+[0m[0m source_address_prefix                      = "10.0.1.0/24"
+2026-03-27T21:03:40.1000407Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-27T21:03:40.1000847Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-27T21:03:40.1001296Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-27T21:03:40.1001720Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-27T21:03:40.1002026Z             },
+2026-03-27T21:03:40.1002242Z           [32m+[0m[0m {
+2026-03-27T21:03:40.1002575Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-27T21:03:40.1003005Z               [32m+[0m[0m description                                = ""
+2026-03-27T21:03:40.1003431Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-27T21:03:40.1003857Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-27T21:03:40.1004283Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-27T21:03:40.1004715Z               [32m+[0m[0m destination_port_range                     = "22"
+2026-03-27T21:03:40.1005135Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-27T21:03:40.1005567Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-27T21:03:40.1006057Z               [32m+[0m[0m name                                       = "Allow-SSH-From-User-Subnet"
+2026-03-27T21:03:40.1006522Z               [32m+[0m[0m priority                                   = 100
+2026-03-27T21:03:40.1007115Z               [32m+[0m[0m protocol                                   = "Tcp"
+2026-03-27T21:03:40.1007676Z               [32m+[0m[0m source_address_prefix                      = "10.0.1.0/24"
+2026-03-27T21:03:40.1008462Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-27T21:03:40.1008907Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-27T21:03:40.1009333Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-27T21:03:40.1009743Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-27T21:03:40.1010042Z             },
+2026-03-27T21:03:40.1010263Z           [32m+[0m[0m {
+2026-03-27T21:03:40.1010592Z               [32m+[0m[0m access                                     = "Deny"
+2026-03-27T21:03:40.1011012Z               [32m+[0m[0m description                                = ""
+2026-03-27T21:03:40.1011435Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-27T21:03:40.1011876Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-27T21:03:40.1012305Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-27T21:03:40.1012730Z               [32m+[0m[0m destination_port_range                     = "*"
+2026-03-27T21:03:40.1013152Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-27T21:03:40.1013586Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-27T21:03:40.1014052Z               [32m+[0m[0m name                                       = "Deny-All-Inbound"
+2026-03-27T21:03:40.1014500Z               [32m+[0m[0m priority                                   = 4096
+2026-03-27T21:03:40.1014911Z               [32m+[0m[0m protocol                                   = "*"
+2026-03-27T21:03:40.1015321Z               [32m+[0m[0m source_address_prefix                      = "*"
+2026-03-27T21:03:40.1015735Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-27T21:03:40.1016162Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-27T21:03:40.1016585Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-27T21:03:40.1016996Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-27T21:03:40.1017297Z             },
+2026-03-27T21:03:40.1017507Z           [32m+[0m[0m {
+2026-03-27T21:03:40.1018111Z               [32m+[0m[0m access                                     = "Deny"
+2026-03-27T21:03:40.1018707Z               [32m+[0m[0m description                                = ""
+2026-03-27T21:03:40.1019158Z               [32m+[0m[0m destination_address_prefix                 = "Internet"
+2026-03-27T21:03:40.1019627Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-27T21:03:40.1020066Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-27T21:03:40.1020512Z               [32m+[0m[0m destination_port_range                     = "*"
+2026-03-27T21:03:40.1020937Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-27T21:03:40.1021372Z               [32m+[0m[0m direction                                  = "Outbound"
+2026-03-27T21:03:40.1021853Z               [32m+[0m[0m name                                       = "Deny-Internet-Outbound"
+2026-03-27T21:03:40.1022311Z               [32m+[0m[0m priority                                   = 4000
+2026-03-27T21:03:40.1022724Z               [32m+[0m[0m protocol                                   = "*"
+2026-03-27T21:03:40.1023136Z               [32m+[0m[0m source_address_prefix                      = "*"
+2026-03-27T21:03:40.1023552Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-27T21:03:40.1023977Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-27T21:03:40.1024897Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-27T21:03:40.1025907Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-27T21:03:40.1026493Z             },
+2026-03-27T21:03:40.1026804Z         ]
+2026-03-27T21:03:40.1027228Z       [32m+[0m[0m tags                = {
+2026-03-27T21:03:40.1028153Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.1028756Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.1029034Z         }
+2026-03-27T21:03:40.1029198Z     }
+2026-03-27T21:03:40.1029497Z 
+2026-03-27T21:03:40.1029727Z [1m  # azurerm_network_security_group.benutzer[0m will be created
+2026-03-27T21:03:40.1030212Z [0m  [32m+[0m[0m resource "azurerm_network_security_group" "benutzer" {
+2026-03-27T21:03:40.1030647Z       [32m+[0m[0m id                  = (known after apply)
+2026-03-27T21:03:40.1031040Z       [32m+[0m[0m location            = "germanywestcentral"
+2026-03-27T21:03:40.1031435Z       [32m+[0m[0m name                = "firma-nsg-benutzer"
+2026-03-27T21:03:40.1031804Z       [32m+[0m[0m resource_group_name = "firma-rg"
+2026-03-27T21:03:40.1032134Z       [32m+[0m[0m security_rule       = [
+2026-03-27T21:03:40.1032417Z           [32m+[0m[0m {
+2026-03-27T21:03:40.1032745Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-27T21:03:40.1033173Z               [32m+[0m[0m description                                = ""
+2026-03-27T21:03:40.1033602Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-27T21:03:40.1034029Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-27T21:03:40.1034463Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-27T21:03:40.1034892Z               [32m+[0m[0m destination_port_range                     = "*"
+2026-03-27T21:03:40.1035333Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-27T21:03:40.1035781Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-27T21:03:40.1036272Z               [32m+[0m[0m name                                       = "Allow-App-Subnet-Inbound"
+2026-03-27T21:03:40.1036743Z               [32m+[0m[0m priority                                   = 200
+2026-03-27T21:03:40.1037156Z               [32m+[0m[0m protocol                                   = "*"
+2026-03-27T21:03:40.1037600Z               [32m+[0m[0m source_address_prefix                      = "10.0.2.0/24"
+2026-03-27T21:03:40.1038398Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-27T21:03:40.1038862Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-27T21:03:40.1039288Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-27T21:03:40.1039700Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-27T21:03:40.1040005Z             },
+2026-03-27T21:03:40.1040219Z           [32m+[0m[0m {
+2026-03-27T21:03:40.1040557Z               [32m+[0m[0m access                                     = "Allow"
+2026-03-27T21:03:40.1040994Z               [32m+[0m[0m description                                = ""
+2026-03-27T21:03:40.1041417Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-27T21:03:40.1041843Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-27T21:03:40.1042268Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-27T21:03:40.1042710Z               [32m+[0m[0m destination_port_range                     = "3389"
+2026-03-27T21:03:40.1043139Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-27T21:03:40.1043569Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-27T21:03:40.1044033Z               [32m+[0m[0m name                                       = "Allow-RDP-Inbound"
+2026-03-27T21:03:40.1044773Z               [32m+[0m[0m priority                                   = 100
+2026-03-27T21:03:40.1045199Z               [32m+[0m[0m protocol                                   = "Tcp"
+2026-03-27T21:03:40.1046386Z               [32m+[0m[0m source_address_prefix                      = "***"
+2026-03-27T21:03:40.1047262Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-27T21:03:40.1048443Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-27T21:03:40.1049310Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-27T21:03:40.1050139Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-27T21:03:40.1050470Z             },
+2026-03-27T21:03:40.1050703Z           [32m+[0m[0m {
+2026-03-27T21:03:40.1051107Z               [32m+[0m[0m access                                     = "Deny"
+2026-03-27T21:03:40.1051552Z               [32m+[0m[0m description                                = ""
+2026-03-27T21:03:40.1051977Z               [32m+[0m[0m destination_address_prefix                 = "*"
+2026-03-27T21:03:40.1052401Z               [32m+[0m[0m destination_address_prefixes               = []
+2026-03-27T21:03:40.1052829Z               [32m+[0m[0m destination_application_security_group_ids = []
+2026-03-27T21:03:40.1053256Z               [32m+[0m[0m destination_port_range                     = "*"
+2026-03-27T21:03:40.1053680Z               [32m+[0m[0m destination_port_ranges                    = []
+2026-03-27T21:03:40.1054117Z               [32m+[0m[0m direction                                  = "Inbound"
+2026-03-27T21:03:40.1054583Z               [32m+[0m[0m name                                       = "Deny-All-Inbound"
+2026-03-27T21:03:40.1055028Z               [32m+[0m[0m priority                                   = 4096
+2026-03-27T21:03:40.1055443Z               [32m+[0m[0m protocol                                   = "*"
+2026-03-27T21:03:40.1055860Z               [32m+[0m[0m source_address_prefix                      = "*"
+2026-03-27T21:03:40.1056273Z               [32m+[0m[0m source_address_prefixes                    = []
+2026-03-27T21:03:40.1056694Z               [32m+[0m[0m source_application_security_group_ids      = []
+2026-03-27T21:03:40.1057114Z               [32m+[0m[0m source_port_range                          = "*"
+2026-03-27T21:03:40.1057516Z               [32m+[0m[0m source_port_ranges                         = []
+2026-03-27T21:03:40.1058101Z             },
+2026-03-27T21:03:40.1058286Z         ]
+2026-03-27T21:03:40.1058524Z       [32m+[0m[0m tags                = {
+2026-03-27T21:03:40.1058848Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.1059179Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.1059429Z         }
+2026-03-27T21:03:40.1059590Z     }
+2026-03-27T21:03:40.1059694Z 
+2026-03-27T21:03:40.1059869Z [1m  # azurerm_public_ip.windows[0m will be created
+2026-03-27T21:03:40.1060266Z [0m  [32m+[0m[0m resource "azurerm_public_ip" "windows" {
+2026-03-27T21:03:40.1060647Z       [32m+[0m[0m allocation_method       = "Static"
+2026-03-27T21:03:40.1061054Z       [32m+[0m[0m ddos_protection_mode    = "VirtualNetworkInherited"
+2026-03-27T21:03:40.1061478Z       [32m+[0m[0m fqdn                    = (known after apply)
+2026-03-27T21:03:40.1061857Z       [32m+[0m[0m id                      = (known after apply)
+2026-03-27T21:03:40.1062205Z       [32m+[0m[0m idle_timeout_in_minutes = 4
+2026-03-27T21:03:40.1062560Z       [32m+[0m[0m ip_address              = (known after apply)
+2026-03-27T21:03:40.1062919Z       [32m+[0m[0m ip_version              = "IPv4"
+2026-03-27T21:03:40.1063290Z       [32m+[0m[0m location                = "germanywestcentral"
+2026-03-27T21:03:40.1063679Z       [32m+[0m[0m name                    = "firma-pip-win"
+2026-03-27T21:03:40.1064235Z       [32m+[0m[0m resource_group_name     = "firma-rg"
+2026-03-27T21:03:40.1064684Z       [32m+[0m[0m sku                     = "Standard"
+2026-03-27T21:03:40.1065019Z       [32m+[0m[0m sku_tier                = "Regional"
+2026-03-27T21:03:40.1065337Z       [32m+[0m[0m tags                    = {
+2026-03-27T21:03:40.1065659Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.1065984Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.1066237Z         }
+2026-03-27T21:03:40.1066466Z       [32m+[0m[0m zones                   = [
+2026-03-27T21:03:40.1066759Z           [32m+[0m[0m "1",
+2026-03-27T21:03:40.1066968Z         ]
+2026-03-27T21:03:40.1067133Z     }
+2026-03-27T21:03:40.1067223Z 
+2026-03-27T21:03:40.1067398Z [1m  # azurerm_resource_group.main[0m will be created
+2026-03-27T21:03:40.1068113Z [0m  [32m+[0m[0m resource "azurerm_resource_group" "main" {
+2026-03-27T21:03:40.1068542Z       [32m+[0m[0m id       = (known after apply)
+2026-03-27T21:03:40.1068899Z       [32m+[0m[0m location = "germanywestcentral"
+2026-03-27T21:03:40.1069226Z       [32m+[0m[0m name     = "firma-rg"
+2026-03-27T21:03:40.1069517Z       [32m+[0m[0m tags     = {
+2026-03-27T21:03:40.1069809Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.1070134Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.1070386Z         }
+2026-03-27T21:03:40.1070555Z     }
+2026-03-27T21:03:40.1070645Z 
+2026-03-27T21:03:40.1070831Z [1m  # azurerm_route_table.anwendung[0m will be created
+2026-03-27T21:03:40.1071247Z [0m  [32m+[0m[0m resource "azurerm_route_table" "anwendung" {
+2026-03-27T21:03:40.1071687Z       [32m+[0m[0m bgp_route_propagation_enabled = (known after apply)
+2026-03-27T21:03:40.1072138Z       [32m+[0m[0m disable_bgp_route_propagation = (known after apply)
+2026-03-27T21:03:40.1072559Z       [32m+[0m[0m id                            = (known after apply)
+2026-03-27T21:03:40.1072977Z       [32m+[0m[0m location                      = "germanywestcentral"
+2026-03-27T21:03:40.1073408Z       [32m+[0m[0m name                          = "firma-rt-anwendung"
+2026-03-27T21:03:40.1073817Z       [32m+[0m[0m resource_group_name           = "firma-rg"
+2026-03-27T21:03:40.1074192Z       [32m+[0m[0m route                         = [
+2026-03-27T21:03:40.1074483Z           [32m+[0m[0m {
+2026-03-27T21:03:40.1074787Z               [32m+[0m[0m address_prefix         = "0.0.0.0/0"
+2026-03-27T21:03:40.1075187Z               [32m+[0m[0m name                   = "block-internet"
+2026-03-27T21:03:40.1075570Z               [32m+[0m[0m next_hop_in_ip_address = ""
+2026-03-27T21:03:40.1075927Z               [32m+[0m[0m next_hop_type          = "None"
+2026-03-27T21:03:40.1076197Z             },
+2026-03-27T21:03:40.1076375Z         ]
+2026-03-27T21:03:40.1076656Z       [32m+[0m[0m subnets                       = (known after apply)
+2026-03-27T21:03:40.1077030Z       [32m+[0m[0m tags                          = {
+2026-03-27T21:03:40.1077366Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.1077703Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.1078252Z         }
+2026-03-27T21:03:40.1078422Z     }
+2026-03-27T21:03:40.1078514Z 
+2026-03-27T21:03:40.1078697Z [1m  # azurerm_subnet.anwendung[0m will be created
+2026-03-27T21:03:40.1079083Z [0m  [32m+[0m[0m resource "azurerm_subnet" "anwendung" {
+2026-03-27T21:03:40.1079485Z       [32m+[0m[0m address_prefixes                               = [
+2026-03-27T21:03:40.1079832Z           [32m+[0m[0m "10.0.2.0/24",
+2026-03-27T21:03:40.1080058Z         ]
+2026-03-27T21:03:40.1080353Z       [32m+[0m[0m default_outbound_access_enabled                = true
+2026-03-27T21:03:40.1080861Z       [32m+[0m[0m enforce_private_link_endpoint_network_policies = (known after apply)
+2026-03-27T21:03:40.1081425Z       [32m+[0m[0m enforce_private_link_service_network_policies  = (known after apply)
+2026-03-27T21:03:40.1081921Z       [32m+[0m[0m id                                             = (known after apply)
+2026-03-27T21:03:40.1083368Z       [32m+[0m[0m name                                           = "snet-anwendung"
+2026-03-27T21:03:40.1084168Z       [32m+[0m[0m private_endpoint_network_policies              = (known after apply)
+2026-03-27T21:03:40.1084751Z       [32m+[0m[0m private_endpoint_network_policies_enabled      = (known after apply)
+2026-03-27T21:03:40.1085308Z       [32m+[0m[0m private_link_service_network_policies_enabled  = (known after apply)
+2026-03-27T21:03:40.1085820Z       [32m+[0m[0m resource_group_name                            = "firma-rg"
+2026-03-27T21:03:40.1086324Z       [32m+[0m[0m virtual_network_name                           = "firma-vnet"
+2026-03-27T21:03:40.1086660Z     }
+2026-03-27T21:03:40.1086758Z 
+2026-03-27T21:03:40.1086926Z [1m  # azurerm_subnet.benutzer[0m will be created
+2026-03-27T21:03:40.1087301Z [0m  [32m+[0m[0m resource "azurerm_subnet" "benutzer" {
+2026-03-27T21:03:40.1088142Z       [32m+[0m[0m address_prefixes                               = [
+2026-03-27T21:03:40.1088764Z           [32m+[0m[0m "10.0.1.0/24",
+2026-03-27T21:03:40.1089123Z         ]
+2026-03-27T21:03:40.1089585Z       [32m+[0m[0m default_outbound_access_enabled                = true
+2026-03-27T21:03:40.1090399Z       [32m+[0m[0m enforce_private_link_endpoint_network_policies = (known after apply)
+2026-03-27T21:03:40.1091339Z       [32m+[0m[0m enforce_private_link_service_network_policies  = (known after apply)
+2026-03-27T21:03:40.1092240Z       [32m+[0m[0m id                                             = (known after apply)
+2026-03-27T21:03:40.1093028Z       [32m+[0m[0m name                                           = "snet-benutzer"
+2026-03-27T21:03:40.1093917Z       [32m+[0m[0m private_endpoint_network_policies              = (known after apply)
+2026-03-27T21:03:40.1094866Z       [32m+[0m[0m private_endpoint_network_policies_enabled      = (known after apply)
+2026-03-27T21:03:40.1095868Z       [32m+[0m[0m private_link_service_network_policies_enabled  = (known after apply)
+2026-03-27T21:03:40.1096791Z       [32m+[0m[0m resource_group_name                            = "firma-rg"
+2026-03-27T21:03:40.1097647Z       [32m+[0m[0m virtual_network_name                           = "firma-vnet"
+2026-03-27T21:03:40.1098694Z     }
+2026-03-27T21:03:40.1098873Z 
+2026-03-27T21:03:40.1099360Z [1m  # azurerm_subnet_network_security_group_association.anwendung[0m will be created
+2026-03-27T21:03:40.1100391Z [0m  [32m+[0m[0m resource "azurerm_subnet_network_security_group_association" "anwendung" {
+2026-03-27T21:03:40.1101301Z       [32m+[0m[0m id                        = (known after apply)
+2026-03-27T21:03:40.1102034Z       [32m+[0m[0m network_security_group_id = (known after apply)
+2026-03-27T21:03:40.1102769Z       [32m+[0m[0m subnet_id                 = (known after apply)
+2026-03-27T21:03:40.1103269Z     }
+2026-03-27T21:03:40.1103626Z 
+2026-03-27T21:03:40.1104140Z [1m  # azurerm_subnet_network_security_group_association.benutzer[0m will be created
+2026-03-27T21:03:40.1105249Z [0m  [32m+[0m[0m resource "azurerm_subnet_network_security_group_association" "benutzer" {
+2026-03-27T21:03:40.1106132Z       [32m+[0m[0m id                        = (known after apply)
+2026-03-27T21:03:40.1106836Z       [32m+[0m[0m network_security_group_id = (known after apply)
+2026-03-27T21:03:40.1107553Z       [32m+[0m[0m subnet_id                 = (known after apply)
+2026-03-27T21:03:40.1108236Z     }
+2026-03-27T21:03:40.1108398Z 
+2026-03-27T21:03:40.1108833Z [1m  # azurerm_subnet_route_table_association.anwendung[0m will be created
+2026-03-27T21:03:40.1109769Z [0m  [32m+[0m[0m resource "azurerm_subnet_route_table_association" "anwendung" {
+2026-03-27T21:03:40.1110905Z       [32m+[0m[0m id             = (known after apply)
+2026-03-27T21:03:40.1111537Z       [32m+[0m[0m route_table_id = (known after apply)
+2026-03-27T21:03:40.1112156Z       [32m+[0m[0m subnet_id      = (known after apply)
+2026-03-27T21:03:40.1113212Z     }
+2026-03-27T21:03:40.1113374Z 
+2026-03-27T21:03:40.1113833Z [1m  # azurerm_virtual_network.main[0m will be created
+2026-03-27T21:03:40.1114531Z [0m  [32m+[0m[0m resource "azurerm_virtual_network" "main" {
+2026-03-27T21:03:40.1115144Z       [32m+[0m[0m address_space       = [
+2026-03-27T21:03:40.1115649Z           [32m+[0m[0m "10.0.0.0/16",
+2026-03-27T21:03:40.1116036Z         ]
+2026-03-27T21:03:40.1116494Z       [32m+[0m[0m dns_servers         = (known after apply)
+2026-03-27T21:03:40.1117150Z       [32m+[0m[0m guid                = (known after apply)
+2026-03-27T21:03:40.1118028Z       [32m+[0m[0m id                  = (known after apply)
+2026-03-27T21:03:40.1118683Z       [32m+[0m[0m location            = "germanywestcentral"
+2026-03-27T21:03:40.1119252Z       [32m+[0m[0m name                = "firma-vnet"
+2026-03-27T21:03:40.1119776Z       [32m+[0m[0m resource_group_name = "firma-rg"
+2026-03-27T21:03:40.1120383Z       [32m+[0m[0m subnet              = (known after apply)
+2026-03-27T21:03:40.1120967Z       [32m+[0m[0m tags                = {
+2026-03-27T21:03:40.1121515Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.1122082Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.1122517Z         }
+2026-03-27T21:03:40.1122789Z     }
+2026-03-27T21:03:40.1122944Z 
+2026-03-27T21:03:40.1123299Z [1m  # azurerm_windows_virtual_machine.main[0m will be created
+2026-03-27T21:03:40.1124079Z [0m  [32m+[0m[0m resource "azurerm_windows_virtual_machine" "main" {
+2026-03-27T21:03:40.1124954Z       [32m+[0m[0m admin_password                                         = (sensitive value)
+2026-03-27T21:03:40.1125861Z       [32m+[0m[0m admin_username                                         = "adminuser"
+2026-03-27T21:03:40.1126743Z       [32m+[0m[0m allow_extension_operations                             = true
+2026-03-27T21:03:40.1127592Z       [32m+[0m[0m bypass_platform_safety_checks_on_user_schedule_enabled = false
+2026-03-27T21:03:40.1128540Z       [32m+[0m[0m computer_name                                          = (known after apply)
+2026-03-27T21:03:40.1129100Z       [32m+[0m[0m disk_controller_type                                   = (known after apply)
+2026-03-27T21:03:40.1129624Z       [32m+[0m[0m enable_automatic_updates                               = true
+2026-03-27T21:03:40.1130155Z       [32m+[0m[0m extensions_time_budget                                 = "PT1H30M"
+2026-03-27T21:03:40.1130666Z       [32m+[0m[0m hotpatching_enabled                                    = false
+2026-03-27T21:03:40.1131156Z       [32m+[0m[0m id                                                     = (known after apply)
+2026-03-27T21:03:40.1131640Z       [32m+[0m[0m location                                               = "germanywestcentral"
+2026-03-27T21:03:40.1132126Z       [32m+[0m[0m max_bid_price                                          = -1
+2026-03-27T21:03:40.1132583Z       [32m+[0m[0m name                                                   = "firma-vm-win"
+2026-03-27T21:03:40.1133185Z       [32m+[0m[0m network_interface_ids                                  = (known after apply)
+2026-03-27T21:03:40.1133729Z       [32m+[0m[0m patch_assessment_mode                                  = "ImageDefault"
+2026-03-27T21:03:40.1134252Z       [32m+[0m[0m patch_mode                                             = "AutomaticByOS"
+2026-03-27T21:03:40.1134729Z       [32m+[0m[0m platform_fault_domain                                  = -1
+2026-03-27T21:03:40.1135195Z       [32m+[0m[0m priority                                               = "Regular"
+2026-03-27T21:03:40.1135696Z       [32m+[0m[0m private_ip_address                                     = (known after apply)
+2026-03-27T21:03:40.1136232Z       [32m+[0m[0m private_ip_addresses                                   = (known after apply)
+2026-03-27T21:03:40.1136735Z       [32m+[0m[0m provision_vm_agent                                     = true
+2026-03-27T21:03:40.1137503Z       [32m+[0m[0m public_ip_address                                      = (known after apply)
+2026-03-27T21:03:40.1138381Z       [32m+[0m[0m public_ip_addresses                                    = (known after apply)
+2026-03-27T21:03:40.1139269Z       [32m+[0m[0m resource_group_name                                    = "firma-rg"
+2026-03-27T21:03:40.1140164Z       [32m+[0m[0m size                                                   = "Standard_B2ms"
+2026-03-27T21:03:40.1140953Z       [32m+[0m[0m tags                                                   = {
+2026-03-27T21:03:40.1141608Z           [32m+[0m[0m "Umgebung"  = "Produktion"
+2026-03-27T21:03:40.1142184Z           [32m+[0m[0m "Verwalter" = "IT-Admin"
+2026-03-27T21:03:40.1142618Z         }
+2026-03-27T21:03:40.1143240Z       [32m+[0m[0m virtual_machine_id                                     = (known after apply)
+2026-03-27T21:03:40.1144250Z       [32m+[0m[0m vm_agent_platform_updates_enabled                      = false
+2026-03-27T21:03:40.1145070Z       [32m+[0m[0m zone                                                   = "1"
+2026-03-27T21:03:40.1145432Z 
+2026-03-27T21:03:40.1145611Z       [32m+[0m[0m os_disk {
+2026-03-27T21:03:40.1146089Z           [32m+[0m[0m caching                   = "ReadWrite"
+2026-03-27T21:03:40.1146636Z           [32m+[0m[0m disk_size_gb              = 128
+2026-03-27T21:03:40.1147221Z           [32m+[0m[0m name                      = (known after apply)
+2026-03-27T21:03:40.1148099Z           [32m+[0m[0m storage_account_type      = "StandardSSD_LRS"
+2026-03-27T21:03:40.1148812Z           [32m+[0m[0m write_accelerator_enabled = false
+2026-03-27T21:03:40.1149281Z         }
+2026-03-27T21:03:40.1149453Z 
+2026-03-27T21:03:40.1149681Z       [32m+[0m[0m source_image_reference {
+2026-03-27T21:03:40.1150247Z           [32m+[0m[0m offer     = "WindowsServer"
+2026-03-27T21:03:40.1150952Z           [32m+[0m[0m publisher = "MicrosoftWindowsServer"
+2026-03-27T21:03:40.1151682Z           [32m+[0m[0m sku       = "2022-datacenter-azure-edition"
+2026-03-27T21:03:40.1176757Z           [32m+[0m[0m version   = "latest"
+2026-03-27T21:03:40.1177263Z         }
+2026-03-27T21:03:40.1177550Z     }
+2026-03-27T21:03:40.1179273Z 
+2026-03-27T21:03:40.1179639Z [1mPlan:[0m 15 to add, 0 to change, 0 to destroy.
+2026-03-27T21:03:40.1180152Z [0m
+2026-03-27T21:03:40.1180437Z Changes to Outputs:
+2026-03-27T21:03:40.1180959Z   [32m+[0m[0m linux_vm_private_ip   = (known after apply)
+2026-03-27T21:03:40.1181640Z   [32m+[0m[0m rdp_connection_hint   = (known after apply)
+2026-03-27T21:03:40.1182262Z   [32m+[0m[0m resource_group_name   = "firma-rg"
+2026-03-27T21:03:40.1182893Z   [32m+[0m[0m ssh_via_windows_hint  = (known after apply)
+2026-03-27T21:03:40.1183516Z   [32m+[0m[0m vnet_name             = "firma-vnet"
+2026-03-27T21:03:40.1184138Z   [32m+[0m[0m windows_vm_private_ip = (known after apply)
+2026-03-27T21:03:40.1184791Z   [32m+[0m[0m windows_vm_public_ip  = (known after apply)
+2026-03-27T21:03:40.1185318Z [90m
+2026-03-27T21:03:40.1186208Z ─────────────────────────────────────────────────────────────────────────────[0m
+2026-03-27T21:03:40.1186755Z 
+2026-03-27T21:03:40.1186909Z Saved the plan to: tfplan
+2026-03-27T21:03:40.1187152Z 
+2026-03-27T21:03:40.1187468Z To perform exactly these actions, run the following command to apply:
+2026-03-27T21:03:40.1188293Z     terraform apply "tfplan"
+2026-03-27T21:03:40.1237521Z ##[group]Run terraform apply -auto-approve tfplan
+2026-03-27T21:03:40.1238393Z [36;1mterraform apply -auto-approve tfplan[0m
+2026-03-27T21:03:40.1274559Z shell: /usr/bin/bash -e {0}
+2026-03-27T21:03:40.1274900Z env:
+2026-03-27T21:03:40.1275340Z   ARM_CLIENT_ID: ***
+2026-03-27T21:03:40.1275845Z   ARM_CLIENT_SECRET: ***
+2026-03-27T21:03:40.1276273Z   ARM_SUBSCRIPTION_ID: ***
+2026-03-27T21:03:40.1276724Z   ARM_TENANT_ID: ***
+2026-03-27T21:03:40.1277285Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/c2c10345-465d-4132-9282-4f981b5fce98
+2026-03-27T21:03:40.1278456Z ##[endgroup]
+2026-03-27T21:03:47.1337355Z [0m[1mazurerm_resource_group.main: Creating...[0m[0m
+2026-03-27T21:03:47.4336817Z [31m╷[0m[0m
+2026-03-27T21:03:47.4343612Z [31m│[0m [0m[1m[31mError: [0m[0m[1mA resource with the ID "/subscriptions/***/resourceGroups/firma-rg" already exists - to be managed via Terraform this resource needs to be imported into the State. Please see the resource documentation for "azurerm_resource_group" for more information.[0m
+2026-03-27T21:03:47.4345756Z [31m│[0m [0m
+2026-03-27T21:03:47.4346564Z [31m│[0m [0m[0m  with azurerm_resource_group.main,
+2026-03-27T21:03:47.4348660Z [31m│[0m [0m  on main.tf line 32, in resource "azurerm_resource_group" "main":
+2026-03-27T21:03:47.4349603Z [31m│[0m [0m  32: resource "azurerm_resource_group" "main" [4m{[0m[0m
+2026-03-27T21:03:47.4350230Z [31m│[0m [0m
+2026-03-27T21:03:47.4350591Z [31m╵[0m[0m
+2026-03-27T21:03:47.4444852Z ##[error]Terraform exited with code 1.
+2026-03-27T21:03:47.4518408Z ##[error]Process completed with exit code 1.
+2026-03-27T21:03:47.4659322Z Post job cleanup.
+2026-03-27T21:03:47.6021665Z [command]/usr/bin/git version
+2026-03-27T21:03:47.6077064Z git version 2.53.0
+2026-03-27T21:03:47.6135539Z Temporarily overriding HOME='/home/runner/work/_temp/d7f2ec49-3e74-458d-8979-4466f98091a5' before making global git config changes
+2026-03-27T21:03:47.6137508Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-27T21:03:47.6143720Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ba-iac-experiment/ba-iac-experiment
+2026-03-27T21:03:47.6218652Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-27T21:03:47.6273623Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-27T21:03:47.6597676Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-27T21:03:47.6639610Z http.https://github.com/.extraheader
+2026-03-27T21:03:47.6664169Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-03-27T21:03:47.6723766Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-27T21:03:47.7054484Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-27T21:03:47.7108371Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-27T21:03:47.7809428Z Cleaning up orphan processes
+2026-03-27T21:03:47.8181352Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, hashicorp/setup-terraform@v3. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
